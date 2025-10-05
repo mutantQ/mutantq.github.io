@@ -65,15 +65,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-딥러닝의-기초",
+            },{id: "post-test-01-정답",
         
-          title: "딥러닝의 기초",
+          title: "TEST 01 정답",
         
-        description: "딥러닝을 처음 배우는 사람을 위한 종합 가이드 - 선형대수부터 역전파까지",
+        description: "수학 교육 자료",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/deep-learning-basics/";
+            window.location.href = "/blog/2024/tutoring-test-similarity-answer/";
           
         },
       },{id: "post-introduction-to-pettingzoo",
@@ -549,9 +549,20 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-tips-and-tricks/";
           
         },
-      },{id: "post-test",
+      },{id: "post-test-01",
         
-          title: "TEST",
+          title: "TEST 01",
+        
+        description: "수학 교육 자료",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/tutoring-test-similarity/";
+          
+        },
+      },{id: "post-test-02",
+        
+          title: "TEST 02",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -560,15 +571,15 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-test-polynomials/";
           
         },
-      },{id: "post-test",
+      },{id: "post-test-02-정답",
         
-          title: "TEST",
+          title: "TEST 02 정답",
         
         description: "수학 교육 자료",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2021/tutoring-test-similarity/";
+            window.location.href = "/blog/2021/tutoring-test-polynomials-answer/";
           
         },
       },{id: "post-과외-자료-모음",
@@ -580,39 +591,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2021/tutoring-materials-index/";
-          
-        },
-      },{id: "post-ai를-적용하기-좋은-주제에-관하여",
-        
-          title: "AI를 적용하기 좋은 주제에 관하여",
-        
-        description: "인공지능을 효과적으로 적용하기 위한 데이터셋 구축 및 선정 가이드",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/ai-application-topics/";
-          
-        },
-      },{id: "post-벡터와-벡터-공간",
-        
-          title: "벡터와 벡터 공간",
-        
-        description: "선형대수학의 기초 - 벡터와 벡터 공간의 정의",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/vectors-and-vector-spaces/";
-          
-        },
-      },{id: "post-군의-정의와-예시",
-        
-          title: "군의 정의와 예시",
-        
-        description: "추상대수학의 기초 - 군론 입문",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/group-theory-basics/";
           
         },
       },{id: "post-머신러닝은-양자역학-시뮬레이션을-가속화할-수-있을까",
