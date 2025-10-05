@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-test-01-정답",
+            },{id: "post-signing-right-away",
+        
+          title: "Signing Right Away",
+        
+        description: "A Hardware-Rooted Trust Architecture for Verifiable Digital Provenance",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/signing-right-away/";
+          
+        },
+      },{id: "post-test-01-정답",
         
           title: "TEST 01 정답",
         
