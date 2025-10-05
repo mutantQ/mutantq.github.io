@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Signing Right Away
-date: 2025-10-05 20:00:00
+title: "Signing Right Away"
+date: 2025-10-05 20:00:00 +0900
 description: A Hardware-Rooted Trust Architecture for Verifiable Digital Provenance
 tags: digital-signature c2pa content-provenance fake-news ai-generated-images
 categories: ideas

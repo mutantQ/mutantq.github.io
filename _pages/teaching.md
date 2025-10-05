@@ -25,6 +25,6 @@ DeepMind X UCL series notes and introduction to multi-agent systems.
 
 Collection of tutoring materials covering various mathematics topics.
 
-- **[과외 자료 모음 (Korean)](/blog/2023/tutoring-materials-index/)** - 수학 과외 및 교육 자료 모음
+- **[과외 자료 모음 (Korean)](/blog/2021/tutoring-materials-index/)** - 수학 과외 및 교육 자료 모음
 
 ---

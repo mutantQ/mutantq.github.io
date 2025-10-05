@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 큐비트의 이해
-date: 2021-03-20 10:00:00
+title: "큐비트의 이해"
+date: 2021-03-20 10:00:00 +0900
 description: 양자컴퓨팅의 기본 단위 큐비트에 대한 이해 (작성 중)
 tags: quantum-computing qubits physics korean draft
 categories: quantum
@@ -92,4 +92,4 @@ $$
 
 이제 두번째 질문에 답해보자. 왜 큐비트는 복소수로 표현해야만 하는가? 
 
-[Optical Quantum Gates](%ED%81%90%EB%B9%84%ED%8A%B8%EC%9D%98%20%EC%9D%B4%ED%95%B4%20(%EC%9E%91%EC%84%B1%20%EC%A4%91)%204cdc4b1b0bcd4f6a80b04889f30e1d4b/Optical%20Quantum%20Gates%20b3b5ca31f2934467881da06be1ef0b9b.md)
+[Optical Quantum Gates](/_posts/2021-03-15-string-vibration-energy.md)

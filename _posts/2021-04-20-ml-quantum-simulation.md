@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 머신러닝은 양자역학 시뮬레이션을 가속화할 수 있을까?
-date: 2021-04-20 10:00:00
+title: "머신러닝은 양자역학 시뮬레이션을 가속화할 수 있을까?"
+date: 2021-04-20 10:00:00 +0900
 description: ML-accelerated QM simulations for industrial applications 논문 요약
 tags: machine-learning quantum-mechanics simulation korean
 categories: research

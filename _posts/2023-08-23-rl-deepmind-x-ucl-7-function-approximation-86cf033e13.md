@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DeepMind X UCL | 7. Function Approximation"
-date: 2023-08-23 11:00:00
+date: 2023-08-23 11:00:00 +0900 +0900
 description: Reinforcement Learning Basics Series
 tags: reinforcement-learning deep-learning tutorial english series
 categories: education

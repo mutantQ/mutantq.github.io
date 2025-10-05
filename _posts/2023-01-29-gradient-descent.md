@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gradient Descent
-date: 2023-01-29 10:00:00
+date: 2023-01-29 10:00:00 +0900
 description: Understanding optimization problems, gradient descent algorithms, and local vs global minima
 tags: deep-learning optimization gradient-descent machine-learning tutorial english
 categories: education

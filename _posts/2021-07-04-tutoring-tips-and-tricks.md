@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tips"
-date: 2021-07-04 10:00:00
+date: 2021-07-04 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean
 categories: education

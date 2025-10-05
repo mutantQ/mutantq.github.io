@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to Deep Learning
-date: 2023-01-01 09:00:00
+date: 2023-01-01 09:00:00 +0900
 description: A comprehensive guide for beginners - from linear algebra to backpropagation
 tags: deep-learning neural-networks machine-learning tutorial english
 categories: education

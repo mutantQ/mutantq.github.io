@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 과외 자료 모음
-date: 2021-07-01 10:00:00
+date: 2021-07-01 10:00:00 +0900
 description: 수학 과외 및 교육 자료 모음 - 전략, 수학적 모델링, 문제 풀이
 tags: education tutoring mathematics korean
 categories: education

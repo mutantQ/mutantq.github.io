@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reinforcement Learning Basics
-date: 2023-02-01 10:00:00
+date: 2023-02-01 10:00:00 +0900
 description: DeepMind X UCL reinforcement learning series notes and PettingZoo introduction
 tags: reinforcement-learning deep-learning DeepMind tutorial english
 categories: education

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 현의 진동과 에너지
-date: 2021-03-15 10:00:00
+title: "현의 진동과 에너지"
+date: 2021-03-15 10:00:00 +0900
 description: 옥스퍼드 대학교 물리학 강의 자료 번역 - 파동의 에너지 전달과 저장
 tags: physics waves energy translation korean
 categories: physics

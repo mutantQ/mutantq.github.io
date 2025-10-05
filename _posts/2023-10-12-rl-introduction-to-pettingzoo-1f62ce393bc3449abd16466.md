@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction to PettingZoo"
-date: 2023-10-12 10:00:00
+date: 2023-10-12 10:00:00 +0900
 description: Multi-agent reinforcement learning library for Python
 tags: reinforcement-learning deep-learning MARL tutorial english series
 categories: education
