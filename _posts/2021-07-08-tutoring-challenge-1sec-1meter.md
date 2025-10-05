@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "도전 과제"
+title: "도전 과제 : 1초의 길이, 1미터의 시간"
 date: 2021-07-08 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean

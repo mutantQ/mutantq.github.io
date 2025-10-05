@@ -5,7 +5,7 @@ date: 2021-03-21 10:00:00 +0900
 description: 양자컴퓨팅 - 큐비트 이해하기
 tags: quantum-computing qubits physics korean
 categories: quantum
-published: false
+# published: false
 ---
 
 

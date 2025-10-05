@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "도전 과제 팰린드롬"
+title: "도전 과제 : 팰린드롬"
 date: 2021-07-16 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean

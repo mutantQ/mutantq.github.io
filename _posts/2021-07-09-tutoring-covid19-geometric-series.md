@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "도전 과제 COVID-19과 등비수열"
+title: "도전 과제 : COVID-19과 등비수열"
 date: 2021-07-09 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean

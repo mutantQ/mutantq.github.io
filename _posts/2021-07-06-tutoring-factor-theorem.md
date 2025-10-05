@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "개념 익히기 인수 정리를 이용한 인수분해"
+title: "개념 익히기 : 인수 정리를 이용한 인수분해"
 date: 2021-07-06 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean
@@ -36,7 +36,7 @@ unlisted: true
 
 </aside>
 
-[증명 : 유리근 정리](%EA%B0%9C%EB%85%90%20%EC%9D%B5%ED%9E%88%EA%B8%B0%20%EC%9D%B8%EC%88%98%20%EC%A0%95%EB%A6%AC%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%9D%B8%EC%88%98%EB%B6%84%ED%95%B4%20161f0f24f931800ebd40d3749a386801/%EC%A6%9D%EB%AA%85%20%EC%9C%A0%EB%A6%AC%EA%B7%BC%20%EC%A0%95%EB%A6%AC%20161f0f24f9318121af41f8e981b18e6e.md)
+[증명 : 유리근 정리](/blog/2021/tutoring-rational-root-theorem-proof)
 
 정리가 성립한다는 가정 하에, 이를 이용해서 문제를 푸는 방법을 먼저 살펴보자.
 

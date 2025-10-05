@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TEST 01"
+title: "TEST 01 : 도형의 닮음"
 date: 2021-07-03 10:00:00 +0900
 description: 수학 교육 자료
 tags: education tutoring mathematics korean
