@@ -1,8 +1,8 @@
 ---
 layout: post
-title: AI, Science, and the Humanities - Navigating the Future of Intelligence
+title: AI, Science, and the Humanities
 date: 2025-10-05 10:00:00 +0900
-description: Exploring the essential role of humanities in AI research, the nature of human uniqueness, and designing a future society where humans and AI coexist harmoniously
+description: Exploring the essential role of humanities in AI research
 tags: artificial-intelligence philosophy humanities ethics consciousness responsibility english
 categories: essay
 lang: en

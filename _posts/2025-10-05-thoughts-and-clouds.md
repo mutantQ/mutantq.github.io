@@ -2,7 +2,7 @@
 layout: post
 title: The Difference Between Thoughts and Clouds
 date: 2025-10-05 12:00:00 +0900
-description: A philosophical exploration of consciousness, emergence, and what distinguishes human thought from natural complex systems like clouds
+description: A philosophical exploration of consciousness and emergence
 tags: philosophy consciousness emergence complexity neuroscience meditation english
 categories: essay
 toc:
