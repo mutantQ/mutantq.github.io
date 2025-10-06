@@ -40,7 +40,7 @@ It was at this point that a fortuitous opportunity arose. A successful founder, 
 
 ## The SRA Architecture
 
-The core architecture of SRA was established in our original 2024 whitepaper, based on fundamental cryptographic principles of confidentiality, integrity, authentication, and replay protection. We initially designed our system around authenticated encryption schemes like ChaCha20-Poly1305, and later discovered that the MIPI Alliance's Camera Security Framework had independently standardized similar approaches. This convergence validated our architectural choices. While the prototyping experience taught us crucial lessons about implementation strategy—particularly the need for hardware-accelerated cryptography and better development platforms—the fundamental architectural design remained consistent.
+The core architecture of SRA was established in our original 2024 whitepaper, based on fundamental cryptographic principles of confidentiality, integrity, authentication, and replay protection. We initially designed our system around authenticated encryption schemes like ChaCha20-Poly1305. During development, we discovered that the MIPI Alliance's Camera Security Framework had independently standardized similar approaches, which validated our architectural choices. While the prototyping experience taught us crucial lessons about implementation strategy—particularly the need for hardware-accelerated cryptography and better development platforms—the fundamental architectural design remained consistent.
 
 The architecture involves two main components:
 
