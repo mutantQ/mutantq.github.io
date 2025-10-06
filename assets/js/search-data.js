@@ -80,18 +80,18 @@ ninja.data = [{
         
           title: "The Difference Between Thoughts and Clouds",
         
-        description: "A philosophical exploration of consciousness, emergence, and what distinguishes human thought from natural complex systems like clouds",
+        description: "A philosophical exploration of consciousness and emergence",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/thoughts-and-clouds/";
           
         },
-      },{id: "post-ai-science-and-the-humanities-navigating-the-future-of-intelligence",
+      },{id: "post-ai-science-and-the-humanities",
         
-          title: "AI, Science, and the Humanities - Navigating the Future of Intelligence",
+          title: "AI, Science, and the Humanities",
         
-        description: "Exploring the essential role of humanities in AI research, the nature of human uniqueness, and designing a future society where humans and AI coexist harmoniously",
+        description: "Exploring the essential role of humanities in AI research",
         section: "Posts",
         handler: () => {
           
