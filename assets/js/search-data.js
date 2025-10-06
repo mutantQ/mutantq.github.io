@@ -373,6 +373,17 @@ ninja.data = [{
             window.location.href = "/blog/2022/attention-ownership/";
           
         },
+      },{id: "post-a-modern-reinterpretation-of-keynes-bancor-and-the-international-clearing-union",
+        
+          title: "A Modern Reinterpretation of Keynes’ Bancor and the International Clearing Union",
+        
+        description: "Studying a Hypothetical International Currency through Multi-Agent Reinforcement Learning",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/bancor-modern-reinterpretation/";
+          
+        },
       },{id: "post-전략-평면-기하학",
         
           title: "전략 : 평면 기하학",
