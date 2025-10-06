@@ -1,0 +1,417 @@
+import copy
+from typing import Any
+
+import flax
+import jax
+import jax.numpy as jnp
+from jax.lax import stop_gradient
+import ml_collections
+import optax
+
+from functools import partial
+
+from utils.encoders import encoder_modules
+from utils.flax_utils import ModuleDict, TrainState, nonpytree_field
+from utils.networks import MeanflowActor, Value
+from utils.losses import adaptive_l2_loss
+
+from omegaconf import OmegaConf
+
+class MFQLAgent(flax.struct.PyTreeNode):
+    """MeanFlow Q-learning (FQL) agent."""
+
+    rng: Any
+    network: Any
+    config: Any = nonpytree_field()
+
+    # We do not need to guarantee that r and t are larger or smaller
+    # since we can technically use the constraint
+    def sample_t_r(self, batch_size, rng):
+        '''
+            Sampling r and t
+        '''
+        rng, rng_rand = jax.random.split(rng, 2)
+        if self.config['time_dist'][0] == 'uniform':
+            samples = jax.random.uniform(rng_rand,
+                                         (batch_size,2))
+
+        elif self.config['time_dist'][0] == 'lognorm':
+            mu, sigma = self.config['time_dist'][-2], self.config['time_dist'][-1]
+            normal_samples = jax.random.normal(rng_rand, 
+                                               (batch_size,2)) * sigma + mu
+            samples = 1 / (1 + jnp.exp(-normal_samples)) # apply sigmoid
+        else:
+            raise ValueError(f"{self.config['time_dist'][0]} is unknown and not supported!")
+
+        t = samples[:,0]
+        r = samples[:,1]
+
+        num_selected = int(self.config['flow_ratio']*batch_size)
+        indices = jax.random.permutation(batch_size)[:num_selected]
+        t[indices] = r[indices]
+
+        if self.config['alpha_symm'] == 0.0:
+            assert jnp.sum(r > t) == 0
+        return t, r
+
+    def critic_loss(self, batch, grad_params, rng):
+        """Compute the MFQL critic loss."""
+        rng, sample_rng = jax.random.split(rng)
+        next_actions = self.sample_actions(batch['next_observations'], seed=sample_rng)
+        next_actions = jnp.clip(next_actions, -1, 1)
+        next_qs = self.network.select('target_critic')(batch['next_observations'], actions=next_actions)
+        if self.config['q_agg'] == 'min':
+            next_q = next_qs.min(axis=0)
+        else:
+            next_q = next_qs.mean(axis=0)
+
+        target_q = batch['rewards'] + self.config['discount'] * batch['masks'] * next_q
+
+        q = self.network.select('critic')(batch['observations'], actions=batch['actions'], params=grad_params)
+        critic_loss = jnp.square(q - target_q).mean()
+
+        return critic_loss, {
+            'critic_loss': critic_loss,
+            'q_mean': q.mean(),
+            'q_max': q.max(),
+            'q_min': q.min(),
+        }
+
+    def actor_loss(self, batch, grad_params, rng):
+        """Compute the MFQL actor loss."""
+        batch_size, action_dim = batch['actions'].shape
+        # Split RNG key for different parts of the loss
+        rng, rng_bc_params, rng_q_policy_noise, rng_sample_actions_mse = jax.random.split(rng, 4)
+        x_rng, r_rng, t_rng, w_rng = jax.random.split(rng_bc_params, 4)
+
+        # flow loss.
+        x_0 = jax.random.normal(x_rng, (batch_size, action_dim))
+        x_1 = batch['actions']
+        t = jax.random.uniform(t_rng, (batch_size, 1))
+        r = jax.random.uniform(r_rng, (batch_size, 1))  # Start time, which is 0 in this case.
+        w = jax.random.uniform(w_rng, (batch_size, 1)) * (self.config['w_max']) # [0, 5.]    
+        z_t = (1 - t) * x_0 + t * x_1
+        z_r = (1 - r) * x_0 + r * x_1  # r is the start time, which is 0 in this case.
+        vel = x_1 - x_0
+
+        u_t = self.network.select('actor_meanflow')(
+            observations=batch['observations'],
+            actions=z_t,
+            rs=r,
+            ts=t,
+            ws=w,
+            params=grad_params
+        )
+
+        print("config", self.config)
+
+        if self.config['classifier_free']:
+            # classifier-free guidance
+            # rng, rng_cfg = jax.random.split(rng, 2)
+            c = batch['observations']
+            uncond = jnp.zeros_like(c)
+
+            # Unconditional prediction
+            u_rr_uncond = self.network.select('actor_meanflow')(
+                observations=uncond,
+                actions=z_r,
+                rs=r,
+                ts=r,
+                ws=w,
+                params=grad_params
+            )
+
+            # Conditional prediction
+            u_rr_cond = self.network.select('actor_meanflow')(
+                observations=c,
+                actions=z_r,
+                rs=r,
+                ts=r,
+                ws=jnp.zeros_like(r),
+                params=grad_params
+            )
+
+            # TODO: Make it programmable
+            cfg_w = self.config['cfg_w']
+
+            u_rr = cfg_w * u_rr_cond + (1 - cfg_w) * u_rr_uncond
+
+            v_hat = w * vel + (1 - w) * u_rr
+        else:
+            v_hat = vel
+
+        # We drop observations randomly
+        rng, rng_drop_obs = jax.random.split(rng, 2)
+        cfg_idx = jax.random.uniform(rng_drop_obs, (batch['observations'].shape[0],)) < self.config['ratio_sampling']
+        obs = jnp.where(cfg_idx[:, None], batch['observations'], jnp.zeros_like(batch['observations']))
+        model_partial = partial(self.network.select('actor_meanflow'),
+                                params=grad_params,
+                                observations=obs, #batch['observations'],
+                                ws=w)
+        # Compute the JVP (Jacobian-vector product) for the flow loss.
+        jvp_args = (
+            lambda z, r, t: model_partial(actions=z, rs=r, ts=t),
+            (z_r, r, t),
+            (v_hat, jnp.ones_like(r), jnp.zeros_like(t)),
+        )
+
+        u_r, dudr = jax.jvp(*jvp_args)
+        u_tgt = v_hat - (t - r) * dudr
+
+        if self.config['stop_grad']:
+            bc_flow_loss = u_r - stop_gradient(u_tgt)
+        else:
+            bc_flow_loss = u_r - u_tgt
+        
+        bc_flow_loss = adaptive_l2_loss(bc_flow_loss)
+        ## Symmetric loss
+        symm_loss = jnp.mean((u_r - u_t) ** 2)
+
+        # Q loss.
+        # TODO: Simplify the Q-loss with just sampling actions
+        # Generate actions from the policy for Q-value estimation
+        q_loss_noises = jax.random.normal(rng_q_policy_noise, (batch_size, action_dim))
+        r_q = jnp.zeros((batch_size, 1)) # Start time for policy action generation
+        t_q = jnp.ones_like(r_q)      # End time for policy action generation
+        w_q = jnp.ones_like(r_q) * self.config.get('temperature', 1.0)
+        # Velocity prediction from actor_meanflow using current trainable parameters
+        vel_q = self.network.select('actor_meanflow')(
+            observations=batch['observations'],
+            actions=q_loss_noises,
+            rs=r_q,
+            ts=t_q,
+            ws=w_q,
+            params=grad_params
+        )
+        policy_actions_for_q = q_loss_noises + vel_q
+        policy_actions_for_q = jnp.clip(policy_actions_for_q, -1, 1)
+
+        qs = self.network.select('critic')(batch['observations'], actions=policy_actions_for_q)
+        q = jnp.mean(qs, axis=0)
+
+        q_loss = -q.mean() # Mean Q value maximization.
+        if self.config['normalize_q_loss']:
+            lam = stop_gradient(1 / jnp.abs(q).mean())
+            q_loss = lam * q_loss
+
+        # Total loss.
+        actor_loss = self.config['alpha'] * bc_flow_loss + self.config['alpha_symm'] * symm_loss + q_loss
+
+        # Additional metrics for logging.
+        actions_for_mse_log = self.sample_actions(batch['observations'], seed=rng_sample_actions_mse)
+        mse = jnp.mean((actions_for_mse_log - batch['actions']) ** 2)
+
+        return actor_loss, {
+            'actor_loss': actor_loss,
+            'bc_flow_loss': bc_flow_loss,
+            'symm_loss': symm_loss,
+            'q_loss': q_loss,
+            'q': q.mean(),
+            'mse': mse,
+        }
+
+    @jax.jit
+    def total_loss(self, batch, grad_params, rng=None):
+        """Compute the total loss."""
+        info = {}
+        rng = rng if rng is not None else self.rng
+
+        rng, actor_rng, critic_rng = jax.random.split(rng, 3)
+
+        critic_loss, critic_info = self.critic_loss(batch, grad_params, critic_rng)
+        for k, v in critic_info.items():
+            info[f'critic/{k}'] = v
+
+        actor_loss, actor_info = self.actor_loss(batch, grad_params, actor_rng)
+        for k, v in actor_info.items():
+            info[f'actor/{k}'] = v
+
+        loss = critic_loss + actor_loss
+        return loss, info
+
+    def target_update(self, network, module_name):
+        """Update the target network with exponential moving average."""
+        new_target_params = jax.tree_util.tree_map(
+            lambda p, tp: p * self.config['tau'] + tp * (1 - self.config['tau']),
+            self.network.params[f'modules_{module_name}'],
+            self.network.params[f'modules_target_{module_name}'],
+        )
+        network.params[f'modules_target_{module_name}'] = new_target_params
+
+    @jax.jit
+    def update(self, batch):
+        """Update the agent and return a new agent with information dictionary."""
+        new_rng, rng = jax.random.split(self.rng)
+
+        def loss_fn(grad_params):
+            return self.total_loss(batch,
+                                   grad_params,
+                                   rng=rng)
+
+        new_network, info = self.network.apply_loss_fn(loss_fn=loss_fn)
+        self.target_update(new_network, 'critic')
+        return self.replace(network=new_network, rng=new_rng), info
+
+    @jax.jit
+    def sample_actions(
+        self,
+        observations,
+        seed=None,
+        temperature=2.0,
+    ):
+        """Sample actions from the one-step policy."""
+        action_seed = seed # sample_actions typically takes one seed
+
+        if observations.ndim == 1:
+            observations = jnp.expand_dims(observations, axis=0)
+            squeeze_output = True
+        else:
+            squeeze_output = False
+
+        noises = jax.random.normal(
+            action_seed,
+            (observations.shape[0],self.config['action_dim']),
+        )
+
+        r = jnp.zeros(
+            (observations.shape[0], 1),  # Start time
+        )
+
+        t = jnp.ones_like(r)
+        w = jnp.ones_like(t) * temperature
+
+        vel = self.network.select('actor_meanflow')(
+            observations=observations,
+            actions=noises,
+            rs=r,
+            ts=t,
+            ws=w
+        )
+        actions = noises + vel
+        actions = jnp.clip(actions, -1, 1)
+
+        if squeeze_output:
+            actions = jnp.squeeze(actions, axis=0)
+        return actions
+
+    def sample_one_step(self, z_r, labels, i, t_steps):
+        t = t_steps[i]
+        r = t_steps[i+1]
+
+        t = jnp.repeat(t, z_r.shape[0])
+        r = jnp.repeat(r, z_r.shape[0])
+
+        return self.solver_step(z_r, t, r, labels)
+
+    def solver_step(self, z_r, t, r, labels):
+        """Perform one step of the solver."""
+        # Use the actor_meanflow to predict the next state.
+        vel = self.network.select('actor_meanflow')(
+            observations=labels,
+            actions=z_r,
+            rs=r,
+            ts=t,
+            ws=jnp.zeros_like(r)
+        )
+        actions = z_r + vel
+        actions = jnp.clip(actions, -1, 1)
+        return actions
+
+    @classmethod
+    def create(
+        cls,
+        seed,
+        ex_observations,
+        ex_actions,
+        config,
+    ):
+        """Create a new agent.
+
+        Args:
+            seed: Random seed.
+            ex_observations: Example batch of observations.
+            ex_actions: Example batch of actions.
+            config: Configuration dictionary.
+        """
+        rng = jax.random.PRNGKey(seed)
+        rng, init_rng = jax.random.split(rng, 2)
+
+        ex_times = ex_actions[..., :1]
+        ob_dims = ex_observations.shape[1:]
+        action_dim = ex_actions.shape[-1]
+
+        # Define encoders.
+        encoders = dict()
+        
+        if config.get('encoder', None) is not None:
+            encoder_module = encoder_modules[config.encoder]
+            encoders['critic'] = encoder_module()
+            encoders['actor_meanflow'] = encoder_module()
+
+        # Define networks.
+        critic_def = Value(
+            hidden_dims=config['value_hidden_dims'],
+            layer_norm=config['layer_norm'],
+            num_ensembles=2,
+            encoder=encoders.get('critic'),
+        )
+        actor_meanflow_def = MeanflowActor(
+            hidden_dims=config['actor_hidden_dims'],
+            action_dim=action_dim,
+            layer_norm=config['actor_layer_norm'],
+            encoder=encoders.get('actor_meanflow'),
+        )
+
+        network_info = dict(
+            critic=(critic_def, (ex_observations, ex_actions)),
+            target_critic=(copy.deepcopy(critic_def), (ex_observations, ex_actions)),
+            actor_meanflow=(actor_meanflow_def, (ex_observations, ex_actions, ex_times, ex_times)),
+        )
+        if encoders.get('actor_meanflow') is not None:
+            # Add actor_meanflow_encoder to ModuleDict to make it separately callable.
+            network_info['actor_meanflow_encoder'] = (encoders.get('actor_meanflow'), (ex_observations,))
+        networks = {k: v[0] for k, v in network_info.items()}
+        network_args = {k: v[1] for k, v in network_info.items()}
+
+        network_def = ModuleDict(networks)
+        network_tx = config['optimizer'] #optax.adam(learning_rate=config['lr'])
+        network_params = network_def.init(init_rng, **network_args)['params']
+        network = TrainState.create(network_def, network_params, tx=network_tx)
+
+        params = network.params
+        params['modules_target_critic'] = params['modules_critic']
+
+        config['ob_dims'] = ob_dims
+        config['action_dim'] = action_dim
+        # OmegaConf.set_readonly(config, True)
+        return cls(rng, network=network, config=config)#flax.core.FrozenDict(**config))
+
+# def get_config():
+#     config = ml_collections.ConfigDict(
+#         dict(
+#             agent_name='mfql',  # Agent name.
+#             ob_dims=ml_collections.config_dict.placeholder(list),  # Observation dimensions (will be set automatically).
+#             action_dim=ml_collections.config_dict.placeholder(int),  # Action dimension (will be set automatically).
+#             lr=3e-4,  # Learning rate.
+#             batch_size=256,  # Batch size.
+#             actor_hidden_dims=(512, 512, 512, 512),  # Actor network hidden dimensions.
+#             value_hidden_dims=(512, 512, 512, 512),  # Value network hidden dimensions.
+#             layer_norm=True,  # Whether to use layer normalization.
+#             actor_layer_norm=False,  # Whether to use layer normalization for the actor.
+#             discount=0.99,  # Discount factor.
+#             alpha=10.0, # BC coefficient.
+#             alpha_symm=0.0, # Symmetric loss coefficient.
+#             tau=0.005,  # Target network update rate.
+#             q_agg='mean',  # Aggregation method for target Q values.
+#             normalize_q_loss=False,  # Whether to normalize the Q loss.
+#             encoder=ml_collections.config_dict.placeholder(str),  # Visual encoder name (None, 'impala_small', etc.).
+#             loss_deg=1.0, # Adaptive loss degree
+#             stop_grad=True, # Whether to stop gradient -> this should be checked since we are kind of doing PINN here
+#             ratio_sampling=0.25, # 
+#             cfg=True, # Classifier-Free Guidance 
+#             flow_ratio=0.25, # Ratio to make t == r
+#             w_max=5.0, 
+#         )
+    # )
+    # return config
+
