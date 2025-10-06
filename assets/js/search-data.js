@@ -76,9 +76,31 @@ ninja.data = [{
             window.location.href = "/blog/2025/signing-right-away/";
           
         },
+      },{id: "post-the-difference-between-thoughts-and-clouds",
+        
+          title: "The Difference Between Thoughts and Clouds",
+        
+        description: "A philosophical exploration of consciousness, emergence, and what distinguishes human thought from natural complex systems like clouds",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/thoughts-and-clouds/";
+          
+        },
+      },{id: "post-ai-science-and-the-humanities-navigating-the-future-of-intelligence",
+        
+          title: "AI, Science, and the Humanities - Navigating the Future of Intelligence",
+        
+        description: "Exploring the essential role of humanities in AI research, the nature of human uniqueness, and designing a future society where humans and AI coexist harmoniously",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-science-and-humanities/";
+          
+        },
       },{id: "post-test-01-정답",
         
-          title: "TEST 01 정답",
+          title: "TEST 01 : 정답",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -340,9 +362,20 @@ ninja.data = [{
             window.location.href = "/blog/2023/deep-learning-intro-en/";
           
         },
+      },{id: "post-attention-ownership",
+        
+          title: "Attention Ownership",
+        
+        description: "Reclaiming Your Mind in the Digital Age",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/attention-ownership/";
+          
+        },
       },{id: "post-전략-평면-기하학",
         
-          title: "전략 평면 기하학",
+          title: "전략 : 평면 기하학",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -353,7 +386,7 @@ ninja.data = [{
         },
       },{id: "post-전략-어려운-문제가-풀리는-이유",
         
-          title: "전략 어려운 문제가 풀리는 이유",
+          title: "전략 : 어려운 문제가 풀리는 이유",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -364,7 +397,7 @@ ninja.data = [{
         },
       },{id: "post-보충-질문-켤레-복소수",
         
-          title: "보충 질문 켤레 복소수",
+          title: "보충 질문 : 켤레 복소수",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -375,7 +408,7 @@ ninja.data = [{
         },
       },{id: "post-보충-자료-최대공약수와-최소공배수",
         
-          title: "보충 자료 최대공약수와 최소공배수",
+          title: "보충 자료 : 최대공약수와 최소공배수",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -386,7 +419,7 @@ ninja.data = [{
         },
       },{id: "post-보충-자료-유리수의-사칙-연산",
         
-          title: "보충 자료 유리수의 사칙 연산",
+          title: "보충 자료 : 유리수의 사칙 연산",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -397,7 +430,7 @@ ninja.data = [{
         },
       },{id: "post-보충-자료-소금물의-농도",
         
-          title: "보충 자료 소금물의 농도",
+          title: "보충 자료 : 소금물의 농도",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -408,7 +441,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-하노이의-탑",
         
-          title: "도전 과제 하노이의 탑",
+          title: "도전 과제 : 하노이의 탑",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -419,7 +452,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-팰린드롬",
         
-          title: "도전 과제 팰린드롬",
+          title: "도전 과제 : 팰린드롬",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -430,7 +463,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-자와-컴퍼스",
         
-          title: "도전 과제 자와 컴퍼스",
+          title: "도전 과제 : 자와 컴퍼스",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -441,7 +474,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-유클리드-호제법",
         
-          title: "도전 과제 유클리드 호제법",
+          title: "도전 과제 : 유클리드 호제법",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -452,7 +485,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-요세푸스-문제",
         
-          title: "도전 과제 요세푸스 문제",
+          title: "도전 과제 : 요세푸스 문제",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -463,7 +496,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-수열과-입체도형의-부피",
         
-          title: "도전 과제 수열과 입체도형의 부피",
+          title: "도전 과제 : 수열과 입체도형의 부피",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -474,7 +507,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-삼각함수",
         
-          title: "도전 과제 삼각함수",
+          title: "도전 과제 : 삼각함수",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -485,7 +518,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-길-찾기",
         
-          title: "도전 과제 길 찾기",
+          title: "도전 과제 : 길 찾기",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -496,7 +529,7 @@ ninja.data = [{
         },
       },{id: "post-도전-과제-covid-19과-등비수열",
         
-          title: "도전 과제 COVID-19과 등비수열",
+          title: "도전 과제 : COVID-19과 등비수열",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -505,9 +538,9 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-covid19-geometric-series/";
           
         },
-      },{id: "post-도전-과제",
+      },{id: "post-도전-과제-1초의-길이-1미터의-시간",
         
-          title: "도전 과제",
+          title: "도전 과제 : 1초의 길이, 1미터의 시간",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -518,7 +551,7 @@ ninja.data = [{
         },
       },{id: "post-개념-익히기-조립제법의-원리",
         
-          title: "개념 익히기 조립제법의 원리",
+          title: "개념 익히기 : 조립제법의 원리",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -527,9 +560,20 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-synthetic-division/";
           
         },
+      },{id: "post-증명-유리근-정리",
+        
+          title: "증명 : 유리근 정리",
+        
+        description: "수학 교육 자료",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/tutoring-rational-root-theorem-proof/";
+          
+        },
       },{id: "post-개념-익히기-인수-정리를-이용한-인수분해",
         
-          title: "개념 익히기 인수 정리를 이용한 인수분해",
+          title: "개념 익히기 : 인수 정리를 이용한 인수분해",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -549,9 +593,9 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-tutoring/";
           
         },
-      },{id: "post-tips",
+      },{id: "post-tips-and-tricks",
         
-          title: "Tips",
+          title: "Tips and Tricks",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -560,9 +604,9 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-tips-and-tricks/";
           
         },
-      },{id: "post-test-01",
+      },{id: "post-test-01-도형의-닮음",
         
-          title: "TEST 01",
+          title: "TEST 01 : 도형의 닮음",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -571,9 +615,9 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-test-similarity/";
           
         },
-      },{id: "post-test-02",
+      },{id: "post-test-02-다항식",
         
-          title: "TEST 02",
+          title: "TEST 02 : 다항식",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -584,7 +628,7 @@ ninja.data = [{
         },
       },{id: "post-test-02-정답",
         
-          title: "TEST 02 정답",
+          title: "TEST 02 : 정답",
         
         description: "수학 교육 자료",
         section: "Posts",
@@ -613,6 +657,28 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2021/ml-quantum-simulation/";
+          
+        },
+      },{id: "post-optical-quantum-gates",
+        
+          title: "Optical Quantum Gates",
+        
+        description: "양자컴퓨팅 - 큐비트 이해하기",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/qubit-optical-quantum-gates/";
+          
+        },
+      },{id: "post-큐비트의-이해",
+        
+          title: "큐비트의 이해",
+        
+        description: "양자컴퓨팅의 기본 단위 큐비트에 대한 이해 (작성 중)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/understanding-qubits-draft/";
           
         },
       },{id: "post-현의-진동과-에너지",
