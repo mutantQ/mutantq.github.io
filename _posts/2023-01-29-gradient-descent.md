@@ -10,8 +10,6 @@ toc:
 lang: en
 ---
 
-# Gradient Descent
-
 ## What is an Optimization Problem?
 
 An **optimization problem** seeks the **optimal solution** from all possible solutions. For instance, a researcher at an IT company developing navigation software would aim to provide users with the "fastest traffic route". Similarly, someone with a background in industrial engineering might look for a "business model that maximizes profitability". Both are tackling optimization problems. There are multiple ways to travel from point $A$ to $B$ using public transportation. Similarly, countless business models can make a company profitable. However, people naturally desire the quickest route and the most profitable business model. In this context, optimization problems are very familiar to computer scientists, industrial engineers, and even business and economics professionals.
