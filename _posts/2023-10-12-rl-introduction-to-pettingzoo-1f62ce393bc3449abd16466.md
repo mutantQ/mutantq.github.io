@@ -8,6 +8,7 @@ categories: education
 lang: en
 ---
 
+*This work has been translated from Korean to English using Claude 4.5 Sonnet.*
 
 ## Documentation link
 

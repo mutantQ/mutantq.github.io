@@ -8,6 +8,7 @@ categories: education
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
 
 ## 극한의 개념 (limits)
 

@@ -8,6 +8,7 @@ categories: education
 lang: en
 ---
 
+*This work has not been AI-generated.*
 
 ## GLIE
 

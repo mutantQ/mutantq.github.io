@@ -8,6 +8,8 @@ categories: education
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
+
 [본문으로 돌아가기](/blog/2021/tutoring-factor-theorem)
 
 아래의 유리근 정리를 증명해보자.

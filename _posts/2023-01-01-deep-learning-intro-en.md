@@ -14,7 +14,9 @@ lang: en
 
 ---
 
-This is a 14-day comprehensive course for learning the fundamentals of deep learning systematically.
+*This work has not been AI-generated.*
+
+This is a 14-day comprehensive course for learning the fundamentals of deep learning.
 
 # Week 1
 

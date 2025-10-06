@@ -8,6 +8,7 @@ categories: quantum
 # published: false
 ---
 
+*본 글은 인공지능을 활용하지 않고 작성되었음을 알립니다.*
 
 우선 아래 영상을 시청해보자.
 

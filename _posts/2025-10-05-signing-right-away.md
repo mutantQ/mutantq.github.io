@@ -8,7 +8,11 @@ categories: ideas
 lang: en
 ---
 
+*This work contains AI-generated paragraphs and sentences. The original whitepaper of this work has been written by myself in English. The original experiment notes (undisclosed) were written in Korean by myself and my teammates, Wonbeen Yoon and Minjun Yi from Seoul National University. Gemini Deep Research was used to organize the work into the full whitepaper. Each work was fully reviewed and revised by myself.*
+
+
 You can find the full whitepaper here: **[PDF](/assets/pdf/SRA-2025-10-05.pdf)**
+The original whitepaper can be viewed here: **[PDF](/assets/pdf/SRA-2024-05-26.pdf)**
 
 ## A Brief Motivation
 
@@ -34,11 +38,11 @@ We had reached a deadlock. We knew exactly what the problems were and what we ne
 
 It was at this point that a fortuitous opportunity arose. A successful founder, Kay Kyungsik Woo, held a seminar and offered to provide angel investment (approx. $70,000 in total) to three student teams. This was the catalyst we desperately needed to move forward, armed with the hard-won lessons from our initial failure.
 
-## A More Mature Architecture
+## The SRA Architecture
 
-That failure forced us to take a step back and refine our approach, leading to the more structured architecture we are pursuing now. The plan is heavily inspired by the MIPI Alliance's Camera Security Framework, which outlines pillars of confidentiality, integrity, authentication, and replay protection.
+The core architecture of SRA was established in our original 2024 whitepaper, based on fundamental cryptographic principles of confidentiality, integrity, authentication, and replay protection. We initially designed our system around authenticated encryption schemes like ChaCha20-Poly1305, and later discovered that the MIPI Alliance's Camera Security Framework had independently standardized similar approaches. This convergence validated our architectural choices. While the prototyping experience taught us crucial lessons about implementation strategy—particularly the need for hardware-accelerated cryptography and better development platforms—the fundamental architectural design remained consistent.
 
-Our revised architecture involves two main components:
+The architecture involves two main components:
 
 ### 1. Authenticated & Encrypted Camera-to-Processor Link
 
@@ -50,21 +54,19 @@ The encrypted feed is sent directly to a TEE, an isolated, secure enclave on the
 
 This design ensures that by the time an application or user has access to an image, it has already been signed within a secure hardware environment. The investment would allow us to acquire the necessary next-generation FPGA to properly implement and test this more robust architecture.
 
-## Thoughts on Long-Term Viability and IP
+## Aligning with the Broader Ecosystem
 
-Looking ahead, we recognize that working around closed industry standards isn't a sustainable strategy. This prototyping effort is a means to an end, and we have a three-stage plan for addressing the intellectual property (IP) challenges:
+Our prototyping experience led to a critical strategic insight: the most effective path to widespread adoption is not to reinvent the wheel, but to align with and build upon the secure hardware capabilities that are already being integrated into commercial System-on-Chips (SoCs).
 
-### 1. Develop Proprietary Technology
+Mobile SoC vendors like Qualcomm have already integrated the necessary hardware primitives—such as secure Image Signal Processors (ISPs), hardware crypto accelerators, and robust Trusted Execution Environments (TEEs)—into their platforms. The emergence of the Qualcomm Snapdragon 8 Gen 3 as the first C2PA-compliant mobile platform validates this trend.
 
-The primary goal is to use the experience gained to develop our own unique, efficient, and patentable method for secure camera data transmission.
+### Our Strategy: Open and Interoperable
 
-### 2. Contribute to Standardization
+Rather than pursuing custom silicon or proprietary solutions, SRA's strategy is to position itself as an **open, interoperable reference architecture** that can be implemented on any SoC that provides the necessary trusted hardware components. By leveraging existing secure camera APIs and TEE SDKs, SRA can be deployed as a firmware or software solution that "lights up" the latent security capabilities of modern devices.
 
-Once we have a robust proprietary solution, one path is to contribute it to open standards bodies like C2PA. This could help create a more open, interoperable ecosystem for secure media capture.
+This approach dramatically reduces cost and time-to-market compared to a custom silicon strategy, and it fosters a competitive, multi-vendor ecosystem rather than a single proprietary solution. The initial plan to design custom ASICs was abandoned in favor of this more pragmatic path that builds on the industry's existing investments in secure hardware.
 
-### 3. Build a Defensive Patent Portfolio
-
-We would also patent our innovations to create a defensive IP portfolio, allowing us to operate and protect our work as we aim for broader adoption, potentially through licensing to device and chip manufacturers.
+Industry pioneers like Truepic have already demonstrated similar architectures in practice with their Foresight system, which leverages the Qualcomm TEE and secure hardware pipeline. This serves as proof-of-concept for our model and demonstrates a clear path to market through ecosystem collaboration.
 
 ## Conclusion
 

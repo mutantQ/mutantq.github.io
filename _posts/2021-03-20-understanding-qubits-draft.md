@@ -8,6 +8,8 @@ categories: quantum
 # published: false
 ---
 
+*본 글은 인공지능을 활용하지 않고 작성된 글임을 알립니다.*
+
 ### Understanding Qubits
 
 ## 양자컴퓨터를 이해하고 싶다면 큐비트부터 이해하자

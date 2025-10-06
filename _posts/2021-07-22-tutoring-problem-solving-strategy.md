@@ -8,6 +8,7 @@ categories: education
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
 
 ![마리오카트의 쿠파 성 (출처: 나무위키)](/assets/img/blog/tutoring/untitled__161f0f24f931809c9bf9e8ee042d6.png)
 

@@ -8,6 +8,8 @@ categories: education
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
+
 [문제로 돌아가기](/blog/2021/tutoring-test-similarity/)
 
 **문제 1 정답:** $\frac{3}{2}\rm{cm}$

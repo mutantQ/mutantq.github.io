@@ -7,6 +7,8 @@ tags: machine-learning quantum-mechanics simulation korean
 categories: research
 ---
 
+*본 글은 인공지능을 활용하지 않고 작성되었음을 알립니다.*
+
 ### Machine learning-accelerated quantum mechanics-based atomistic simulations for industrial applications
 
 ## Abstract

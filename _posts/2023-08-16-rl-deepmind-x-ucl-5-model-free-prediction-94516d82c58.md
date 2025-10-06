@@ -8,6 +8,7 @@ categories: education
 lang: en
 ---
 
+*This work has not been AI-generated.*
 
 **Note.** The notation used here might be confusing. We use $S$ to denote the state space and $S_t$ to represent the state at time $t$. Similarly, $A$ represents the action space, and $A_t$ denotes the action at time $t$.
 

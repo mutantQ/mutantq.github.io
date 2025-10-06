@@ -8,6 +8,7 @@ categories: education
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
 
 ![라파엘로의 "아테네 학당" (출처: Wikipedia)](/assets/img/blog/tutoring/untitled__161f0f24f93180c5b98ef3a3182bd.png)
 

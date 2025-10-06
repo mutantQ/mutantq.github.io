@@ -10,6 +10,8 @@ toc:
 unlisted: true
 ---
 
+*본 자료는 인공지능을 활용하지 않고 작성되었음을 알립니다.*
+
 ## 전략
 
 - [전략 : 어려운 문제가 풀리는 이유](/blog/2021/tutoring-problem-solving-strategy/)

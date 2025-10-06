@@ -7,9 +7,9 @@ tags: physics waves energy translation korean
 categories: physics
 ---
 
-- 이 글은 영국 옥스퍼드 대학교 물리학과 강사 Dr. Christopher W. P. Palmer의 부교재 "Energy in Waves on Strings"를 번역한 것임을 알립니다.
+*이 글은 영국 옥스퍼드 대학교 물리학과 강사 Dr. Christopher W. P. Palmer의 부교재 "Energy in Waves on Strings"를 번역한 것임을 알립니다.*
 [https://users.physics.ox.ac.uk/~palmerc/Wavesfiles/Energy_Handout.pdf](https://users.physics.ox.ac.uk/~palmerc/Wavesfiles/Energy_Handout.pdf)
-오역을 발견할 시에는 jangyejun@snu.ac.kr로 연락 부탁드립니다.
+*또한, 본 글은 인공지능을 활용하지 않고 작성된 글임을 알립니다.*
 
 파동의 가장 특징적인 성질 중 하나는 에너지를 전달할 수 있다는 것이다. 이 부교재에서는 팽팽한 현에서의 에너지 전달 및 저장에 대해 분석할 것이다. 우선 현의 질량 선밀도가 $\rho$, 장력이 $T$일 것을 가정하면 파동의 속력은 $c=\sqrt{\frac{T}{\rho}}$로 구할 수 있다. 또한 현 위에서의 위치를 $x$좌표로 나타내고, 횡 방향으로의 변위를 $y$로 나타내면 아래의 파동 방정식을 만족한다.
 
