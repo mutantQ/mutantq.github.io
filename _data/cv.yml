@@ -19,48 +19,52 @@
   contents:
     - title: B.S. in Electrical and Computer Engineering
       institution: Seoul National University, Seoul, South Korea
-      year: 2023 - Present
+      year: Mar 2021 - Present
       description:
-        - "CGPA: 3.51/4.3"
-        - Student Designed Major in AI-based Molecular Simulation
+        - "CGPA: 3.56/4.3"
         - "Research Focus: Deep Reinforcement Learning, Generative Models, AI Safety"
         - Expected graduation December 2026
     - title: High School Diploma
-      institution: Sejong Academy of Science and Arts (SASA), Seoul, South Korea
-      year: 2021
+      institution: Sejong Academy of Science and Arts (SASA), Sejong, South Korea
+      year: Mar 2018 - Jan 2021
       description:
         - "GPA: 4.10/4.3"
         - Majored in Computer Science and Physics
-        - Mar 2020 – Sep 2020 exchange at KAIST (CGPA 3.85/4.3)
 
 - title: Experience
   type: time_table
   contents:
-    - title: Junior Level Military Science & Technology Researcher
-      institution: Korea Army, Innovation Institute for Future Army (IIFA), South Korea
+    - title: Military Science & Technology Researcher
+      institution: Republic of Korea Army, Innovation Institute for Future Army (IIFA), Daejeon, South Korea
       year: Apr 2024 - Oct 2025
       description:
         - Conducted research on AI security, focusing on model and data poisoning attacks on military AI systems
         - Investigated deep reinforcement learning applications for penetration testing on large-scale networks
         - Presented research findings at national conferences (KICS 2025, CISC-W 2024)
     - title: Research Intern
-      institution: KAIST ACSS Lab (Advisor Prof. Soojean Han), Daejeon, South Korea
+      institution: KAIST ACSS Lab (Advisor: Prof. Soojean Han), Daejeon, South Korea
       year: Dec 2023 - Mar 2024
       description:
         - Explored applications of group equivariant neural networks for multi-agent traffic optimization
         - Investigated traffic light control systems using multi-agent reinforcement learning
         - Gained experience in symmetry-aware neural network architectures and their applications to real-world problems
-    - title: Project Head, SOUL
+    - title: Project Head, SOUL - A Modern Reinterpretation of Keynes' Bancor
       institution: Korea Foundation for Advanced Studies (KFAS), Seoul, South Korea
-      year: Feb 2022 - Present
+      year: Feb 2023 - Feb 2024
       description:
-        - Simulating currency wars using reinforcement learning to derive new economical & political strategies
-        - Trained game-playing AI agents that learn to cooperate via communication using Deep Q-Learning on Google Cloud
-        - Communicated complex AI concepts including LSTM to teammates with non-technical backgrounds
+        - Modeled central banks of each country as an RL agent aiming to maximize annual GDP in a simulated global economy
+        - Explored economic policy and international relations through game-theoretic and multi-agent simulations
         - Secured funding of 10 million KRW (~$10,000 CAD) and managed allocation for computing, mentoring, and resources
         - title: "GitHub: <a href='https://github.com/codingJang/soul'>codingJang/soul</a>"
+    - title: Editor, Questions for Future
+      institution: KFAS & Institute for Future Strategy, Seoul National University, Seoul, South Korea
+      year: Aug 2022 - Nov 2023
+      description:
+        - Coined the phrase "attention ownership" – the right to control, manage, and determine how one's attention is directed
+        - Book published with title 'Living Ideas from Future Observers (미래 관찰자의 살아있는 아이디어)', available for purchase throughout Korean bookstores
+        - title: "Website: <a href='http://qsf.or.kr/'>qsf.or.kr</a> | Book: <a href='https://cremaclub.yes24.com/BookClub/Detail/124157103'>YES24</a>"
     - title: Software Lead, FHP-RTFS
-      institution: Sejong Academy of Science and Arts (SASA), Seoul, South Korea
+      institution: Sejong Academy of Science and Arts (SASA), Sejong, South Korea
       year: Feb 2019 - Feb 2020
       description:
         - Built a contactless feedback system for alerting incorrect body posture when using digital devices
@@ -73,47 +77,46 @@
   type: time_table
   contents:
     - title: "Q-Guided Flow Q-Learning"
-      year: 2025
+      year: Sep 2025
       description:
         - "Authors: Yejun Jang, Hong Chul Nam, Jeong Min Park, Gimin Bae, Hyun Kwon"
         - "Conference: CoRL 2025 Workshop RemembeRL"
         - title: "<a href='https://openreview.net/forum?id=MFY9i3uR7S'>Paper (OpenReview)</a> | <a href='https://openreview.net/pdf?id=MFY9i3uR7S'>PDF</a>"
     - title: "Exploring the Structure and Hyperparameters of a DQN Model for Penetration Testing on Large-Scale Networks"
-      year: 2025
+      year: Feb 2025
       description:
         - "Authors: Yejun Jang, Jihun Shin, Janghyong Lee"
         - "Conference: Symposium of the Korean Institute of Communications and Information Sciences (KICS)"
         - title: "<a href='https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132012'>Paper</a>"
     - title: "Preventing Model and Data Poisoning Attacks on Military AI Systems via Supply Chain Verification Techniques"
-      year: 2024
+      year: Nov 2024
       description:
         - "Authors: Yejun Jang, Rocky Kim, Yeongwha Lee"
         - "Conference: Conference on Information Security and Cryptography Winter 2024 (CISC-W)"
         - title: "<a href='https://manuscriptlink-society-file.s3.ap-northeast-1.amazonaws.com/kiisc/conference/ciscw2024/(%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC)+%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AF%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC(CISC-W%E2%80%9924)_.pdf'>Paper (PDF)</a>"
+    - title: "Living Ideas from Future Observers (미래 관찰자의 살아있는 아이디어)"
+      year: Nov 2023
+      description:
+        - "Book authored by the Institute for Future Strategy of Seoul National University. Participated as an editor and contributor."
+        - title: "<a href='https://cremaclub.yes24.com/BookClub/Detail/124157103'>Book (YES24)</a>"
     - title: "A Study on Real-Time Feedback System for Forward Head Posture Using Markerless Skeletal Tracking"
-      year: 2020
+      year: May 2020
       description:
         - "Authors: Yejun Jang, Sunjin Kim"
         - "Conference: International Science and Engineering Fair (ISEF) - Finalist"
+        - title: "<a href='https://abstracts.societyforscience.org/Home/FullAbstract?ISEFYears=0%2C&Category=Any%20Category&AllAbstracts=True&FairCountry=Any%20Country&FairState=Any%20State&ProjectId=19818'>Abstract</a>"
 
 - title: Research Projects
   type: time_table
   contents:
     - title: "Signing Right Away (SRA)"
-      year: 2024 - 2025
+      year: Mar 2024 - Present
       description:
         - Designed hardware-rooted trust architecture for verifiable digital provenance
         - Developed authenticated encryption scheme for camera-to-processor data integrity
         - Proposed TEE-based immediate signing to combat AI-generated fake content
         # - Received angel investment (~$70K) for hardware prototyping and FPGA development
         - "Collaborators: Wonbeen Yoon, Minjun Yi (Seoul National University)"
-    - title: "A Modern Reinterpretation of Keynes' Bancor"
-      year: 2022 - 2023
-      description:
-        - Modeled international trade using multi-agent reinforcement learning
-        - Simulated Keynes' International Clearing Union with cooperative RL agents
-        - Explored economic policy implications through game-theoretic analysis
-        - Integrated economics simulations with international relations dynamics
 
 - title: Essays & Educational Content
   type: time_table
@@ -147,12 +150,12 @@
   type: time_table
   contents:
     - title: QuPid - VR Quantum Computing Education
-      year: 2020 - 2021
+      year: Aug 2021
       description:
         - Created a VR laboratory to explain basic but hard-to-grasp concepts in quantum computing, specifically the qubit
         - title: "GitHub: <a href='https://github.com/codingJang/QuPid'>codingJang/QuPid</a>"
     - title: Car-The-Garden - Autonomous Navigation
-      year: 2019
+      year: Sep 2021 - Dec 2021
       description:
         - Applied left-first and right-first search algorithms to navigate a miniature version of the standard Korean driving test
         - title: "GitHub: <a href='https://github.com/codingJang/Car-The-Garden'>codingJang/Car-The-Garden</a>"
@@ -171,6 +174,7 @@
       items:
         - Korea Science and Engineering Fair (KSEF) Gold Award (1st) - Became ISEF finalist
         - Korea Biz-school Youth Startup Competition Grand Award (1st) - Awarded by Korean Minister of SMEs and Startups
+        - AP Academic Achievement Awards - Top 4% in Physics I & II and 3 other subjects
         - SASA Science Creativity Competition Gold Award (1st)
         - SASA Physics Cinematography Contest Gold Award (1st)
         - SASA English Creative Writing Contest Gold Award (1st)
@@ -178,12 +182,11 @@
       items:
         - SASA Creative Research Conference Gold Award (1st)
         - SASA STEAM Artwork Conference Gold Award (1st)
-        - AP Academic Achievement Awards - Top 4% in Physics I & II and 3 other subjects
 
 - title: Scholarships
   type: time_table
   contents:
-    - year: 2022 - Present
+    - year: Feb 2022 - Present
       items:
         - "Korea Foundation for Advanced Studies (KFAS) Injaerim Scholarship Program"
         - "$5,000/year + $10,000 maximum project fund per team"
@@ -219,19 +222,11 @@
         - "AI Security: Adversarial Attacks, Model Poisoning, Supply Chain Security"
     - title: Programming Languages
       items:
-        - "Python, C, C#, MATLAB"
+        - "Python, C, C#, Bash"
     - title: Libraries & Frameworks
       items:
-        - "PyTorch, JAX, NumPy, Pandas, Matplotlib"
-        - "RL: PettingZoo, Gymnasium (OpenAI Gym), Stable-Baselines3"
-        - "Computer Vision: OpenCV"
-    - title: Cloud & Infrastructure
-      items:
-        - Google Cloud Platform
-    - title: Hardware & Systems
-      items:
-        - "FPGA Development, Hardware Security, Cryptographic Systems"
-        - "Trusted Execution Environments (TEE)"
+        - "PyTorch, JAX, huggingface, NumPy, Pandas, Matplotlib, Docker, Git, uv"
+        - "RL: PettingZoo, Gymnasium (OpenAI Gym), RLlib, CleanRL, trl"
     - title: Research & Communication
       items:
         - "Technical Writing, Academic Research, Conference Presentations"
