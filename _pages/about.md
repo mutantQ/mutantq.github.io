@@ -27,16 +27,28 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Yejun Jang, an AI researcher and undergraduate student at Seoul National University majoring in Electrical and Computer Engineering. My research interests lie at the intersection of **deep learning** and **multi-agent reinforcement learning**, with a focus on developing intelligent systems that can learn, cooperate, and make strategic decisions.
+I am an undergraduate researcher at Seoul National University, specializing in artificial intelligence with a focus on deep reinforcement learning and AI safety. My research interests span generative models for sequential decision-making, offline reinforcement learning, and the security of AI systems.
 
-Currently, I'm working on exciting projects in reinforcement learning, including simulating currency wars using multi-agent RL and developing flow-based Q-learning algorithms. My work has been recognized at international venues including CoRL 2025 Workshop RemembeRL and various Korean conferences.
+## Research Highlights
 
-**Research Interests:**
-- Multi-agent reinforcement learning
-- Deep Q-Learning and flow-based methods
-- Generative AI (VAE, GAN)
-- AI security and robustness
+My recent work on **Q-Guided Flow Q-Learning (QFQL)** introduces a novel actor-critic framework that decouples policy and value learning in offline reinforcement learning. By combining conditional flow matching with temporal-difference learning and adding a value-seeking guidance term at inference, QFQL achieves strong performance while maintaining training stability—without requiring auxiliary student models or policy regularizers. This work was accepted at the CoRL 2025 Workshop RemembeRL.
 
-I'm passionate about making complex AI concepts accessible and have experience communicating technical ideas to diverse audiences. I've also been recognized as a 2020 Regeneron ISEF finalist for my work on computer vision-based posture correction systems.
+Beyond reinforcement learning, I explore the intersection of AI and security. I have investigated deep Q-networks for penetration testing on large-scale networks and developed supply chain verification techniques to prevent model and data poisoning attacks on military AI systems. My earlier research on real-time feedback systems for forward head posture correction using markerless skeletal tracking earned recognition as an ISEF 2020 Finalist.
 
-When I'm not researching, I enjoy working on creative projects that blend AI with practical applications, from VR quantum computing education to automated penetration testing systems.
+## Philosophy & Writing
+
+I believe that AI research must be grounded in a deep understanding of humanity, ethics, and society. Through my essays and whitepapers, I explore questions at the intersection of technology and philosophy:
+
+- **AI, Science, and the Humanities**: Examining why AI researchers must actively pursue an understanding of humans and society beyond technical knowledge, and how legal and ethical systems might evolve as humans and AI coexist.
+
+- **Signing Right Away**: A hardware-rooted trust architecture for verifiable digital provenance, addressing the proliferation of AI-generated fake content by securing content authenticity at the source.
+
+I also maintain educational content on deep learning and reinforcement learning fundamentals, making complex AI concepts accessible to learners at all levels.
+
+## Background
+
+Before joining Seoul National University, I developed an early interest in applying technology to real-world problems. My research journey has taken me from computer vision and human-computer interaction to reinforcement learning and AI safety, always with an eye toward both technical excellence and societal impact.
+
+Having recently completed my mandatory military service in October 2025, I am now fully focused on advancing my research in artificial intelligence, with particular emphasis on bridging technical innovation with philosophical inquiry and societal responsibility.
+
+Feel free to explore my [publications](/publications/), [blog posts](/blog/), and my [GitHub profile](https://github.com/codingJang/) to learn more about my work.

@@ -8,6 +8,7 @@ categories: essay
 toc:
   sidebar: left
 lang: en
+published: false
 ---
 
 *This essay was originally written in Korean on Dec 30, 2022 and was machine translated by Claude 4.5 Sonnet on Oct 6, 2025. The translated essay was fully reviewed and revised by myself.*
