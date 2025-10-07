@@ -8,6 +8,12 @@
     - name: Languages
       value: English, Korean
 
+- title: Research Objectives
+  type: map
+  contents:
+    - name: End Goal
+      value: Develop reinforcement learning agents that can make reliable decisions based on grounded factual information, bridging advanced decision-making algorithms with trustworthy information infrastructure.
+
 - title: Education
   type: time_table
   contents:
@@ -37,6 +43,13 @@
         - Conducted research on AI security, focusing on model and data poisoning attacks on military AI systems
         - Investigated deep reinforcement learning applications for penetration testing on large-scale networks
         - Presented research findings at national conferences (KICS 2025, CISC-W 2024)
+    - title: Research Intern
+      institution: KAIST ACSS Lab (Advisor Prof. Soojean Han), Daejeon, South Korea
+      year: Dec 2023 - Mar 2024
+      description:
+        - Explored applications of group equivariant neural networks for multi-agent traffic optimization
+        - Investigated traffic light control systems using multi-agent reinforcement learning
+        - Gained experience in symmetry-aware neural network architectures and their applications to real-world problems
     - title: Project Head, SOUL
       institution: Korea Foundation for Advanced Studies (KFAS), Seoul, South Korea
       year: Feb 2022 - Present

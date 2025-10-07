@@ -29,11 +29,13 @@ latest_posts:
 
 I am an undergraduate researcher at Seoul National University, specializing in artificial intelligence with a focus on deep reinforcement learning and AI safety. My research interests span generative models for sequential decision-making, offline reinforcement learning, and the security of AI systems.
 
+**My end goal is to develop reinforcement learning agents that can make reliable decisions based on grounded factual information.** This vision drives two parallel research directions: advancing the technical foundations of decision-making through offline RL and generative models, while simultaneously ensuring the integrity of the information these agents rely upon through hardware-rooted content provenance and AI security.
+
 ## Research Highlights
 
 My recent work on **Q-Guided Flow Q-Learning (QFQL)** introduces a novel actor-critic framework that decouples policy and value learning in offline reinforcement learning. By combining conditional flow matching with temporal-difference learning and adding a value-seeking guidance term at inference, QFQL achieves strong performance while maintaining training stability—without requiring auxiliary student models or policy regularizers. This work was accepted at the CoRL 2025 Workshop RemembeRL.
 
-Beyond reinforcement learning, I explore the intersection of AI and security. I have investigated deep Q-networks for penetration testing on large-scale networks and developed supply chain verification techniques to prevent model and data poisoning attacks on military AI systems. My earlier research on real-time feedback systems for forward head posture correction using markerless skeletal tracking earned recognition as an ISEF 2020 Finalist.
+Beyond reinforcement learning, I explore the intersection of AI and security. I have investigated deep Q-networks for penetration testing on large-scale networks and developed supply chain verification techniques to prevent model and data poisoning attacks on military AI systems. I have also gained experience in multi-agent systems and group equivariant neural networks during my research internship at KAIST ACSS Lab under Professor Soojean Han.
 
 ## Philosophy & Writing
 
@@ -47,8 +49,6 @@ I also maintain educational content on deep learning and reinforcement learning 
 
 ## Background
 
-Before joining Seoul National University, I developed an early interest in applying technology to real-world problems. My research journey has taken me from computer vision and human-computer interaction to reinforcement learning and AI safety, always with an eye toward both technical excellence and societal impact.
+Before joining Seoul National University, I developed an early interest in applying technology to real-world problems.  My earlier research on real-time feedback systems for forward head posture correction using markerless skeletal tracking earned recognition as an ISEF 2020 Finalist. Since then, my research journey has taken me from computer vision and human-computer interaction to reinforcement learning and AI safety, always with an eye toward both technical excellence and societal impact.
 
-Having recently completed my mandatory military service in October 2025, I am now fully focused on advancing my research in artificial intelligence, with particular emphasis on bridging technical innovation with philosophical inquiry and societal responsibility.
-
-Feel free to explore my [publications](/publications/), [blog posts](/blog/), and my [GitHub profile](https://github.com/codingJang/) to learn more about my work.
+Having recently completed my mandatory military service in October 2025, I am now fully focused on advancing my research in artificial intelligence, with particular emphasis on bridging technical innovation with philosophical inquiry and societal responsibility. Feel free to explore my [publications](/publications/), [blog posts](/blog/), and my [GitHub profile](https://github.com/codingJang/) to learn more about my work.
