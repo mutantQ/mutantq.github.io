@@ -8,6 +8,7 @@ categories: essay
 toc:
   sidebar: left
 lang: en
+published: false
 ---
 
 *This essay was originally written in Korean and was machine translated by Claude 4.5 Sonnet. The translated essay was fully reviewed and revised by myself.*

@@ -41,6 +41,6 @@ lang: ko
 - [Day 12: 역전파의 개념](/blog/2023/dl-day12-day-12-day-12/)
 - [Day 13: 역전파의 계산](/blog/2023/dl-day13-day-13-day-13/)
 
-## Part V. 인공신경망 설계 및 실습
+<!-- ## Part V. 인공신경망 설계 및 실습
 
-- [Day 14: 클래스 정의 및 패키지 사용법](/blog/2023/dl-day14-day-14-day-14/)
+- [Day 14: 클래스 정의 및 패키지 사용법](/blog/2023/dl-day14-day-14-day-14/) -->

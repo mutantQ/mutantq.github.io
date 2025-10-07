@@ -5,6 +5,7 @@ date: 2021-04-20 10:00:00 +0900
 description: ML-accelerated QM simulations for industrial applications 논문 요약
 tags: machine-learning quantum-mechanics simulation korean
 categories: research
+published: false
 ---
 
 *본 글은 인공지능을 활용하지 않고 작성되었음을 알립니다.*

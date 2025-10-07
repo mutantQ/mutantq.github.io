@@ -6,7 +6,10 @@ description: Reinforcement Learning Basics Series
 tags: reinforcement-learning deep-learning tutorial english series
 categories: education
 lang: en
+unlisted: true
 ---
+
+[**목차로 돌아가기**](/blog/2023/reinforcement-learning-basics)
 
 *This work has not been AI-generated.*
 

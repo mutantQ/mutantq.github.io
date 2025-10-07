@@ -2,7 +2,7 @@
 layout: post
 title: Reinforcement Learning Basics
 date: 2023-02-01 10:00:00 +0900
-description: DeepMind X UCL reinforcement learning series notes and PettingZoo introduction
+description: DeepMind X UCL reinforcement learning series summaries and PettingZoo introduction
 tags: reinforcement-learning deep-learning DeepMind tutorial english
 categories: education
 toc:
@@ -10,7 +10,7 @@ toc:
 lang: en
 ---
 
-This series consists of lecture notes from the DeepMind X UCL reinforcement learning course and an introduction to the PettingZoo library.
+This series consists of lecture summaries from the DeepMind X UCL reinforcement learning course and an introduction to the PettingZoo library.
 
 ## DeepMind X UCL Deep RL Series
 

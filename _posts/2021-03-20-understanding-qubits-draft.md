@@ -5,7 +5,7 @@ date: 2021-03-20 10:00:00 +0900
 description: 양자컴퓨팅의 기본 단위 큐비트에 대한 이해 (작성 중)
 tags: quantum-computing qubits physics korean draft
 categories: quantum
-# published: false
+published: false
 ---
 
 *본 글은 인공지능을 활용하지 않고 작성된 글임을 알립니다.*
