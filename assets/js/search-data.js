@@ -23,19 +23,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "Educational materials and tutorials covering deep learning, reinforcement learning, mathematics, and more.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/teaching/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Open-source projects and research implementations in AI, reinforcement learning, quantum computing education, and computer vision.",
+        },{id: "nav-bookshelf",
+          title: "bookshelf",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/books/";
           },
         },{id: "nav-cv",
           title: "cv",
@@ -44,28 +44,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Educational materials and tutorials covering deep learning, reinforcement learning, mathematics, and more.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "post-signing-right-away",
+        },{id: "post-signing-right-away",
         
           title: "Signing Right Away",
         
