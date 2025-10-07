@@ -136,7 +136,7 @@ ninja.data = [{
         
           title: "Reinforcement Learning Basics",
         
-        description: "DeepMind X UCL reinforcement learning series summaries and PettingZoo introduction",
+        description: "DeepMind X UCL reinforcement learning series summary notes and PettingZoo introduction",
         section: "Posts",
         handler: () => {
           
