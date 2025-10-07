@@ -17,6 +17,7 @@
       description:
         - "CGPA: 3.51/4.3"
         - Student Designed Major in AI-based Molecular Simulation
+        - "Research Focus: Deep Reinforcement Learning, Generative Models, AI Safety"
         - Expected graduation December 2026
     - title: High School Diploma
       institution: Sejong Academy of Science and Arts (SASA), Seoul, South Korea
@@ -29,6 +30,13 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Junior Level Military Science & Technology Researcher
+      institution: Korea Army, Innovation Institute for Future Army (IIFA), South Korea
+      year: Apr 2024 - Oct 2025
+      description:
+        - Conducted research on AI security, focusing on model and data poisoning attacks on military AI systems
+        - Investigated deep reinforcement learning applications for penetration testing on large-scale networks
+        - Presented research findings at national conferences (KICS 2025, CISC-W 2024)
     - title: Project Head, SOUL
       institution: Korea Foundation for Advanced Studies (KFAS), Seoul, South Korea
       year: Feb 2022 - Present
@@ -48,6 +56,80 @@
         - Became 2020 Regeneron ISEF finalist
         - title: "GitHub: <a href='https://github.com/codingJang/FHP-RTFS'>codingJang/FHP-RTFS</a>"
 
+- title: Publications
+  type: time_table
+  contents:
+    - title: "Q-Guided Flow Q-Learning"
+      year: 2025
+      description:
+        - "Authors: Yejun Jang, Hong Chul Nam, Jeong Min Park, Gimin Bae, Hyun Kwon"
+        - "Conference: CoRL 2025 Workshop RemembeRL"
+        - title: "<a href='https://openreview.net/forum?id=MFY9i3uR7S'>Paper (OpenReview)</a> | <a href='https://openreview.net/pdf?id=MFY9i3uR7S'>PDF</a>"
+    - title: "Exploring the Structure and Hyperparameters of a DQN Model for Penetration Testing on Large-Scale Networks"
+      year: 2025
+      description:
+        - "Authors: Yejun Jang, Jihun Shin, Janghyong Lee"
+        - "Conference: Symposium of the Korean Institute of Communications and Information Sciences (KICS)"
+        - title: "<a href='https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132012'>Paper</a>"
+    - title: "Preventing Model and Data Poisoning Attacks on Military AI Systems via Supply Chain Verification Techniques"
+      year: 2024
+      description:
+        - "Authors: Yejun Jang, Rocky Kim, Yeongwha Lee"
+        - "Conference: Conference on Information Security and Cryptography Winter 2024 (CISC-W)"
+        - title: "<a href='https://manuscriptlink-society-file.s3.ap-northeast-1.amazonaws.com/kiisc/conference/ciscw2024/(%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC)+%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AF%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC(CISC-W%E2%80%9924)_.pdf'>Paper (PDF)</a>"
+    - title: "A Study on Real-Time Feedback System for Forward Head Posture Using Markerless Skeletal Tracking"
+      year: 2020
+      description:
+        - "Authors: Yejun Jang, Sunjin Kim"
+        - "Conference: International Science and Engineering Fair (ISEF) - Finalist"
+
+- title: Research Projects
+  type: time_table
+  contents:
+    - title: "Signing Right Away (SRA)"
+      year: 2024 - 2025
+      description:
+        - Designed hardware-rooted trust architecture for verifiable digital provenance
+        - Developed authenticated encryption scheme for camera-to-processor data integrity
+        - Proposed TEE-based immediate signing to combat AI-generated fake content
+        - Received angel investment (~$70K) for hardware prototyping and FPGA development
+        - "Collaborators: Wonbeen Yoon, Minjun Yi (Seoul National University)"
+    - title: "A Modern Reinterpretation of Keynes' Bancor"
+      year: 2022 - 2023
+      description:
+        - Modeled international trade using multi-agent reinforcement learning
+        - Simulated Keynes' International Clearing Union with cooperative RL agents
+        - Explored economic policy implications through game-theoretic analysis
+        - Integrated economics simulations with international relations dynamics
+
+- title: Essays & Educational Content
+  type: time_table
+  contents:
+    - title: "AI, Science, and the Humanities"
+      year: 2025
+      description:
+        - Explored the essential role of humanities in AI research and ethics
+        - Discussed consciousness, legal frameworks, and human-AI coexistence
+        - Examined philosophical implications of AI advancement on human identity
+    - title: "Attention Ownership - Reclaiming Your Mind in the Digital Age"
+      year: 2022
+      description:
+        - Analyzed cognitive economics of digital platforms and attention manipulation
+        - Examined platform design patterns and their psychological impacts
+        - Proposed frameworks for digital autonomy and mindful technology use
+    - title: "Introduction to Deep Learning"
+      year: 2023
+      description:
+        - Comprehensive 14-day course covering fundamentals of deep learning
+        - Topics include linear algebra, backpropagation, neural networks, optimization
+        - Bilingual educational content (English/Korean)
+    - title: "Reinforcement Learning Series"
+      year: 2023
+      description:
+        - Lecture summaries from DeepMind X UCL RL course
+        - Covers model-free prediction, control, function approximation, dynamic programming
+        - Introduction to multi-agent RL with PettingZoo library
+
 - title: Projects
   type: time_table
   contents:
@@ -61,15 +143,13 @@
       description:
         - Applied left-first and right-first search algorithms to navigate a miniature version of the standard Korean driving test
         - title: "GitHub: <a href='https://github.com/codingJang/Car-The-Garden'>codingJang/Car-The-Garden</a>"
-    - title: Rev-Missiles! - Game Reverse Engineering
-      year: 2018
-      description:
-        - Reverse engineered the mobile game "MISSILES!" to add more missiles and features
-        - title: "GitHub: <a href='https://github.com/codingJang/Rev-Missiles'>codingJang/Rev-Missiles</a>"
 
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2025
+      items:
+        - "Q-Guided Flow Q-Learning accepted to CoRL 2025 Workshop RemembeRL"
     - year: 2020
       items:
         - Regeneron International Science and Engineering Fair (ISEF) Finalist
@@ -120,16 +200,26 @@
   contents:
     - title: Deep Learning & AI
       items:
-        - Multi-agent reinforcement learning
-        - Generative AI (VAE, GAN)
-        - Sequential models (LSTM)
-        - Deep Q-Learning
+        - "Reinforcement Learning: Offline RL, Multi-agent RL, Deep Q-Learning, Policy Gradient Methods"
+        - "Generative Models: Flow Matching, Normalizing Flows, VAE, GAN"
+        - "Deep Learning: Sequential Models (LSTM, Transformers), Function Approximation"
+        - "AI Security: Adversarial Attacks, Model Poisoning, Supply Chain Security"
     - title: Programming Languages
       items:
-        - "Python, C, C#"
+        - "Python, C, C#, MATLAB"
     - title: Libraries & Frameworks
       items:
-        - "PyTorch, NumPy, Pandas, PettingZoo, PyGame, Matplotlib"
+        - "PyTorch, JAX, NumPy, Pandas, Matplotlib"
+        - "RL: PettingZoo, Gymnasium (OpenAI Gym), Stable-Baselines3"
+        - "Computer Vision: OpenCV"
     - title: Cloud & Infrastructure
       items:
         - Google Cloud Platform
+    - title: Hardware & Systems
+      items:
+        - "FPGA Development, Hardware Security, Cryptographic Systems"
+        - "Trusted Execution Environments (TEE)"
+    - title: Research & Communication
+      items:
+        - "Technical Writing, Academic Research, Conference Presentations"
+        - "Cross-disciplinary Communication (AI, Economics, Philosophy)"
