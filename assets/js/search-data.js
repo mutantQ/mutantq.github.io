@@ -76,17 +76,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/signing-right-away/";
           
         },
-      },{id: "post-the-difference-between-thoughts-and-clouds",
-        
-          title: "The Difference Between Thoughts and Clouds",
-        
-        description: "A philosophical exploration of consciousness and emergence",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/thoughts-and-clouds/";
-          
-        },
       },{id: "post-ai-science-and-the-humanities",
         
           title: "AI, Science, and the Humanities",
@@ -168,7 +157,7 @@ ninja.data = [{
         
           title: "Reinforcement Learning Basics",
         
-        description: "DeepMind X UCL reinforcement learning series notes and PettingZoo introduction",
+        description: "DeepMind X UCL reinforcement learning series summaries and PettingZoo introduction",
         section: "Posts",
         handler: () => {
           
@@ -657,39 +646,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2021/tutoring-materials-index/";
-          
-        },
-      },{id: "post-머신러닝은-양자역학-시뮬레이션을-가속화할-수-있을까",
-        
-          title: "머신러닝은 양자역학 시뮬레이션을 가속화할 수 있을까?",
-        
-        description: "ML-accelerated QM simulations for industrial applications 논문 요약",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/ml-quantum-simulation/";
-          
-        },
-      },{id: "post-optical-quantum-gates",
-        
-          title: "Optical Quantum Gates",
-        
-        description: "양자컴퓨팅 - 큐비트 이해하기",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/qubit-optical-quantum-gates/";
-          
-        },
-      },{id: "post-큐비트의-이해",
-        
-          title: "큐비트의 이해",
-        
-        description: "양자컴퓨팅의 기본 단위 큐비트에 대한 이해 (작성 중)",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/understanding-qubits-draft/";
           
         },
       },{id: "post-현의-진동과-에너지",
