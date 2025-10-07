@@ -330,17 +330,6 @@ ninja.data = [{
             window.location.href = "/blog/2023/deep-learning-intro-en/";
           
         },
-      },{id: "post-attention-ownership",
-        
-          title: "Attention Ownership",
-        
-        description: "Reclaiming Your Mind in the Digital Age",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2022/attention-ownership/";
-          
-        },
       },{id: "post-a-modern-reinterpretation-of-keynes-bancor-and-the-international-clearing-union",
         
           title: "A Modern Reinterpretation of Keynes’ Bancor and the International Clearing Union",
@@ -643,14 +632,32 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_emperors_new_mind/";
-            },},{id: "news-presented-research-on-preventing-ai-poisoning-attacks-at-cisc-w-2024-great-discussions-on-ai-security",
-          title: 'Presented research on preventing AI poisoning attacks at CISC-W 2024. Great discussions on...',
+            },},{id: "news-selected-as-a-finalist-at-the-international-science-and-engineering-fair-isef-2020-for-research-on-real-time-feedback-system-for-forward-head-posture-using-markerless-skeletal-tracking-trophy",
+          title: 'Selected as a Finalist at the International Science and Engineering Fair (ISEF) 2020...',
           description: "",
-          section: "News",},{id: "news-presented-our-work-on-dqn-for-penetration-testing-at-the-korean-institute-of-communications-and-information-sciences-symposium",
-          title: 'Presented our work on DQN for penetration testing at the Korean Institute of...',
+          section: "News",},{id: "news-published-the-original-whitepaper-on-signing-right-away-proposing-a-hardware-rooted-trust-architecture-for-verifiable-digital-provenance-to-combat-ai-generated-fake-content-page-facing-up",
+          title: 'Published the original whitepaper on “Signing Right Away” - proposing a hardware-rooted trust...',
+          description: "",
+          section: "News",},{id: "news-our-paper-preventing-model-and-data-poisoning-attacks-on-military-ai-systems-via-supply-chain-verification-techniques-was-presented-at-the-conference-on-information-security-and-cryptography-winter-2024-cisc-w",
+          title: 'Our paper “Preventing Model and Data Poisoning Attacks on Military AI Systems via...',
+          description: "",
+          section: "News",},{id: "news-presented-exploring-the-structure-and-hyperparameters-of-a-dqn-model-for-penetration-testing-on-large-scale-networks-at-the-korean-institute-of-communications-and-information-sciences-kics-symposium",
+          title: 'Presented “Exploring the Structure and Hyperparameters of a DQN Model for Penetration Testing...',
+          description: "",
+          section: "News",},{id: "news-presented-exploring-the-structure-and-hyperparameters-of-a-dqn-model-for-penetration-testing-on-large-scale-networks-at-the-korean-institute-of-communications-and-information-sciences-kics-symposium",
+          title: 'Presented “Exploring the Structure and Hyperparameters of a DQN Model for Penetration Testing...',
+          description: "",
+          section: "News",},{id: "news-new-essay-published-ai-science-and-the-humanities-exploring-the-essential-role-of-humanities-in-ai-research-and-the-evolution-of-human-ai-coexistence-thought-balloon",
+          title: 'New essay published: “AI, Science, and the Humanities” - exploring the essential role...',
           description: "",
           section: "News",},{id: "news-our-paper-q-guided-flow-q-learning-has-been-accepted-to-corl-2025-workshop-rememberl-tada",
           title: 'Our paper “Q-Guided Flow Q-Learning” has been accepted to CoRL 2025 Workshop RemembeRL!...',
+          description: "",
+          section: "News",},{id: "news-published-the-full-whitepaper-on-signing-right-away-an-updated-version-incorporating-lessons-from-hardware-prototyping-and-strategic-insights-on-ecosystem-alignment-page-facing-up",
+          title: 'Published the full whitepaper on “Signing Right Away” - an updated version incorporating...',
+          description: "",
+          section: "News",},{id: "news-published-the-full-whitepaper-on-signing-right-away-an-updated-version-incorporating-lessons-from-hardware-prototyping-and-strategic-insights-on-ecosystem-alignment-page-facing-up",
+          title: 'Published the full whitepaper on “Signing Right Away” - an updated version incorporating...',
           description: "",
           section: "News",},{id: "projects-soul-currency-war-simulation",
           title: 'SOUL - Currency War Simulation',
