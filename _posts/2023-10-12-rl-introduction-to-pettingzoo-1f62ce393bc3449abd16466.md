@@ -9,7 +9,7 @@ lang: en
 unlisted: true
 ---
 
-[**목차로 돌아가기**](/blog/2023/reinforcement-learning-basics)
+[**Head back to contents**](/blog/2023/reinforcement-learning-basics)
 
 *This work has been translated from Korean to English using Claude 4.5 Sonnet.*
 
