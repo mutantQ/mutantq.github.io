@@ -39,9 +39,9 @@ $$
 
 ## 유클리드 호제법 (Euclidean Algorithm)
 
-![유클리드 호제법과 타일 채우기 (출처: [senalyst.com](http://senalyst.com/))](/assets/img/blog/tutoring/untitled_1__161f0f24f93180a49e4ad85867e9a.png)
+![유클리드 호제법과 타일 채우기 (출처: [senalyst.com](https://senalyst.com/))](/assets/img/blog/tutoring/untitled_1__161f0f24f93180a49e4ad85867e9a.png)
 
-유클리드 호제법과 타일 채우기 (출처: [senalyst.com](http://senalyst.com/))
+유클리드 호제법과 타일 채우기 (출처: [senalyst.com](https://senalyst.com/))
 
 두 자연수 $A, B$를 생각하자. $A$를 $B$로 나눌 때 몫(quotient)을 $Q$, 나머지(remainder)를 $R$이라고 하면
 

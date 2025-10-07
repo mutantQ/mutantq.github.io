@@ -77,6 +77,6 @@ $$
 
 ## 한 걸음 더
 
-[https://www.youtube.com/watch?v=1apwd5X5EC0&list=LL&index=10](https://www.youtube.com/watch?v=1apwd5X5EC0&list=LL&index=10)
+[https://www.youtube.com/watch?v=kBu_nXqdeUs](https://www.youtube.com/watch?v=kBu_nXqdeUs)
 
 반지름이 $1$인 큰 원의 내부에 반지름이 $\frac{1}{2}$인 작은 원이 중심 $(\frac{1}{2},0)$에서 출발하여 시계방향으로 미끄러짐 없이 구르는 상황을 생각하자. 이때, 작은 원 위의 점 $P$가 처음에 $(1,0)$에서 출발한다면, 점 $P$는 반드시 $x$축 위에서 운동함을 보이시오.

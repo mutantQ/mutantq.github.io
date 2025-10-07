@@ -16,9 +16,9 @@ unlisted: true
 
 ## 수열이란?
 
-![등차 수열과 등비 수열 (출처: [owlcation.com](http://owlcation.com/))](/assets/img/blog/tutoring/untitled__covid-19_161f0f24f931806582a9.png)
+![등차 수열과 등비 수열 (출처: [owlcation.com](https://owlcation.com/))](/assets/img/blog/tutoring/untitled__covid-19_161f0f24f931806582a9.png)
 
-등차 수열과 등비 수열 (출처: [owlcation.com](http://owlcation.com/))
+등차 수열과 등비 수열 (출처: [owlcation.com](https://owlcation.com/))
 
 수열(sequence)은 말 그대로 수의 나열이다. 즉, 자연수 하나($n$)마다 실수 하나($a_n$)가 대응이 되는 것이다. 일반적으로, 수열을 '일정한 규칙을 가지는 수의 나열'이라고 정의하는데, 여기서 말하는 '규칙'은 일반적으로 수식으로 표현할 수 있다.
 

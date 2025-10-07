@@ -60,9 +60,9 @@ $600,000,000,000,000,000,000,000,000$ 개가 몇 개인지 상상은 가나? 그
 
 좀 전처럼 말도 안 되게 큰 숫자를 상상하는 것은 너무 고통스러운 일이다. 아니, 아무리 똑똑한 인간이라도 상상할 수 없다. 천문학에서는 우주 전체의 크기부터 가장 작은 미립자의 크기까지를 전부 생각해야 한다. 0을 하나 붙일 때마다 10배씩 커지는 폭발적인 크기를 인간의 뇌로는 도저히 감당할 수 없다. 따라서 큰 숫자를 나타내기 위해 단위는 천문학자들에게 꼭 필요하다.
 
-![우주를 관찰하는 천문학자 (출처: [onetravel.com](http://onetravel.com/))](/assets/img/blog/tutoring/untitled_2.png)
+![우주를 관찰하는 천문학자 (출처: [onetravel.com](https://onetravel.com/))](/assets/img/blog/tutoring/untitled_2.png)
 
-우주를 관찰하는 천문학자 (출처: [onetravel.com](http://onetravel.com/))
+우주를 관찰하는 천문학자 (출처: [onetravel.com](https://onetravel.com/))
 
 ## 천문학자들이 사용하는 단위 변환
 
