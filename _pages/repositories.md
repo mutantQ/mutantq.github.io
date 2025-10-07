@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: Open-source projects and research implementations in AI, reinforcement learning, quantum computing education, and computer vision.
-nav: true
+nav: false
 nav_order: 4
 ---
 

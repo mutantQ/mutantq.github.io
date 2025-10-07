@@ -4,7 +4,7 @@ permalink: /teaching/
 title: teaching
 description: Educational materials and tutorials covering deep learning, reinforcement learning, mathematics, and more.
 nav: true
-nav_order: 6
+nav_order: 3
 ---
 
 ## Deep Learning
