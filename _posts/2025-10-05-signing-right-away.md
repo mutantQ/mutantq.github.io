@@ -34,9 +34,9 @@ But the experience, while painful, was incredibly valuable. It taught us two cri
 
 2. **Reverse engineering has its limits.** To build a stable image processing pipeline, we couldn't rely on guesswork alone. We needed access to at least some confidential documentation or, failing that, a far more powerful and flexible hardware platform to allow for rapid, iterative testing.
 
-We had reached a deadlock. We knew exactly what the problems were and what we needed to solve them, but we lacked the resources.
+<!-- We had reached a deadlock. We knew exactly what the problems were and what we needed to solve them, but we lacked the resources.
 
-It was at this point that a fortuitous opportunity arose. A successful founder, Kay Kyungsik Woo, held a seminar and offered to provide angel investment (approx. $70,000 in total) to three student teams. This was the catalyst we desperately needed to move forward, armed with the hard-won lessons from our initial failure.
+It was at this point that a fortuitous opportunity arose. A successful founder, Kay Kyungsik Woo, held a seminar and offered to provide angel investment (approx. $70,000 in total) to three student teams. This was the catalyst we desperately needed to move forward, armed with the hard-won lessons from our initial failure. -->
 
 ## The SRA Architecture
 
@@ -50,9 +50,9 @@ The first step is to secure the physical data path. The camera module and proces
 
 ### 2. Immediate Signing in a Trusted Execution Environment (TEE)
 
-The encrypted feed is sent directly to a TEE, an isolated, secure enclave on the processor. Inside the TEE, the data is decrypted, processed, and cryptographically signed along with its metadata (e.g., timestamp, device ID). The private signing keys never leave the TEE, protecting them from a compromised OS. The final output is a standard image file with an embedded, verifiable C2PA Content Credential.
+The encrypted feed is sent directly to a TEE, an isolated, secure enclave on the processor. Inside the TEE, the data is decrypted, processed, and cryptographically signed along with its metadata (e.g., timestamp, device ID). The private signing keys never leave the TEE, protecting them from a compromised OS. The final output is a standard image file with an embedded, verifiable C2PA Content Credential. This design ensures that by the time an application or user has access to an image, it has already been signed within a secure hardware environment.
 
-This design ensures that by the time an application or user has access to an image, it has already been signed within a secure hardware environment. The investment would allow us to acquire the necessary next-generation FPGA to properly implement and test this more robust architecture.
+<!-- The investment would allow us to acquire the necessary next-generation FPGA to properly implement and test this more robust architecture. -->
 
 ## Aligning with the Broader Ecosystem
 

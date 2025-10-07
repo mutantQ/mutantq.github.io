@@ -92,7 +92,7 @@
         - Designed hardware-rooted trust architecture for verifiable digital provenance
         - Developed authenticated encryption scheme for camera-to-processor data integrity
         - Proposed TEE-based immediate signing to combat AI-generated fake content
-        - Received angel investment (~$70K) for hardware prototyping and FPGA development
+        # - Received angel investment (~$70K) for hardware prototyping and FPGA development
         - "Collaborators: Wonbeen Yoon, Minjun Yi (Seoul National University)"
     - title: "A Modern Reinterpretation of Keynes' Bancor"
       year: 2022 - 2023
