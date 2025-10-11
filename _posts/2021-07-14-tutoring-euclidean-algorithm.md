@@ -98,13 +98,15 @@ $$
 라고 하면,
 
 $$
-b=kb'\;(b'는\;자연수)\newline a-bQ=kc\;(c는\;자연수)
+\begin{align*}
+b=kb'\;(b'는\;자연수)\\ a-bQ=kc\;(c는\;자연수)
+\end{align*}
 $$
 
 여기서 $a$와 $b$를 살펴보면
 
 $$
-\begin{aligned} a&=bQ+kc\newline&=kb'Q+kc\newline&=k(b'Q+c)\newline b&=kc \end{aligned}
+\begin{aligned} a&=bQ+kc\\&=kb'Q+kc\\&=k(b'Q+c)\\ b&=kc \end{aligned}
 $$
 
 $a,b$는 서로소여야하는데, $a$와 $b$의 $1$보다 큰 공약수 $k$가 존재하기 때문에 모순이다.

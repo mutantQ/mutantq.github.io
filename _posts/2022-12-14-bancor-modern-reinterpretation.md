@@ -49,12 +49,14 @@ We model Keynes’ Bancor and the Clearing Union mathematically, and set up a Mu
 ### Notations
 
 - For time dependent variables, $t$ is used to denote time, whether continuous or discrete. (ex: $y(t),\;Z(t)$)
-- Any variable with one or two indices implies a vector or a matrix, and vice versa. For example, the variable $y_i$ with one index $i$ implies the existence of a column vector $y=(y_i)$, and the variable $Z_{ij}$ implies the matrix $Z=(Z_{ij})$.
-- For a matrix $Z$, $Z^D$ is the diagonal part of $Z$, $Z^*=Z-Z^D$ is the matrix obtained by zeroing its diagonals, and $Z^S=(\sum_{j}Z_{ij})$ is the vector created by summing over each row of $Z$. Also, given the vector $z=(z_i)$, we define the operation $\mathrm{diag}(z)=(\mathrm{diag}(z)_{ij})$ and its inverse operation as:
+- Any variable with one or two indices implies a vector or a matrix, and vice versa. For example, the variable $y\_i$ with one index $i$ implies the existence of a column vector $y=(y\_i)$, and the variable $Z\_\{ij\}$ implies the matrix $Z=(Z\_\{ij\})$.
+- For a matrix $Z$, $Z^D$ is the diagonal part of $Z$, $Z^\*=Z-Z^D$ is the matrix obtained by zeroing its diagonals, and $Z^S=(\sum\_\{j\}Z\_\{ij\})$ is the vector created by summing over each row of $Z$. Also, given the vector $z=(z\_i)$, we define the operation $\mathrm{diag}(z)=(\mathrm{diag}(z)\_\{ij\})$ and its inverse operation as:
     
     $$
-    \mathrm{diag}(z)_{ij}=\begin{cases} z_i, & \text{if } i = j\\        0, & \text{if } i \neq j    \end{cases}\;,\;\;\mathrm{diag}^{-1}(Z)_i=(Z_{ii}).
-    $$
+\begin{align*}
+\mathrm{diag}(z)_{ij}=\begin{cases} z_i, & \text{if } i = j\\        0, & \text{if } i \neq j    \end{cases}\;,\;\;\mathrm{diag}^{-1}(Z)_i=(Z_{ii}).
+\end{align*}
+$$
     
 - $\star$ denotes the element-wise multiplication of tensors with equal size.
 - The indices $i$ and $j$ run through $\{1,2,\cdots,n\}$, unless otherwise mentioned.
@@ -63,21 +65,23 @@ We model Keynes’ Bancor and the Clearing Union mathematically, and set up a Mu
 
 A mathematical description of the Bancor is given below.
 
-Suppose $n$ countries have joined the Clearing Union. Each nation is associated with one account, which is initialized to zero. The account is denominated in a new, international unit of account, the ‘Bancor’. Letting $i \in \{1,2,\cdots,n\}$, and writing the amount of Bancor in the $i$-th country’s account at time $t$ as $b_i(t)$,
+Suppose $n$ countries have joined the Clearing Union. Each nation is associated with one account, which is initialized to zero. The account is denominated in a new, international unit of account, the ‘Bancor’. Letting $i \in \{1,2,\cdots,n\}$, and writing the amount of Bancor in the $i$-th country’s account at time $t$ as $b\_i(t)$,
 
 $$
 b_i(t)=0 \;\; \text{for} \; \;t\le s_i.
 $$
 
-Where $s_i$ is the time the $i$-th country joined the clearing union. Let’s narrow our focus to two countries, $i$ and $j$. When the cumulative net export $NX_{ij}(t)$ from $i$ to $j$ is positive, $i$ is said to have gained a trade surplus, and $j$ is said to be running a trade deficit. The accounts keep track of these imbalances - country $i$ gains Bancors and the country $j$ loses Bancors. Assuming $t>s_i$ for all $i$, and denoting the cumulative export from $i$ to $j$ during the interval $[\max\{s_i,s_j\},t]$ in Bancors as $X_{ij}(t)$,
+Where $s\_i$ is the time the $i$-th country joined the clearing union. Let’s narrow our focus to two countries, $i$ and $j$. When the cumulative net export $NX\_\{ij\}(t)$ from $i$ to $j$ is positive, $i$ is said to have gained a trade surplus, and $j$ is said to be running a trade deficit. The accounts keep track of these imbalances - country $i$ gains Bancors and the country $j$ loses Bancors. Assuming $t>s\_i$ for all $i$, and denoting the cumulative export from $i$ to $j$ during the interval $[\max\{s\_i,s\_j\},t]$ in Bancors as $X\_\{ij\}(t)$,
 
 $$
+\begin{align*}
 NX_{ij}(t)=X_{ij}(t)-X_{ji}(t),\\b_i(t)=NX^S_i(t)=\sum_{j=1}^n {NX_{ij}(t)}.
+\end{align*}
 $$
 
 ### Minimization of Global Imbalances
 
-$NX(t)$ is antisymmetric. Since the summation of Bancors over all accounts, or $\sum_i b_i(t)$, is equal to the summation over all elements of the matrix $NX_{ij}(t)$ (which is zero), it is indeed true that the Bancor is created *ex nihilo*. Hirai et. al. clarifies that Keynes’ system does not block capital movement and efficient allocation of savings, and instead addresses the problem of ‘persistent’ imbalances - the credits and debits that have accumulated without connection to actual investments or repayment. This is easily seen from the equation, since $X_{ij}(t)$ and $X_{ji}(t)$ need not be zero for $NX_{ij}(t)$ to be zero.
+$NX(t)$ is antisymmetric. Since the summation of Bancors over all accounts, or $\sum\_i b\_i(t)$, is equal to the summation over all elements of the matrix $NX\_\{ij\}(t)$ (which is zero), it is indeed true that the Bancor is created *ex nihilo*. Hirai et. al. clarifies that Keynes’ system does not block capital movement and efficient allocation of savings, and instead addresses the problem of ‘persistent’ imbalances - the credits and debits that have accumulated without connection to actual investments or repayment. This is easily seen from the equation, since $X\_\{ij\}(t)$ and $X\_\{ji\}(t)$ need not be zero for $NX\_\{ij\}(t)$ to be zero.
 
 Because the accounts are centralized at the Clearing Union, the credit and debit is multilateral, meaning the credits gained due to a surplus in one country can be spent with any other member countries. Therefore, exporting to any member country will reduce a country’s debit. In this way, the Clearing Union can finance international trade without any given amount of money, provided that the system is trusted globally.
 
@@ -87,7 +91,7 @@ Keynes viewed global imbalances as the root cause of many of the world’s probl
 Robertson (1943)
 > 
 
-Mathematically speaking, $b_i(t)=0$ for all $i$ is preferable. To realize this, both debtors and creditors are subject to the payment of periodic charges, proportional to the size of the imbalance. This might sound counterintuitive at first, especially because not only the debtor but the creditor has to pay for net exports. But, when we frame Keynes’ idea as an optimization problem, it becomes evident why this is necessary. Let $\mathbf{b}(t)\in\mathbb{R}^n$ denote the ordered tuple of account balances of all countries. Then the objective becomes
+Mathematically speaking, $b\_i(t)=0$ for all $i$ is preferable. To realize this, both debtors and creditors are subject to the payment of periodic charges, proportional to the size of the imbalance. This might sound counterintuitive at first, especially because not only the debtor but the creditor has to pay for net exports. But, when we frame Keynes’ idea as an optimization problem, it becomes evident why this is necessary. Let $\mathbf{b}(t)\in\mathbb{R}^n$ denote the ordered tuple of account balances of all countries. Then the objective becomes
 
 $$
 \text{minimize}\int_0^\infty ||b(t)||_1dt=\int_0^\infty \left(\sum_{i=1}^n|b_i(t)|\right)dt,
@@ -99,13 +103,13 @@ $$
 \text{minimize}\sum_{t=0}^\infty||b(t)||_1=\sum_{t=0}^\infty\sum_{i=1}^n |b_i(t)|
 $$
 
-We again assume that the summation converges. Since this is the minimization of a sum of absolute values, it is minimized if and only if $b_i(t)=0$ for all $i\in\{1,2,\cdots,n\}$ and $t\in\{0,1,2\cdots\}$. To accomplish this, we can penalize each nation for accumulating debits or credits. We can see from this objective how leaving the creditor free of charge would not solve the problem of accumulating trade imbalances. Any country that can issue a world currency can use expansionary monetary policies and leave the financial burden behind to the rest of the world, which may lead to negative consequences, as Keynes’ pointed out in his works. He attempts to solve exactly this, with the Bancor and the Clearing Union.
+We again assume that the summation converges. Since this is the minimization of a sum of absolute values, it is minimized if and only if $b\_i(t)=0$ for all $i\in\{1,2,\cdots,n\}$ and $t\in\{0,1,2\cdots\}$. To accomplish this, we can penalize each nation for accumulating debits or credits. We can see from this objective how leaving the creditor free of charge would not solve the problem of accumulating trade imbalances. Any country that can issue a world currency can use expansionary monetary policies and leave the financial burden behind to the rest of the world, which may lead to negative consequences, as Keynes’ pointed out in his works. He attempts to solve exactly this, with the Bancor and the Clearing Union.
 
 In addition to this ‘carrying cost’, The balances in each account are bounded from above and below - in other words, a country’s limit, or the ‘quota’ is given by the Clearing Union, in proportion to the trade volume of that country. Once the upper limit is reached, its national currency is revaluated to incentivize the import from other countries. Once the lower limit is reached, the currency is devaluated to promote the export of the country’s goods.
 
 ### Possible extensions
 
-Although Keynes proposed the periodic charge to be proportional to the size of the imbalance, i.e., proportional to the $L^1$ norm, choosing a different minimization objective might be more beneficial. For example, one can use the sum of squares loss, shown below. The minimization objective is valid as long as the minimum value exists, and the objective $b_i(t)=0 \;\; \text{for } i=1,2,\cdots, n$ is met at the minimum.
+Although Keynes proposed the periodic charge to be proportional to the size of the imbalance, i.e., proportional to the $L^1$ norm, choosing a different minimization objective might be more beneficial. For example, one can use the sum of squares loss, shown below. The minimization objective is valid as long as the minimum value exists, and the objective $b\_i(t)=0 \;\; \text{for } i=1,2,\cdots, n$ is met at the minimum.
 
 $$
 \text{minimize}\sum_{t=0}^\infty||b(t)||_2^2=\sum_{t=0}^\infty\sum_{i=1}^n b_i^2(t)
@@ -125,13 +129,13 @@ Here, $\pi\_i$ is the fiscal policy of the country $i$ and $\mathcal{P}\_i$ is t
 
 ## Economics simulation
 
-We set our goal to calculate the GDP $\tilde{R}_i(t)$ and start with the demand. Suppose the demand of the country $i$ before shock is given by $D_i(t)$. When some shock $\beta_i(t)>-1$ is present, the demand after shock becomes
+We set our goal to calculate the GDP $\tilde{R}\_i(t)$ and start with the demand. Suppose the demand of the country $i$ before shock is given by $D\_i(t)$. When some shock $\beta\_i(t)>-1$ is present, the demand after shock becomes
 
 $$
 \tilde{D}_i(t)=(1+\beta_i(t))D_i(t)
 $$
 
-As an action, each country $i$, or agent $i$, selects its interest rate $I_i(t) >0$ at time $t$. Then, the total demand is reduced to
+As an action, each country $i$, or agent $i$, selects its interest rate $I\_i(t) >0$ at time $t$. Then, the total demand is reduced to
 
 $$
 \hat{D}_i(t)=\frac{1}{1+I_i(t)} \tilde{D}_i(t)
@@ -143,7 +147,7 @@ $$
 \frac{\mathbb{E}[E_{ij}(t+\tau)|E_{ij}(t)]}{E_{ij}(t)}=\frac{1+I_i(t)}{1+I_j(t)}
 $$
 
-The conditional expectation on the left hand side is known to be hard to calculate, hence we will approximate it using some heuristics. If $\tau$ is large enough, we can expect the nominal exchange rate to be centered around the ratio of commodity prices between $i$ and $j$, since its economic value should be equal. Denoting the commodity price of country $i$ (denominated in its own national currency unit) at time $t$ as $P_i(t)$, We can approximate the expectation as shown in the following:
+The conditional expectation on the left hand side is known to be hard to calculate, hence we will approximate it using some heuristics. If $\tau$ is large enough, we can expect the nominal exchange rate to be centered around the ratio of commodity prices between $i$ and $j$, since its economic value should be equal. Denoting the commodity price of country $i$ (denominated in its own national currency unit) at time $t$ as $P\_i(t)$, We can approximate the expectation as shown in the following:
 
 $$
 \mathbb{E}[E_{ij}(t+t_0)|E_{ij}(t)]\approx P_i(t)/P_j(t)
@@ -155,7 +159,7 @@ $$
 \begin{align} \tag{∗} E_{ij}(t)=\frac{P_i(t)/P_j(t)}{(1+I_i(t))/(1+I_j(t))} \end{align}
 $$
 
-Real commodity prices are the commodity prices denominated in same units. The real exchange rate $RE_{ij}(t)$, as distinguished from the nominal exchange rate $E_{ij}(t)$, is the ratio of real commodity prices and is given by:
+Real commodity prices are the commodity prices denominated in same units. The real exchange rate $RE\_\{ij\}(t)$, as distinguished from the nominal exchange rate $E\_\{ij\}(t)$, is the ratio of real commodity prices and is given by:
 
 $$
 RE_{ij}(t)=E_{ij}(t)(P_j(t)/P_i(t))
@@ -167,16 +171,16 @@ $$
 RE_{ij}(t)=\frac{1+I_j(t)}{1+I_i(t)}
 $$
 
-How will the one country’s demand be distributed across products from different countries? A simple answer would be that more demand is allocated to countries with cheaper real commodity prices. We assume that when $i$ is fixed, the demand for products in country $j$ is inversely proportional to the real exchange rate $RE_{ij}(t)$. This leads to the definition of the trade coefficient:
+How will the one country’s demand be distributed across products from different countries? A simple answer would be that more demand is allocated to countries with cheaper real commodity prices. We assume that when $i$ is fixed, the demand for products in country $j$ is inversely proportional to the real exchange rate $RE\_\{ij\}(t)$. This leads to the definition of the trade coefficient:
 
 $$
 \alpha_{ij}(t)=\frac{1/RE_{ij}(t)}{\sum_{j=1}^{n}1/RE_{ij}(t)}=\frac{RE_{ji}(t)}{\sum_{j=1}^{n}RE_{ji}(t)}
 $$
 
-Note that $1/RE_{ij}(t)=RE_{ji}(t)$, and that $\sum_{j=1}^n \alpha_{ij}(t)=1$. Now, the total demand is then split according to the ratio $\alpha_{ij}(t)$, which then creates the flow of goods $F_{ji}(t)$ from $j$ into $i$. Here, the $\Delta$ operator is the discrete difference operator, i.e., $\Delta x(t)=x(t)-x(t-1)$.
+Note that $1/RE\_\{ij\}(t)=RE\_\{ji\}(t)$, and that $\sum\_\{j=1\}^n \alpha\_\{ij\}(t)=1$. Now, the total demand is then split according to the ratio $\alpha\_\{ij\}(t)$, which then creates the flow of goods $F\_\{ji\}(t)$ from $j$ into $i$. Here, the $\Delta$ operator is the discrete difference operator, i.e., $\Delta x(t)=x(t)-x(t-1)$.
 
 $$
-\begin{aligned}F_{ji}(t)&=\hat{D}_i(t)\alpha_{ij}(t) \\ \Delta X_{ij}(t)&=F_{ij}(t)=\alpha_{ji}(t)\hat{D}_j(t)\;\;\;(i\ne j)\\ \Delta NX_{ij}(t)&=\Delta X_{ij}(t)-\Delta X_{ji}(t)\end{aligned} 
+\begin{aligned}F_{ji}(t)&=\hat{D}_i(t)\alpha_{ij}(t) \\ \Delta X_{ij}(t)&=F_{ij}(t)=\alpha_{ji}(t)\hat{D}_j(t)\;\;\;(i\ne j)\\ \Delta NX_{ij}(t)&=\Delta X_{ij}(t)-\Delta X_{ji}(t)\end{aligned}
 $$
 
 Country $i$’s instantaneous export, import and net export at time $t$ is given by:
@@ -185,7 +189,7 @@ $$
 \begin{aligned} EX_i(t)&=\sum_{j \ne i}\Delta X_{ij}(t)=\sum_{j \ne i}\alpha_{ji}(t)\hat{D}_j(t),\;\;EX(t)=(\alpha^*)^T(t)\hat{D}(t) \\  IM_i(t)&=\sum_{j \ne i}\Delta X_{ji}(t)=\sum_{j \ne i}\alpha_{ij}(t)\hat{D}_i(t),\;\;IM(t)=(\alpha^*)^S(t)\star \hat{D}(t) \\NET_i(t)&=EX_i(t)-IM_i(t)\end{aligned}
 $$
 
-The GDP $\tilde{R}_i(t)$ is then the sum of total demand and the net export:
+The GDP $\tilde{R}\_i(t)$ is then the sum of total demand and the net export:
 
 $$
 \tilde{R}_i(t)=\hat{D}_i(t)+ NET_i(t)
@@ -197,7 +201,7 @@ $$
 b_i(t)=\sum_{\tau=0}^t{NET_i(t)}
 $$
 
-The commodity prices $P_i(t)$, the inflation rates $\pi_i(t)$, and the shocks $\beta_i(t)$ are updated according to the following:
+The commodity prices $P\_i(t)$, the inflation rates $\pi\_i(t)$, and the shocks $\beta\_i(t)$ are updated according to the following:
 
 $$
 \begin{aligned} P_i(t+1) &= P_i(t) \left(1+ \frac{NX_i (t)}{\hat{D} _i(t)}\right)\left(\frac{1}{1+I_i(t)}\right) \\ \pi_i{(t+1)} &= \frac{P_i{(t+1)}-P_i{(t)}}{P_i{(t)}} \\ D_i{(t+1)} &= \left(\frac{1}{1+\pi_i{(t+1)}}\right)D_i{(t)} \\ \beta_i(t+1) &= \max\{\epsilon-1,\rho \beta_i(t)+\eta_i(t)\},\\
@@ -208,15 +212,15 @@ $$
 
 International relations between countries can be implemented using the following reward sharing mechanism.
 
-Let $A_{ij}(t)$ denote the affinity between two countries $i$ and $j$. $A(t)=(A_{ij}(t))$ is initialized to the identity matrix $I$ at time $t_s=\max\{s_i\}\_{i=1,2,\cdots, n}$.Two countries can increase the affinity between each other, by sending invitations and receiving them. When country $i$ sends an invitation to another country $j$, and the $j$ accepts the invitation, the affinity $A_{ij}(t)$ is increased by some $\delta>0$ in the next timestep.
+Let $A\_\{ij\}(t)$ denote the affinity between two countries $i$ and $j$. $A(t)=(A\_\{ij\}(t))$ is initialized to the identity matrix $I$ at time $t\_s=\max\{s\_i\}\_\{i=1,2,\cdots, n\}$.Two countries can increase the affinity between each other, by sending invitations and receiving them. When country $i$ sends an invitation to another country $j$, and the $j$ accepts the invitation, the affinity $A\_\{ij\}(t)$ is increased by some $\delta>0$ in the next timestep.
 
-The matrix $A(t)$ is set to be symmetric, with $0 \le A_{ij}(t) \le 1$ and $A_{ii}(t)=1$ for all $i,j$ and $t\ge t_s$. Multiplying $A(t)$ to the reward vector $\hat{R}(t)$ gives the shared reward $R'(t)=A(t)\hat{R}(t)=A(t)(\tilde{R}(t)-\zeta \|b(t)\|)$, since it is a linear combination of the rewards $R_j(t)$ with the weights of each reward proportional to $A_{ij}(t)$. 
+The matrix $A(t)$ is set to be symmetric, with $0 \le A\_\{ij\}(t) \le 1$ and $A\_\{ii\}(t)=1$ for all $i,j$ and $t\ge t\_s$. Multiplying $A(t)$ to the reward vector $\hat{R}(t)$ gives the shared reward $R'(t)=A(t)\hat{R}(t)=A(t)(\tilde{R}(t)-\zeta \|b(t)\|)$, since it is a linear combination of the rewards $R\_j(t)$ with the weights of each reward proportional to $A\_\{ij\}(t)$. 
 
 $$
 R'_i(t)=\sum_{j=1}^n A_{ij}(t)\hat{R}_j(t)
 $$
 
-Because $A_{ii}(t)=1$ for all time $t$, the weight of the reward $R_i(t)$ is $1$. We then replace the reward in the RL objective with the shared reward $R_i'(t)$:
+Because $A\_\{ii\}(t)=1$ for all time $t$, the weight of the reward $R\_i(t)$ is $1$. We then replace the reward in the RL objective with the shared reward $R\_i'(t)$:
 
 $$
 \begin{aligned}\underset{\pi_i\in\mathcal{P_i}}{\text{maximize}}\; \sum_{t=0}^\infty{\gamma^t R_i'(t)} 
@@ -224,13 +228,13 @@ $$
 &= \sum_{t=0}^\infty{\sum_{j=1}^n{A_{ij}(t)\left(\tilde{R}_j(t)-\zeta|b_j(t)|\right)}}\end{aligned}
 $$
 
-How, specifically, does the invite-and-accept mechanism work? The action space for country $i$ when there are $n$ countries is $\mathcal{A}_i=\mathbb{R}\times\mathbb{R}^{n}\times\mathbb{R}^{n}$. When $a_i(t)=(I_i(t), P_i(t),Q_i(t))\in\mathcal{A}_i$ is selected, $I_i(t)$ is used as the interest rate, and then the invitation probabilities and the acceptance probabilities are calculated using the preferences $P_i(t)$ and $Q_i(t)$:
+How, specifically, does the invite-and-accept mechanism work? The action space for country $i$ when there are $n$ countries is $\mathcal{A}\_i=\mathbb{R}\times\mathbb{R}^\{n\}\times\mathbb{R}^\{n\}$. When $a\_i(t)=(I\_i(t), P\_i(t),Q\_i(t))\in\mathcal{A}\_i$ is selected, $I\_i(t)$ is used as the interest rate, and then the invitation probabilities and the acceptance probabilities are calculated using the preferences $P\_i(t)$ and $Q\_i(t)$:
 
 $$
 p_{ij}(t)=\mathrm{softmax}(P_i)_j(t)\;\;\text{and}\;\;q_{ij}(t)=\mathrm{sigmoid}(Q_i)_j(t)
 $$
 
- In each timestep, country $i$ sends out a single invitation to one of the countries $j$, with probability $p_{ij}(t)$. Then, $q_{ij}(t)$ determines the probability that country $i$ will accept country $j$’s invitation, given that the country $j$ selected $i$. Let $U_{ij}(t)\sim (p_{ij}(t))\_{j=1,2,\cdots,n}$ denote the boolean invitation matrix of whether the invitation was given from $i$ to $j$, and $V_{ij}(t)\sim \mathrm{Bernoulli}(q_{ij}(t))$ be the boolean acceptance matrix of whether $j$ accepted $i$’s invitation, if there were any. Then, the agreements made from the sending the invitation from $i$ to $j$ and accepting it, can be represented as the matrix $M_{ij}(t)$:
+ In each timestep, country $i$ sends out a single invitation to one of the countries $j$, with probability $p\_\{ij\}(t)$. Then, $q\_\{ij\}(t)$ determines the probability that country $i$ will accept country $j$’s invitation, given that the country $j$ selected $i$. Let $U\_\{ij\}(t)\sim (p\_\{ij\}(t))\_\{j=1,2,\cdots,n\}$ denote the boolean invitation matrix of whether the invitation was given from $i$ to $j$, and $V\_\{ij\}(t)\sim \mathrm{Bernoulli}(q\_\{ij\}(t))$ be the boolean acceptance matrix of whether $j$ accepted $i$’s invitation, if there were any. Then, the agreements made from the sending the invitation from $i$ to $j$ and accepting it, can be represented as the matrix $M\_\{ij\}(t)$:
 
 $$
 M_{ij}(t)=\sum_j{U^*_{ij}(t)V^*_{ij}}(t)
@@ -248,7 +252,7 @@ $$
 \begin{aligned} M(t)&=U^*(t)(V^*)^T(t) \\ \Delta A(t) &= \delta(M(t)+M^T(t)) \end{aligned}
 $$
 
-The maximum increment is $2\delta$, since the invitation can be sent and received in both directions. To be certain that $0 \le A_{ij}(t) \le 1$, $\delta>0$ is chosen so that $(2\delta) T\le1$ for the total number of timesteps, $T$.
+The maximum increment is $2\delta$, since the invitation can be sent and received in both directions. To be certain that $0 \le A\_\{ij\}(t) \le 1$, $\delta>0$ is chosen so that $(2\delta) T\le1$ for the total number of timesteps, $T$.
 
 ## Code
 
@@ -260,7 +264,7 @@ The maximum increment is $2\delta$, since the invitation can be sent and receive
 
 [**load_and_play_ui.py**](https://github.com/codingJang/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/load_and_play_ui.py): The trained model is loaded and tested in the economics environment, with one of the agent’s action replaced with human input.
 
-[**PreprocessingInternationalRelationsData**](https://github.com/codingJang/SOUL_project/tree/main/Source/PreprocessingInternationalRelationsData): The affinity matrix $A_{ij}(t)$, which is initialized to the identity matrix $I$, may be replaced with the IGO_adjmat.csv or DCAD_adjmat.csv, which are created by preprocessing the Intergovernmental Organization (IGO) dataset or the Defense Cooperation Agreement Dataset (DCAD), respectively.
+[**PreprocessingInternationalRelationsData**](https://github.com/codingJang/SOUL_project/tree/main/Source/PreprocessingInternationalRelationsData): The affinity matrix $A\_\{ij\}(t)$, which is initialized to the identity matrix $I$, may be replaced with the IGO_adjmat.csv or DCAD_adjmat.csv, which are created by preprocessing the Intergovernmental Organization (IGO) dataset or the Defense Cooperation Agreement Dataset (DCAD), respectively.
 
 ## Experiments
 

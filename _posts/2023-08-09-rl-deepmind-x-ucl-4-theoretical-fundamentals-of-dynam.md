@@ -18,38 +18,38 @@ unlisted: true
 Let $X$ be a complete normed vector space, equipped with a norm $\|\cdot\|$ and $T:X \rightarrow X$ a $\gamma$-contraction mapping, then:
 
 1. $T$ has a unique fixed point $x^\star \in X$ s.t. $T x^\star=x^\star$
-2. $\forall x_0 \in X$, the sequence $x_{n+1}=Tx_n$ converges to $x^\star$ in a geometric fashion:
+2. $\forall x\_0 \in X$, the sequence $x\_\{n+1\}=Tx\_n$ converges to $x^\star$ in a geometric fashion:
     
     $$
-    \|x_n-x^\star\| \le \gamma^n\|x_0-x^\star\|
-    $$
+\|x_n-x^\star\| \le \gamma^n\|x_0-x^\star\|
+$$
     
-    Thus, $\lim_{n\rightarrow\infty}\|x_n-x^\star\|\le \lim_{n\rightarrow\infty}\gamma^n\|x_0-x^\star\|=0.$
+    Thus, $\lim\_\{n\rightarrow\infty\}\|x\_n-x^\star\|\le \lim\_\{n\rightarrow\infty\}\gamma^n\|x\_0-x^\star\|=0.$
     
 
 ## What does this mean?
 
-It means that if the distance between two points after applying some operator $T$ is no greater than the original distance multiplied by $\gamma \in [0, 1)$, then applying the operator repeatedly to any point $x_0$ to yield $x_n$ is a great way to search for the unique fixed point of the operator $T$.
+It means that if the distance between two points after applying some operator $T$ is no greater than the original distance multiplied by $\gamma \in [0, 1)$, then applying the operator repeatedly to any point $x\_0$ to yield $x\_n$ is a great way to search for the unique fixed point of the operator $T$.
 
 ## Definitions of the Bellman Operators
 
-### Definition: Bellman Optimality Operator $T_V^\star$
+### Definition: Bellman Optimality Operator $T\_V^\star$
 
-Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $V=V_S$ be the space of bounded real-valued functions over $S$. We define, point-wise, the Bellman Optimality Operator $T_V^\star:V\rightarrow V$ as:
+Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $V=V\_S$ be the space of bounded real-valued functions over $S$. We define, point-wise, the Bellman Optimality Operator $T\_V^\star:V\rightarrow V$ as:
 
 $$
 (T_V^\star f)(s)=\max_{a \in A} \biggl[ {r(s, a) + \gamma \mathbb{E} \left[f(s')|s, a\right]} \bigg], \;\forall f \in V
 $$
 
-Sometimes we drop the index and use $T^\star=T_V^\star$.
+Sometimes we drop the index and use $T^\star=T\_V^\star$.
 
 ### What is this operator?
 
 This operator is a $\gamma$-contraction with the unique fixed point being $f=v^\star$, the optimal value function of the MDP. Therefore, if we apply this operator iteratively to some (value) function $v$, it will converge to the optimal value function $v^\star$. This is why we attempt to approximate this specific operator (possibly with a neural network).
 
-### Definition: Bellman Expectation Operator $T^\pi_V$
+### Definition: Bellman Expectation Operator $T^\pi\_V$
 
-Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $V=V_S$ be the space of bounded real-valued functions over $S$. For any policy $\pi:S \times A \rightarrow [0, 1]$, we define, point-wise, the Bellman Expectation Operator $T_V^\pi:V\rightarrow V$ as:
+Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $V=V\_S$ be the space of bounded real-valued functions over $S$. For any policy $\pi:S \times A \rightarrow [0, 1]$, we define, point-wise, the Bellman Expectation Operator $T\_V^\pi:V\rightarrow V$ as:
 
 $$
 (T_V^\pi f)(s)=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s') \bigg| s \bigg], \;\forall f \in V
@@ -61,17 +61,17 @@ $$
 (T_V^\pi f)(s)=\mathbb{E}^\pi \biggl[ {r(s, a) + \gamma \mathbb{E} \left[f(s')|s, a\right]} \bigg| s \bigg], \;\forall f \in V
 $$
 
-Which is the same as the Bellman Optimality Operator, except $\max_{a\in A}$ being replaced by $\mathbb{E}^\pi[\cdot|s]$.
+Which is the same as the Bellman Optimality Operator, except $\max\_\{a\in A\}$ being replaced by $\mathbb{E}^\pi[\cdot\|s]$.
 
-Sometimes we drop the index and use $T^\pi=T_V^\pi$.
+Sometimes we drop the index and use $T^\pi=T\_V^\pi$.
 
 ### What is this operator?
 
 Same as the Bellman Optimality Operator, this operator is a $\gamma$-contraction except the unique fixed point being $f=v^\pi$, the value function for policy $\pi$ in a given MDP. Therefore, we can evaluate the policy $\pi$ by repeatedly applying this operator to the initial (value) function $v$. We then know whether the policy $\pi$ is doing well or not.
 
-### Definition: Bellman Optimality Operator $T_Q^\star$
+### Definition: Bellman Optimality Operator $T\_Q^\star$
 
-Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $Q=Q_{S, A}$ be the space of bounded real-valued functions over $S\times A$. We define the Bellman Optimality Operator $T_Q^\star:Q\rightarrow Q$ as:
+Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $Q=Q\_\{S, A\}$ be the space of bounded real-valued functions over $S\times A$. We define the Bellman Optimality Operator $T\_Q^\star:Q\rightarrow Q$ as:
 
 $$
 (T_Q^\star f)(s, a)=\mathbb{E} \bigg[ r(s, a) + \gamma  \max_{a'\in A}f(s',a') \bigg| s, a \bigg], \;\forall f \in Q
@@ -85,11 +85,11 @@ $$
 
 ### What is this operator?
 
-This is the q-version of the previous Bellman Optimality Operator $T_V^\star$. Similarly, this operator is a $\gamma$-contraction with the unique fixed point being $f=q^\star$, the optimal q-value function of the MDP. Therefore, if we apply this operator iteratively to some (value) function $q$, it will converge to the optimal value function $q^\star$. We may attempt to approximate this operator too.
+This is the q-version of the previous Bellman Optimality Operator $T\_V^\star$. Similarly, this operator is a $\gamma$-contraction with the unique fixed point being $f=q^\star$, the optimal q-value function of the MDP. Therefore, if we apply this operator iteratively to some (value) function $q$, it will converge to the optimal value function $q^\star$. We may attempt to approximate this operator too.
 
-### Definition: Bellman Expectation Operator $T^\pi_Q$
+### Definition: Bellman Expectation Operator $T^\pi\_Q$
 
-Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $Q=Q_{S, A}$ be the space of bounded real-valued functions over $S\times A$. For any policy $\pi:S \times A \rightarrow [0, 1]$, we define, point-wise, the Bellman Expectation Operator $T_Q^\pi:Q \rightarrow Q$ as:
+Given an MDP, $M=\langle S, A, p, r, \gamma \rangle$, let $Q=Q\_\{S, A\}$ be the space of bounded real-valued functions over $S\times A$. For any policy $\pi:S \times A \rightarrow [0, 1]$, we define, point-wise, the Bellman Expectation Operator $T\_Q^\pi:Q \rightarrow Q$ as:
 
 $$
 (T_Q^\pi f)(s, a)=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s',a') \bigg| s, a \bigg], \;\forall f \in Q
@@ -103,18 +103,18 @@ $$
 
 ### What is this operator?
 
-This is the q-version of the previous Bellman Expectation Operator $T_V^\pi$. It is also a $\gamma$-contraction, with the unique fixed point being $f=q^\pi$. Therefore, we can evaluate the policy $\pi$ by repeatedly applying this operator to the initial value function $q$. We then know the performance of the policy $\pi$. Since this is a q-value function, we can also use it to greedify our policy $\pi$ by $\pi \leftarrow \operatorname{argmax}_{a\in A} q^\pi(s, a)$.
+This is the q-version of the previous Bellman Expectation Operator $T\_V^\pi$. It is also a $\gamma$-contraction, with the unique fixed point being $f=q^\pi$. Therefore, we can evaluate the policy $\pi$ by repeatedly applying this operator to the initial value function $q$. We then know the performance of the policy $\pi$. Since this is a q-value function, we can also use it to greedify our policy $\pi$ by $\pi \leftarrow \operatorname{argmax}\_\{a\in A\} q^\pi(s, a)$.
 
 ## Properties of the Bellman Operators
 
-### Properties: Bellman Optimality Operator $T_V^\star \;(= T^\star )$
+### Properties: Bellman Optimality Operator $T\_V^\star \;(= T^\star )$
 
 1. $T^\star$ has a unique fixed point $v^\star$.
-2. $T^\star$ is a $\gamma$-contraction with respect to $\|\cdot\|_\infty$:
+2. $T^\star$ is a $\gamma$-contraction with respect to $\|\cdot\|\_\infty$:
     
     $$
-    \|T^\star v-T^\star u\|_\infty \le \gamma \|v-u\|_\infty, \forall u,v \in V
-    $$
+\|T^\star v-T^\star u\|_\infty \le \gamma \|v-u\|_\infty, \forall u,v \in V
+$$
     
 3. $T^\star$ is monotonic:
 

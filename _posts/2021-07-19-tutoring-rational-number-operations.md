@@ -60,8 +60,10 @@ $$
 **세번째 문제.** $A, B, C$의 대소 관계를 부등호를 사용하여 나타내봅시다.
 
 $$
-A=\frac{12\times\left(1-\left(-\frac{1}{2}\right)^4\right)}{1-\left(-\frac{1}{2}\right)} \newline
-B=42\times\left(\frac{1}{6}-\frac{1}{7}-\frac{1}{3}\right)-2\times\left(-3\right) \newline C=\frac{6}{7}\times\left(\frac{1}{2}-\frac{5}{28}+\frac{3}{7}\right)\div\frac{4}{15}\times\left(-\frac{14}{27}\right)
+\begin{align*}
+A=\frac{12\times\left(1-\left(-\frac{1}{2}\right)^4\right)}{1-\left(-\frac{1}{2}\right)} \\
+B=42\times\left(\frac{1}{6}-\frac{1}{7}-\frac{1}{3}\right)-2\times\left(-3\right) \\ C=\frac{6}{7}\times\left(\frac{1}{2}-\frac{5}{28}+\frac{3}{7}\right)\div\frac{4}{15}\times\left(-\frac{14}{27}\right)
+\end{align*}
 $$
 
 - 세번째 문제에 대한 해설 및 정답
@@ -99,7 +101,7 @@ $$
 이 계산은 크게 세 가지 작업으로 나누어서 생각할 수 있다.
 
 $$
-\begin{align} X&=3^4 \div \left(-1\frac{1}{2}\right)^2\textrm{를 계산하는 작업} \newline Y&=\left(-\frac{3}{4}\right)^3\times\left(2\frac{2}{3}\right)^2\textrm{를 계산하는 작업} \newline A&=X-\left(Y-(-2)^4\right) \textrm{를 계산하는 작업} \end{align}
+\begin{align} X&=3^4 \div \left(-1\frac{1}{2}\right)^2\textrm{를 계산하는 작업} \\ Y&=\left(-\frac{3}{4}\right)^3\times\left(2\frac{2}{3}\right)^2\textrm{를 계산하는 작업} \\ A&=X-\left(Y-(-2)^4\right) \textrm{를 계산하는 작업} \end{align}
 $$
 
 만약 소인수분해를 활용하지 않는다면,
@@ -145,8 +147,8 @@ $$
 
 $$
 \begin{aligned} Z&=-\frac{3}{2}\left(\left(-\frac{1}{3}\right)^3-\left(-\frac{3}{2}\right)^2\right)
-\newline&=-\frac{3}{2}\left(-\frac{1}{3^3}-\frac{3^2}{2^2}\right)
-\newline&=\frac{3}{2}\left(\frac{1}{3^3}+\frac{3^2}{2^2}\right)
+\\&=-\frac{3}{2}\left(-\frac{1}{3^3}-\frac{3^2}{2^2}\right)
+\\&=\frac{3}{2}\left(\frac{1}{3^3}+\frac{3^2}{2^2}\right)
 \end{aligned}
 $$
 
@@ -163,7 +165,7 @@ $$
 
 $$
 \begin{aligned}
-B&=-\left(-\frac{1}{2}\right)^3-\left(-\frac{2}{3}\right)^2-Z\newline&=\frac{1}{2^3}-\frac{2^2}{3^2}-Z\newline&=\frac{1}{2^3}-\frac{2^2}{3^2}-\frac{3}{2}\left(\frac{1}{3^3}+\frac{3^2}{2^2}\right)\newline&=\frac{1-3^3}{2^3}+\frac{-2^2-1/2}{3^2}\newline&=-\frac{13}{2^2}-\frac{4.5}{3^2}\newline&=-\frac{13}{2^2}-0.5\newline&=-\frac{13+2}{4}\newline&=-\frac{15}{4} \end{aligned}
+B&=-\left(-\frac{1}{2}\right)^3-\left(-\frac{2}{3}\right)^2-Z\\&=\frac{1}{2^3}-\frac{2^2}{3^2}-Z\\&=\frac{1}{2^3}-\frac{2^2}{3^2}-\frac{3}{2}\left(\frac{1}{3^3}+\frac{3^2}{2^2}\right)\\&=\frac{1-3^3}{2^3}+\frac{-2^2-1/2}{3^2}\\&=-\frac{13}{2^2}-\frac{4.5}{3^2}\\&=-\frac{13}{2^2}-0.5\\&=-\frac{13+2}{4}\\&=-\frac{15}{4} \end{aligned}
 $$
 
 소인수분해를 하지 않은 채로 먼저 통분했으면 아마 **끔찍한 일이 벌어졌을지도 모른다**.

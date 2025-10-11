@@ -15,7 +15,7 @@ unlisted: true
 
 ## Why function approximations?
 
-It is hard to build lookup tables if the state space $S$ or the action space $A$ is large. For example, the game of go has $10^{170}$ states, which is more than the number of atoms in the universe squared. Therefore, creating the lookup table $v(s)$ is simply infeasible. Not only that, the universe itself is continuous - and we cannot give up on RL just because it is.
+It is hard to build lookup tables if the state space $S$ or the action space $A$ is large. For example, the game of go has $10^\{170\}$ states, which is more than the number of atoms in the universe squared. Therefore, creating the lookup table $v(s)$ is simply infeasible. Not only that, the universe itself is continuous - and we cannot give up on RL just because it is.
 
 Therefore, we will estimate the value function using function approximation. In many cases, the function approximation will involve some parameter vector $\mathbf{w}$:
 
@@ -23,7 +23,7 @@ $$
 \begin{aligned} v_{\mathbf{w}}(s) &\approx v^\pi(s) \;(\text{or} \; v^\star(s)), \\ q_{\mathbf{w}}(s,a)&\approx q^\pi(s,a) \;(\text{or} \; q^\star(s,a)). \end{aligned}
 $$
 
-The parameter vector $\mathbf{w}$ will usually be some high dimensional vector that we can adjust to approximate the the value function. In a deep RL setup, we can also imagine $v_\mathbf{w}(s)$ and $q_\mathbf{w} (s, a)$ as a neural network, a rich class of nonlinear function that maps the state space to a range of values $(v_\mathbf{w}(s):S \rightarrow \mathbb{R})$ or the state-action space to a range of values $(q_\mathbf{w}(s, a) : S \times A \rightarrow \mathbb{R})$.
+The parameter vector $\mathbf{w}$ will usually be some high dimensional vector that we can adjust to approximate the the value function. In a deep RL setup, we can also imagine $v\_\mathbf{w}(s)$ and $q\_\mathbf{w} (s, a)$ as a neural network, a rich class of nonlinear function that maps the state space to a range of values $(v\_\mathbf{w}(s):S \rightarrow \mathbb{R})$ or the state-action space to a range of values $(q\_\mathbf{w}(s, a) : S \times A \rightarrow \mathbb{R})$.
 
 ## Properties of RL
 
@@ -52,10 +52,12 @@ The fact that we do not have to hand engineer features when using deep learning 
 
 ### Approximating state-value functions
 
-Since we have already explored the tabular case, let’s now explore the linear case. In a linear function approximation setup, we represent the state (or the observation) at time $t$ as a vector $\mathbf{x}(S_t)$ which we will also call $\mathbf{x}_t$. This mapping $\mathbf{x}:S\rightarrow \mathbb{R}^n$ is called the feature mapping, and is considered to be fixed:
+Since we have already explored the tabular case, let’s now explore the linear case. In a linear function approximation setup, we represent the state (or the observation) at time $t$ as a vector $\mathbf{x}(S\_t)$ which we will also call $\mathbf{x}\_t$. This mapping $\mathbf{x}:S\rightarrow \mathbb{R}^n$ is called the feature mapping, and is considered to be fixed:
 
 $$
+\begin{align*}
 \mathbf{x}(s)=\begin{pmatrix} x_1(s) \\ \vdots \\ x_n(s) \end{pmatrix},\; \forall s \in S.
+\end{align*}
 $$
 
 Then we approximate the value function by a linear combination of the weights and features:
@@ -69,7 +71,9 @@ $$
 But what about action-value functions? We can use two different techniques to approximate $q(s,a)$. The first one is similar to the previous case. With the feature mapping $\mathbf{x}:S\times A \rightarrow \mathbb{R}^n$:
 
 $$
+\begin{align*}
 \mathbf{x}(s,a)=\begin{pmatrix} x_1(s,a) \\ \vdots \\ x_n(s,a) \end{pmatrix},\; \forall s \in S.
+\end{align*}
 $$
 
 The approximation of the value function is almost identical as before:
@@ -96,17 +100,19 @@ $$
 J(\mathbf{w}) = \mathbb{E}_{S \sim d} \left[(v^\pi(S)-\mathbf{w}^\top \mathbf{x}(S))^2 \right]
 $$
 
-The distribution $d$ is some distribution of states in which we can sample from. Suppose we already know the value function $v^\pi(s)$. Then we can apply stochastic gradient descent (SGD) with decaying step size $\alpha_t$ to find some local minimum / saddle point of a smooth function:
+The distribution $d$ is some distribution of states in which we can sample from. Suppose we already know the value function $v^\pi(s)$. Then we can apply stochastic gradient descent (SGD) with decaying step size $\alpha\_t$ to find some local minimum / saddle point of a smooth function:
 
 $$
+\begin{align*}
 \nabla_\mathbf{w} v_\mathbf{w}(S_t)=\mathbf{x}(S_t) = \mathbf{x}_t, \\ \Delta \mathbf{w}_t = \alpha_t(v^\pi(S_t)-v_\mathbf{w}(S_t)) \mathbf{x}_t.
+\end{align*}
 $$
 
-Note that the gradient of our value function, $\nabla_\mathbf{w} v_\mathbf{w}(S_t)$, is simply $\mathbf{x}(S_t)$. Luckily, $J(\mathbf{w})$ is quadratic in $\mathbf{w}$, and it’s Hessian is positive semi-definite everywhere in $\mathbb{R}^n$ which makes it a semi-convex(?) function. Hence, every local minimum is a global minimum. SGD with decaying step size will then ensure $J(\mathbf{w})$’s convergence to the global minimum.
+Note that the gradient of our value function, $\nabla\_\mathbf{w} v\_\mathbf{w}(S\_t)$, is simply $\mathbf{x}(S\_t)$. Luckily, $J(\mathbf{w})$ is quadratic in $\mathbf{w}$, and it’s Hessian is positive semi-definite everywhere in $\mathbb{R}^n$ which makes it a semi-convex(?) function. Hence, every local minimum is a global minimum. SGD with decaying step size will then ensure $J(\mathbf{w})$’s convergence to the global minimum.
 
 ## MC and TD with Linear Approximation
 
-However, we do not “know” the value function $v^\pi(S_t)$, which means we can’t use it to update our weight vector $\mathbf{w}$. Therefore, we substitute $v^\pi(s)$ with a stochastic target $G_t$:
+However, we do not “know” the value function $v^\pi(S\_t)$, which means we can’t use it to update our weight vector $\mathbf{w}$. Therefore, we substitute $v^\pi(s)$ with a stochastic target $G\_t$:
 
 $$
 \Delta \mathbf{w}_t = \alpha_t(G_t-v_\mathbf{w}(S_t)) \mathbf{x}_t.
@@ -118,7 +124,7 @@ $$
 \{(S_0, G_0), \cdots, (S_T, G_T)\}\;\;T=\text{terminal time-step},
 $$
 
-since $G_t$ is unbiased. If the variance of $G_t$ is too large, we can replace the target with the TD target $R_{t+1} + \gamma v_\mathbf{w}(S_{t+1})$ to get:
+since $G\_t$ is unbiased. If the variance of $G\_t$ is too large, we can replace the target with the TD target $R\_\{t+1\} + \gamma v\_\mathbf{w}(S\_\{t+1\})$ to get:
 
 $$
 \Delta \mathbf{w}_t = \alpha_t(R_{t+1}+\gamma v_\mathbf{w} (S_{t+1})-v_\mathbf{w}(S_t)) \mathbf{x}_t.
@@ -128,13 +134,13 @@ The above update is called **TD with Linear Approximation**.
 
 ## Convergence of MC with Linear Approximation
 
-With linear value function approximation and suitably decaying step size $\alpha_t \rightarrow 0$, it is known that MC converges to:
+With linear value function approximation and suitably decaying step size $\alpha\_t \rightarrow 0$, it is known that MC converges to:
 
 $$
 \mathbf{w}_\text{MC} =\operatorname{argmin}_\mathbf{w} {\mathbb{E}^\pi[(G_t-v_\mathbf{w}(S_t))^2]}=\mathbb{E}^\pi [\mathbf{x}_t \mathbf{x}_t^\top]^{-1} \mathbb{E}^\pi[G_t\mathbf{x}_t]
 $$
 
-We can verify this by setting the gradient of ${\mathbb{E}^\pi[(G_t-v_\mathbf{w}(S_t))^2]}$ with respect to $\mathbf{w}$ to zero:
+We can verify this by setting the gradient of $\{\mathbb{E}^\pi[(G\_t-v\_\mathbf{w}(S\_t))^2]\}$ with respect to $\mathbf{w}$ to zero:
 
 $$
 \begin{align} \nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - v_\mathbf{w}(S_t))^2]=\nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)^2]&=0\\\mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}(S_t))\nabla_\mathbf{w}(\mathbf{w}^\top\mathbf{x}_t)]&=0 \\=\mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)\mathbf{x}_t]&=0 \\= \mathbb{E}^\pi[G_t\mathbf{x}_t - \mathbf{x}_t^\top\mathbf{x}_t\mathbf{w}]&=0 \\ \mathbb{E}^\pi[\mathbf{x}_t\mathbf{x}_t^\top]\mathbf{w}=\mathbb{E}^\pi[G_t\mathbf{x}_t] \\ \mathbf{w}=\mathbf{w}_\text{MC}=\mathbb{E}^\pi[\mathbf{x}_t \mathbf{x}_t^\top]^{-1}\mathbb{E}^\pi[G_t\mathbf{x}_t]\end{align}
@@ -142,13 +148,13 @@ $$
 
 ## Convergence of TD with Linear Approximation
 
-With linear value function approximation and suitably decaying step size $\alpha_t \rightarrow 0$, it is known that TD converges to:
+With linear value function approximation and suitably decaying step size $\alpha\_t \rightarrow 0$, it is known that TD converges to:
 
 $$
 \mathbf{w}_\text{TD} =\mathbb{E}^\pi [\mathbf{x}_t (\mathbf{x}_t-\gamma \mathbf{x}_{t+1})^\top]^{-1} \mathbb{E}^\pi[R_{t+1}\mathbf{x}_t]
 $$
 
-We can verify this by setting the expected value of $\Delta\mathbf{w}$ to zero. Assuming $\alpha_t$ does not correlate with $R_{t+1},\mathbf{x}_t,\mathbf{x}_{t+1}$:
+We can verify this by setting the expected value of $\Delta\mathbf{w}$ to zero. Assuming $\alpha\_t$ does not correlate with $R\_\{t+1\},\mathbf{x}\_t,\mathbf{x}\_\{t+1\}$:
 
 $$
 \begin{align} \mathbb{E}^\pi[\Delta \mathbf{w}]=0&=\mathbb{E}^\pi[\alpha_t(R_{t+1} + \gamma\mathbf{x}_{t+1}^\top\mathbf{w}-\mathbf{x}_t^\top\mathbf{w})\mathbf{x}_t] \\ 0 &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] + \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\gamma\mathbf{x}_{t+1}^\top-\mathbf{x}_t^\top)\mathbf{w}] \\ \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]\mathbf{w} &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] \\ \mathbf{w} = \mathbf{w}_\text{TD}&= \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]^{-1} \mathbb{E}^\pi[R_{t+1} \mathbf{x}_t]\end{align}
@@ -158,16 +164,16 @@ This differs from the MC solution. Remember, TD updates have less variance but m
 
 ## Residual Bellman updates
 
-Note that the TD update is not a gradient update, since it ignores the dependence of $v_\mathbf{w}(S_{t+1})$ on $\mathbf{w}$.
+Note that the TD update is not a gradient update, since it ignores the dependence of $v\_\mathbf{w}(S\_\{t+1\})$ on $\mathbf{w}$.
 
 $$
 \Delta \mathbf{w}_t = \alpha \delta \nabla_\mathbf{w} v_\mathbf{w}(S_t)\;\text{ where }\; \delta_t= R_{t+1} + \gamma v_\mathbf{w}(S_{t+1})-v_\mathbf{w}(S_t)
 $$
 
-To remedy this, we can use the Bellman residual gradient update, where the Bellman loss is given as $\mathbb{E}^\pi[\delta_t^2]$ and we take the gradient of it to update $\mathbf{w}$:
+To remedy this, we can use the Bellman residual gradient update, where the Bellman loss is given as $\mathbb{E}^\pi[\delta\_t^2]$ and we take the gradient of it to update $\mathbf{w}$:
 
 $$
- \nabla_\mathbf{w}\mathbb{E}^\pi[\delta_t^2]=\mathbb{E}^\pi[\nabla_\mathbf{w}(\delta_t^2)]=2\mathbb{E}^\pi[\delta_t \nabla_\mathbf{w}\delta_t]
+\nabla_\mathbf{w}\mathbb{E}^\pi[\delta_t^2]=\mathbb{E}^\pi[\nabla_\mathbf{w}(\delta_t^2)]=2\mathbb{E}^\pi[\delta_t \nabla_\mathbf{w}\delta_t]
 $$
 
 $$

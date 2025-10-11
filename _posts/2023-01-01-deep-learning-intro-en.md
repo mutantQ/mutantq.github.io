@@ -49,11 +49,11 @@ A basic walkthrough of linear algebra and python
 
 ### Prob 1.2
 
-> If $n$ is a positive integer, then an ordered $n$-tuple is a sequence of $n$ real numbers $(v_1, v_2, …, v_n)$. The set of all ordered $n$-tuples is called $n$-space and is denoted by $R^n$.
+> If $n$ is a positive integer, then an ordered $n$-tuple is a sequence of $n$ real numbers $(v\_1, v\_2, …, v\_n)$. The set of all ordered $n$-tuples is called $n$-space and is denoted by $R^n$.
 *- Contemporary Linear Algebra, Howard Anton & Robert C. Busby, p.7.*
 > 
 
-$\mathbf{v}=\begin{bmatrix} x_1 \\\\ x_2 \end{bmatrix}$is an element of the $n$-space, that is, $\mathbf{v} \in \mathbb{R}^n$. What is $n$?
+$\mathbf{v}=\begin{bmatrix} x\_1 \\\\ x\_2 \end{bmatrix}$is an element of the $n$-space, that is, $\mathbf{v} \in \mathbb{R}^n$. What is $n$?
 
 *Note.*
 
@@ -88,7 +88,7 @@ Give an example for each arithmetic rule (a) through (g), using $2$-tuples.
 
 ### Prob 1.4
 
-$\mathbf{x}= (x_1, x_2)\in \mathbb{R}^2$ is a 2-dimensional vector.
+$\mathbf{x}= (x\_1, x\_2)\in \mathbb{R}^2$ is a 2-dimensional vector.
 find the set of $\mathbf{x}$ satisfying the below equation by filling in the blank.
 
 $$
@@ -167,7 +167,7 @@ $$
 \end{align*}
 $$
 
-(a) Solve for the set of vectors $\mathbf{v}=\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \end{bmatrix} \in \mathbb{R}^3$ which satisfies the system of equations shown above.
+(a) Solve for the set of vectors $\mathbf{v}=\begin{bmatrix} x\_1 \\\\ x\_2 \\\\ x\_3 \end{bmatrix} \in \mathbb{R}^3$ which satisfies the system of equations shown above.
 
 (b) Express $\mathbf{v}$ as a linear combination of two linearly independent vectors.
 
@@ -201,14 +201,16 @@ $$
 
 (a) State the formal definition, and 
 
-(b) show that the transformation $L_A(\mathbf{x})=A\mathbf{x}$ defined by multiplying the matrix $A$ on the left side of the vector $\mathbf{x} \in \mathbb{R}^2$, is in fact linear. 
+(b) show that the transformation $L\_A(\mathbf{x})=A\mathbf{x}$ defined by multiplying the matrix $A$ on the left side of the vector $\mathbf{x} \in \mathbb{R}^2$, is in fact linear. 
 
-In other words, show that $L_A$ fits the formal definition of a linear transformation defined in (a).
+In other words, show that $L\_A$ fits the formal definition of a linear transformation defined in (a).
 
 *Note. refer to the matrix-vector multiplication rule below.*
 
 $$
+\begin{align*}
 A\mathbf{x}=\begin{bmatrix} a & b \\ c & d\end{bmatrix} \begin{bmatrix} x \\ y\end{bmatrix} = x\begin{bmatrix} a \\ c\end{bmatrix} + y\begin{bmatrix} b \\ d\end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy\end{bmatrix}
+\end{align*}
 $$
 
 *Vocab. transformation = 변환, linear transformation = 선형 변환, canonical = 기본의, matrix = 행렬.*
@@ -239,16 +241,18 @@ Then, using the formula you have found, calculate the following matrix-vector mu
 
 ### Prob 4.1
 
-*Composition of matrices.* In the video, we have learned how applying two $2 \times 2$ matrices $M_1$ and $M_2$ consecutively to the basis vectors $\mathbf{i}$ and $\mathbf{j}$ gives the columns of the product matrix $M_2 M_1$. For example, applying the rotation $M_1= \begin{bmatrix} 0 & -1 \\\\ 1 & 0 \end{bmatrix}$ and then the shear $M_2= \begin{bmatrix} 1 & 1 \\\\ 0 & 1 \end{bmatrix}$to the vector $\mathbf{i}= \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}$ gives $\begin{bmatrix} 1 \\\\ 1 \end{bmatrix}$, which is the first column of the matrix $M_2 M_1$.
+*Composition of matrices.* In the video, we have learned how applying two $2 \times 2$ matrices $M\_1$ and $M\_2$ consecutively to the basis vectors $\mathbf{i}$ and $\mathbf{j}$ gives the columns of the product matrix $M\_2 M\_1$. For example, applying the rotation $M\_1= \begin{bmatrix} 0 & -1 \\\\ 1 & 0 \end{bmatrix}$ and then the shear $M\_2= \begin{bmatrix} 1 & 1 \\\\ 0 & 1 \end{bmatrix}$to the vector $\mathbf{i}= \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}$ gives $\begin{bmatrix} 1 \\\\ 1 \end{bmatrix}$, which is the first column of the matrix $M\_2 M\_1$.
 
 *Note. The ordering of the multiplication is from right to left, in the same way we compose functions, $(g \circ f)(x)=g(f(x))$.*
 
-(a) Explain how the elements of the matrix $M_2 M_1$ is determined, and extend the result to $3 \times 3$ matrices. In other words, find the matrix-matrix multiplication formula for $3 \times 3$ (and possibly, $n\times n$) matrices.
+(a) Explain how the elements of the matrix $M\_2 M\_1$ is determined, and extend the result to $3 \times 3$ matrices. In other words, find the matrix-matrix multiplication formula for $3 \times 3$ (and possibly, $n\times n$) matrices.
 
 You may refer to the $2\times2$ matrix-matrix multiplication formula below:
 
 $$
+\begin{align*}
 \begin{bmatrix}a & b \\ c & d \end{bmatrix} \begin{bmatrix}e & f \\ g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \\ ce+dg & cf+dh \end{bmatrix}
+\end{align*}
 $$
 
 (b) Give an instance of the formula found in (a), i.e. plug in actual numbers so that you can practice the calculation process yourself. You may use the matrices $C$ and $D$ in prob 3.3-(d),(e). Make sure that the matrices each have at least $6$ non-zero elements, so that the calculations are not too easy. 
@@ -267,7 +271,7 @@ Source : Matrix Multiplication, Wikipedia
 
 (b) Visually check that the $2\times2$ matrix-matrix multiplication formula in prob 4.1-(a) is correct.
 
-(c) When we calculate $(AB)_{ij}$, the $i$-th row, $j$-th column element of the matrix $AB$, we calculate the sum-of-products as in below:
+(c) When we calculate $(AB)\_\{ij\}$, the $i$-th row, $j$-th column element of the matrix $AB$, we calculate the sum-of-products as in below:
 
 $$
 (AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}
@@ -275,7 +279,7 @@ $$
 
 You can verify this by plugging in $i=1$ and $j=2$ and checking if it gives the value at the yellow dot. (Or alternatively, $i=3$ and $j=3$ and checking if it yields the green dot).
 
-Since this is a sum-of-products, we can express $(AB)_{ij}$ using the the sigma notation, i.e.,
+Since this is a sum-of-products, we can express $(AB)\_\{ij\}$ using the the sigma notation, i.e.,
 
 $$
 (AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}=\sum_{k=1}^{2}a_{ik}b_{kj}.
@@ -311,21 +315,23 @@ We will now distinguish these two types of vectors as *column vectors* and *row 
 Lastly, the dot product of two vectors $\mathbf{x, y} \in \mathbb{R}^n$ is denoted by $\mathbf{x} \cdot \mathbf{y}$ and is defined as follows:
 
 $$
+\begin{align*}
 \mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T \mathbf{y} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix} \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} =x_1y_1+x_2y_2+ \cdots + x_ny_n = \sum_{k=1}^{n} x_k y_k.
+\end{align*}
 $$
 
 Now, consider the following:
 
-(a) Express the matrix vector product using the dot product. More specifically, let $\mathbf{r}\_{i}(A)$ be the $i$-th row vector of the matrix $A$ and $\mathbf{c}\_{j}(B)$ be the $j$-th column vector of the matrix $B$. What is $(AB)\_{ij}$, the $i$-th row, $j$-th column element of the matrix $AB$?
+(a) Express the matrix vector product using the dot product. More specifically, let $\mathbf{r}\_\{i\}(A)$ be the $i$-th row vector of the matrix $A$ and $\mathbf{c}\_\{j\}(B)$ be the $j$-th column vector of the matrix $B$. What is $(AB)\_\{ij\}$, the $i$-th row, $j$-th column element of the matrix $AB$?
 
 (b) If the transpose of an $m\times n$ matrix $A$ is equal to itself, or $A=A^T$, what must be the relation between $m$ and $n$? (When $A=A^T$, $A$ is called a symmetric matrix.)
 
 (c) A $2 \times 2$ matrix $I$ maps every vector in $\mathbb{R}^2$ to itself. Find $I$, and show that $I$ is symmetric.
 
-(d) Prove $\mathbf{x} \cdot \mathbf{x} \ge 0$ for any $\mathbf{x}=[x_1, x_2, \cdots, x_n]^T \in \mathbb{R}^n$, then prove that $\mathbf{x} \cdot \mathbf{x}=0$ if and only if $\mathbf{x} =\mathbf{0}$.
-*Remark.* Since we have proven this fact, we can naturally define the length of a vector $\mathbf{x}$ as $\lVert\mathbf{x}\rVert=\sqrt{\mathbf{x} \cdot \mathbf{x}}=\sqrt{x_1^2+x_2^2+ \cdots x_n^2}$. If there exists a vector $\mathbf{x}$ such that $\mathbf{x} \cdot \mathbf{x}<0$, the inside of the square root will become negative, which would be a total disaster!
+(d) Prove $\mathbf{x} \cdot \mathbf{x} \ge 0$ for any $\mathbf{x}=[x\_1, x\_2, \cdots, x\_n]^T \in \mathbb{R}^n$, then prove that $\mathbf{x} \cdot \mathbf{x}=0$ if and only if $\mathbf{x} =\mathbf{0}$.
+*Remark.* Since we have proven this fact, we can naturally define the length of a vector $\mathbf{x}$ as $\lVert\mathbf{x}\rVert=\sqrt{\mathbf{x} \cdot \mathbf{x}}=\sqrt{x\_1^2+x\_2^2+ \cdots x\_n^2}$. If there exists a vector $\mathbf{x}$ such that $\mathbf{x} \cdot \mathbf{x}<0$, the inside of the square root will become negative, which would be a total disaster!
 
-*Note. $[x_1, x_2, \cdots, x_n]^T$ is a column vector with components $x_1, x_2, \cdots,x_n$. Keep the definition of transposition in mind.*
+*Note. $[x\_1, x\_2, \cdots, x\_n]^T$ is a column vector with components $x\_1, x\_2, \cdots,x\_n$. Keep the definition of transposition in mind.*
 
 *Vocab. transpose = 전치, transpose of a matrix = 전치행렬, column vector = 열벡터, row vector = 행벡터,  dot product = 점곱, symmetric matrix = 대칭행렬.*
 
@@ -338,7 +344,9 @@ Now, consider the following:
 Refer to the $2\times2$ matrix-matrix multiplication formula, or alternatively, you may use the same formula expressed in sigma notation, which are all given below:
 
 $$
+\begin{align*}
 \begin{bmatrix}a & b \\ c & d \end{bmatrix} \begin{bmatrix}e & f \\ g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \\ ce+dg & cf+dh \end{bmatrix} \\ \textrm{or} \\ (AB)_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj},\; s=2.
+\end{align*}
 $$
 
 *Note. Although we have proved the associativity of matrix multiplication in the video visually, it is better if we can prove this concretely using the multiplication formula.*
@@ -399,10 +407,12 @@ A rotation (which is a linear transformation) maps the basis vectors $\mathbf{i}
 *Linear transformation from $\mathbb{R}^n$ to $\mathbb{R}^m$.* Now, consider a linear transformation from $\mathbb{R}^2$ to $\mathbb{R}^3$. This would be represented by a $3 \times 2$ matrix, such as the one below:
 
 $$
+\begin{align*}
 W=\begin{bmatrix} -3 & -1 \\ 2 & 2  \\ 3 & -1\end{bmatrix}\in\mathbb{R}^{3\times2}.
+\end{align*}
 $$
 
-*Note. $\mathbb{R}^{m\times n}$ denotes the set of all $m \times n$ matrices.* Notice how the input $\mathbf{x}=\begin{bmatrix} x_1 \\\\ x_2 \end{bmatrix} \in \mathbb{R}^2$ is mapped to $W\mathbf{x}=x_1\begin{bmatrix} -3 \\\\ 2 \\\\ 3 \end{bmatrix} + x_2\begin{bmatrix} -1 \\\\ 2 \\\\ 1 \end{bmatrix}\in\mathbb{R}^3$.
+*Note. $\mathbb{R}^\{m\times n\}$ denotes the set of all $m \times n$ matrices.* Notice how the input $\mathbf{x}=\begin{bmatrix} x\_1 \\\\ x\_2 \end{bmatrix} \in \mathbb{R}^2$ is mapped to $W\mathbf{x}=x\_1\begin{bmatrix} -3 \\\\ 2 \\\\ 3 \end{bmatrix} + x\_2\begin{bmatrix} -1 \\\\ 2 \\\\ 1 \end{bmatrix}\in\mathbb{R}^3$.
 
 (a) From what we’ve learned, we can say that $W\mathbf{x}$ is a linear combination of $[-3 \;\; 2 \;\; 3 ]^T$ and $[-1 \;\; 2 \;\; 1]^T$. If $\mathbf{x}$ moves around all of $\mathbb{R}^2$, where does $W\mathbf{x}$ move around in $\mathbb{R}^3$? Determine the shape of the set given below:
 
@@ -410,17 +420,17 @@ $$
 \textrm{Im}(L_W)=\left\{W\mathbf{x}\;|\;\mathbf{x} \in \mathbb{R}^2\right\} \subset \mathbb{R}^3.
 $$
 
-*Note. The set is called the image of $L_W$, where $L_W$ denotes the linear transformation given by the matrix $W$. It is also called the range of $L_W$.*
+*Note. The set is called the image of $L\_W$, where $L\_W$ denotes the linear transformation given by the matrix $W$. It is also called the range of $L\_W$.*
 
-(b) Can you find a point in $\mathbb{R}^3$ where $W\mathbf{x}$ cannot reach? Find a point in $\mathbb{R}^3$ that lies outside of $\textrm{Im}(L_W)$.
+(b) Can you find a point in $\mathbb{R}^3$ where $W\mathbf{x}$ cannot reach? Find a point in $\mathbb{R}^3$ that lies outside of $\textrm{Im}(L\_W)$.
 
-(c) Suppose $W$ is replaced by $W'=\begin{bmatrix} 3 & -1 \\\\ -6 & 2  \\\\ 3 & -1\end{bmatrix}.$ What happens to the shape of $\textrm{Im}(L_W)$?
+(c) Suppose $W$ is replaced by $W'=\begin{bmatrix} 3 & -1 \\\\ -6 & 2  \\\\ 3 & -1\end{bmatrix}.$ What happens to the shape of $\textrm{Im}(L\_W)$?
 
-(d) State all possible shapes of $\textrm{Im}(L_M)$ for $M \in \mathbb{R}^{3 \times 2}$, and the corresponding conditions of $M$ for each shape. Can $\textrm{Im}(L_M)$ be equal to $\mathbb{R}^3$?
+(d) State all possible shapes of $\textrm{Im}(L\_M)$ for $M \in \mathbb{R}^\{3 \times 2\}$, and the corresponding conditions of $M$ for each shape. Can $\textrm{Im}(L\_M)$ be equal to $\mathbb{R}^3$?
 
 (e) Solve (a), (b), (c) for $W^T=\begin{bmatrix} -3 & 2 & 3 \\\\ -1 & 2 & -1 \end{bmatrix}$ , $(W')^T=\begin{bmatrix} 3 & -6 & 3 \\\\ -1  & 2 & -1\end{bmatrix}$. How are the circumstances different?
 
-(f) Solve (d) with $M \in \mathbb{R}^{2 \times 3}$ instead of $M \in \mathbb{R}^{3 \times 2}$. Can $\textrm{Im}(L_M)$ be equal to $\mathbb{R}^2$?
+(f) Solve (d) with $M \in \mathbb{R}^\{2 \times 3\}$ instead of $M \in \mathbb{R}^\{3 \times 2\}$. Can $\textrm{Im}(L\_M)$ be equal to $\mathbb{R}^2$?
 
 *Vocab. image = 상, range = 치역, circumstance = 상황.*
 
@@ -551,7 +561,7 @@ $$
 
 (a) Explain the two concepts ① local minimum and ② global minimum, respectively.
 
-(b) Suppose the gradient descent on the cost function $C$ has been executed multiple times, and the parameters $\mathbf{p}=(p_1, p_2,  \cdots, p_n)$ have converged to a single point $\mathbf{p}^{(\infty)}$. Can we be sure that $\mathbf{p}^{(\infty)}$ is a global minimum of the cost function $C$?
+(b) Suppose the gradient descent on the cost function $C$ has been executed multiple times, and the parameters $\mathbf{p}=(p\_1, p\_2,  \cdots, p\_n)$ have converged to a single point $\mathbf{p}^\{(\infty)\}$. Can we be sure that $\mathbf{p}^\{(\infty)\}$ is a global minimum of the cost function $C$?
 
 ## Day 12 (1/19)
 
@@ -567,13 +577,13 @@ What is “the other” interpretation of the gradient descent that the author p
 
 ### Prob 3.2
 
-The author suggests three ways to increase the activation of a single neuron: Increase the bias $b$ of that neuron, increase the weight $w_i$ connected to the previous layer, or change the activation $a_i$ of the previous layer. Explain how the sign of the parameters affects the change of the activation. In other words, answer these questions:
+The author suggests three ways to increase the activation of a single neuron: Increase the bias $b$ of that neuron, increase the weight $w\_i$ connected to the previous layer, or change the activation $a\_i$ of the previous layer. Explain how the sign of the parameters affects the change of the activation. In other words, answer these questions:
 
-(a) Why can’t we just increase $a_i$?
+(a) Why can’t we just increase $a\_i$?
 
-(b) Why should we increase $b$ and $w_i$ instead of decreasing it?
+(b) Why should we increase $b$ and $w\_i$ instead of decreasing it?
 
-(c) If you instead want to decrease the activation of some neuron, what should you do to $b$, $w_i$, and $a_i$?
+(c) If you instead want to decrease the activation of some neuron, what should you do to $b$, $w\_i$, and $a\_i$?
 
 ### Prob 3.3 (HARD)
 
@@ -585,9 +595,9 @@ Note that the sigmoid function is positive and increasing. What would happen if 
 
 (c) a negative and decreasing function
 
-for the activation function? State the desired direction of change for each parameter $b$, $w_i$, $a_i$ for each circumstance (a), (b), (c), given that the activation must increase. In other words, fill the table below with either (+) for increase, (-) for increase, (?) for undetermined.
+for the activation function? State the desired direction of change for each parameter $b$, $w\_i$, $a\_i$ for each circumstance (a), (b), (c), given that the activation must increase. In other words, fill the table below with either (+) for increase, (-) for increase, (?) for undetermined.
 
-|  | $b$ | $w_i$ | $a_i$ |
+|  | $b$ | $w\_i$ | $a\_i$ |
 | --- | --- | --- | --- |
 | (a) |  |  |  |
 | (b) |  |  |  |
@@ -618,34 +628,34 @@ Explain what a stochastic gradient descent is. More specifically,
 
 ### Prob 4.1 (HARD)
 
-The objective of this problem is to approximate some arbitrary function $f_{\textrm{true}}$, using only the input-output pairs of the function. For example, If we already know that $f_{\textrm{true}}$ passes through the points $(1, 2),\\:(4,-6),\\:(7,3),\\:(10,1),\cdots$, we might want to find an approximation of $f_{\textrm{true}}$ by finding another function $f$ that also passes through these points. We will try to find this approximate $f$ using a neural network.
+The objective of this problem is to approximate some arbitrary function $f\_\{\textrm{true}\}$, using only the input-output pairs of the function. For example, If we already know that $f\_\{\textrm{true}\}$ passes through the points $(1, 2),\\:(4,-6),\\:(7,3),\\:(10,1),\cdots$, we might want to find an approximation of $f\_\{\textrm{true}\}$ by finding another function $f$ that also passes through these points. We will try to find this approximate $f$ using a neural network.
 
-Suppose we have $N$ input-output pairs of the true underlying function $f_{\textrm{true}}$, $(x_1,y_1),\\:(x_2,y_2),\cdots,\\:(x_N,y_N)$, which are fixed. Then, since $f_{\textrm{true}}$ should pass through these datapoints,
+Suppose we have $N$ input-output pairs of the true underlying function $f\_\{\textrm{true}\}$, $(x\_1,y\_1),\\:(x\_2,y\_2),\cdots,\\:(x\_N,y\_N)$, which are fixed. Then, since $f\_\{\textrm{true}\}$ should pass through these datapoints,
 
 $$
 y_i=f_{\textrm{true}}(x_i), \textrm{ for each } i=1,2,\cdots,N.
 $$
 
-Consider a deep neural network $f_\theta$ made by stacking $L$ layers, with each layer width(= number of neurons in each layer) equal to $1$, for simplicity. Also, suppose $L=3$. We hope that this neural network approximates the underlying function $f_{\textrm{true}}$. This network can simply be regarded as a composition of $L$ univariate, scalar-valued, and differentiable functions $f^{(l)}\;(l=1,2,\cdots,L)$ (which are called layers):
+Consider a deep neural network $f\_\theta$ made by stacking $L$ layers, with each layer width(= number of neurons in each layer) equal to $1$, for simplicity. Also, suppose $L=3$. We hope that this neural network approximates the underlying function $f\_\{\textrm{true}\}$. This network can simply be regarded as a composition of $L$ univariate, scalar-valued, and differentiable functions $f^\{(l)\}\;(l=1,2,\cdots,L)$ (which are called layers):
 
 $$
 f=f^{(L)} \circ f^{(L-1)} \circ \cdots \circ f^{(1)}.
 $$
 
-Each $f^{(l)}$ maps the previous activation $a^{(l-1)}$ to the new activation $a^{(l)}$ using the formula
+Each $f^\{(l)\}$ maps the previous activation $a^\{(l-1)\}$ to the new activation $a^\{(l)\}$ using the formula
 
 $$
 a^{(l)}=\rho (w^{(l)}a^{(l-1)}+b^{(l)})=: f^{(l)}(a^{(l-1)}),
 $$
 
-where the trainable parameters $w^{(l)}$ and $b^{(l)}$ are the weight and bias, respectively. The activation function $\rho$ is given by $\rho(x)=\textrm{ReLU}(x)=\max\\{0,x\\}$. For convenience, we will define the intermediate variable $z^{(l)} := w^{(l)}a^{(l-1)}+b^{(l)}$ so that $a^{(l)}=\rho\left(z^{(l)}\right)$. $a^{(0)}=x_i$ because the input must equal the initial activation. The subscript $\theta$ of the neural network $f_\theta$ denotes the tuple of all trainable parameters in the neural network.
+where the trainable parameters $w^\{(l)\}$ and $b^\{(l)\}$ are the weight and bias, respectively. The activation function $\rho$ is given by $\rho(x)=\textrm{ReLU}(x)=\max\\{0,x\\}$. For convenience, we will define the intermediate variable $z^\{(l)\} := w^\{(l)\}a^\{(l-1)\}+b^\{(l)\}$ so that $a^\{(l)\}=\rho\left(z^\{(l)\}\right)$. $a^\{(0)\}=x\_i$ because the input must equal the initial activation. The subscript $\theta$ of the neural network $f\_\theta$ denotes the tuple of all trainable parameters in the neural network.
 
 - *What are trainable parameters?*
     
-    Trainable parameters are the parameters in a neural network that can be freely chosen to appropriately fit the (fixed) data. You can think each of them as knobs or dials that can be adjusted to increase the performance of the network on a given dataset. Here, $x_i$’s and $y_i$’s are not trainable because they are data, and not parameters. Most of the time, trainable parameters simply mean weights and biases.
+    Trainable parameters are the parameters in a neural network that can be freely chosen to appropriately fit the (fixed) data. You can think each of them as knobs or dials that can be adjusted to increase the performance of the network on a given dataset. Here, $x\_i$’s and $y\_i$’s are not trainable because they are data, and not parameters. Most of the time, trainable parameters simply mean weights and biases.
     
 
-The cost function $C$ (which is a function of only $\theta$) is defined as the sum of squared distances between the last activation and the true function value. If we succeed at minimizing $C$, we can say that we have closely approximated the function $f_{\textrm{true}}$ with the neural network $f_\theta$.
+The cost function $C$ (which is a function of only $\theta$) is defined as the sum of squared distances between the last activation and the true function value. If we succeed at minimizing $C$, we can say that we have closely approximated the function $f\_\{\textrm{true}\}$ with the neural network $f\_\theta$.
 
 $$
 C(\theta):=\sum_{i=1}^{N}(a_{L,i}-y_i)^2=\sum_{i=1}^{N}(f_\theta(x_i)-f_{\textrm{true}}(x_i))^2=\sum_{i=1}^{N}(f_\theta(x_i)-y_i)^2
@@ -655,7 +665,7 @@ Answer the following:
 
 (a) How many trainable parameters are there? In other words, what is the length of the tuple $\theta$?
 
-(b) Draw the full tree diagram of the neural network $f_\theta$ (with $L=3$) as in `2:14`.
+(b) Draw the full tree diagram of the neural network $f\_\theta$ (with $L=3$) as in `2:14`.
 
 (c) Suppose we have $4$ datapoints, $(1, 2),\\:(4,-6),\\:(7,3),\\:(10,1)$. If all the weights and biases are equal to $1$, that is, if $\theta=(1,1,\cdots,1)$,  what is the value of the cost function $C(\theta)$?
 
@@ -665,19 +675,19 @@ Answer the following:
 
 ### Prob 4.2 (HARD)
 
-Now, suppose the width of the layers has increased from $1$ to $2$, except for the last layer $f^{(L)}$. Suppose $L=2$ for this time.
+Now, suppose the width of the layers has increased from $1$ to $2$, except for the last layer $f^\{(L)\}$. Suppose $L=2$ for this time.
 
-Since the width has increased, each layer $f^{(l)}\;(l=1,2,\cdots,L)$ is now a differentiable multivariate vector function given by the formula
+Since the width has increased, each layer $f^\{(l)\}\;(l=1,2,\cdots,L)$ is now a differentiable multivariate vector function given by the formula
 
 $$
 \mathbf{a}^{(l)}=\rho (W^{(l)}\mathbf{a}^{(l-1)}+\mathbf{b}^{(l)})=:f^{(l)}(\mathbf{a}^{(l-1)}),
 $$
 
-Where $W^{(l)}$ and $\mathbf{b}^{(l)}$ is the weight matrix and the bias vector of the $l$-th layer.
+Where $W^\{(l)\}$ and $\mathbf{b}^\{(l)\}$ is the weight matrix and the bias vector of the $l$-th layer.
 
 (a) How many trainable parameters are there? Determine the length of the tuple $\theta$.
 
-(b) Draw the full tree diagram of the neural network $f_\theta$.
+(b) Draw the full tree diagram of the neural network $f\_\theta$.
 
 (c) Suppose we have $2$ datapoints, $(1, 2),\\:(4,-6)$. Suppose all the weights and biases are equal to $1$, then calculate the cost function $C(\theta)$.
 

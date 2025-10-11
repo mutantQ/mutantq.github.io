@@ -33,7 +33,7 @@ $$
 \frac{1}{2}\, \rho \delta x\!\left(\frac{\partial y}{\partial t}\right)^2
 $$
 
-를 가진다. 따라서 운동 에너지 밀도 $u_K$는 아래와 같다.
+를 가진다. 따라서 운동 에너지 밀도 $u\_K$는 아래와 같다.
 
 $$
 \frac{1}{2} \,\rho\!\left(\frac{\partial y}{\partial t}\right)^2 \tag{3}
@@ -75,9 +75,9 @@ $$
 
 ### **더 자세한 접근.**
 
-$u_P$를 계산하기 위해 앞서 제시한 간단한 접근은 $T$가 상수라는 가정이 어떤 조건에서 타당한지 모르고, 특히 어떤 길이의 변화도 $T$에 조금은 영향을 주기 때문에 다소 부적절한 접근이라고 할 수 있다. 이 상황을 더 자세하게 설명하려면 한 발짝 뒤로 물러서서 늘어난 현의 탄성을 더 일반적으로 고려해야 한다.
+$u\_P$를 계산하기 위해 앞서 제시한 간단한 접근은 $T$가 상수라는 가정이 어떤 조건에서 타당한지 모르고, 특히 어떤 길이의 변화도 $T$에 조금은 영향을 주기 때문에 다소 부적절한 접근이라고 할 수 있다. 이 상황을 더 자세하게 설명하려면 한 발짝 뒤로 물러서서 늘어난 현의 탄성을 더 일반적으로 고려해야 한다.
 
-앞서 언급한 현의 한 조각의 길이가 $\delta x_0$라고 하자. 만약 이 조각이 임의의 길이 $\delta l$로 늘어난다고 하면, 장력 $T(\delta l)$과 저장된 에너지 $\delta U_P(\delta l)$는 아래의 당연한 공식으로 주어진다.
+앞서 언급한 현의 한 조각의 길이가 $\delta x\_0$라고 하자. 만약 이 조각이 임의의 길이 $\delta l$로 늘어난다고 하면, 장력 $T(\delta l)$과 저장된 에너지 $\delta U\_P(\delta l)$는 아래의 당연한 공식으로 주어진다.
 
 *(번역 주: 아래 공식이 당연한지는 독자가 알아서 판단하기를 바람)*
 
@@ -85,7 +85,7 @@ $$
 T(\delta l) = \lambda \frac{\delta l - \delta x_0}{\delta x_0} \;\;\;\textrm{and} \;\;\;\delta U_P(\delta l)= \frac{\lambda}{2\delta x_0}(\delta l - \delta x_0)^2
 $$
 
-여기서 $\lambda$는 현의 영률(원문: elastic constant)이다. 서로 다른 늘어난 상태 사이의 $\delta U_P$의 변화를 합차 공식을 이용하여 구하면
+여기서 $\lambda$는 현의 영률(원문: elastic constant)이다. 서로 다른 늘어난 상태 사이의 $\delta U\_P$의 변화를 합차 공식을 이용하여 구하면
 
 $$
 \delta U_P(\delta l_2)-\delta U_P(\delta l_1) = \frac{\lambda}{2\delta x_0} (\delta l_2 + \delta l_1 - 2 \delta x_0)(\delta l_2 - \delta l_1)
@@ -112,7 +112,7 @@ $$
 따라서 새로운 결과를 다시 써서 간단한 접근을 수정하면
 
 $$
-\begin{align} u_P \delta x &= T(\delta x)(\delta l - \delta x)+\frac{T(\delta l) - T(\delta x)}{2}(\delta l - \delta x) \newline &= T(\delta x)\! \left((\delta l - \delta x)+\frac{1}{2}\frac{(\delta l - \delta x)^2}{(\delta x - \delta x_0)} \right) \end{align} \tag{6}
+\begin{align} u_P \delta x &= T(\delta x)(\delta l - \delta x)+\frac{T(\delta l) - T(\delta x)}{2}(\delta l - \delta x) \\ &= T(\delta x)\! \left((\delta l - \delta x)+\frac{1}{2}\frac{(\delta l - \delta x)^2}{(\delta x - \delta x_0)} \right) \end{align} \tag{6}
 $$
 
 간단한 접근이 위 식에서 더 개선되었으나, 추가적인 길이 변화에 의한 효과는 기존 식보다 차수가 더 높고, 따라서 차수가 가장 낮은 항만 고려하면 식 (5)에서 구한 결과도 충분히 타당하다는 것을 확인할 수 있다.
@@ -131,7 +131,7 @@ $$
 u_P = \frac{1}{2}T\left(\frac{\partial y}{\partial x}\right)^2 = \frac{1}{2}T\left(-\frac{1}{c}\frac{\partial y}{\partial t}\right)^2 = \frac{1}{2} \frac{T}{c^2} \left(\frac{\partial y}{\partial t} \right)^2 = u_K \tag{7}
 $$
 
-임을 보일 수 있다. 따라서 앞으로 진행하는 파동의 에너지 밀도는 $u_P$와 $u_K$에 동등하게 분할되며, 총 에너지는 아래 식으로 구할 수 있다.
+임을 보일 수 있다. 따라서 앞으로 진행하는 파동의 에너지 밀도는 $u\_P$와 $u\_K$에 동등하게 분할되며, 총 에너지는 아래 식으로 구할 수 있다.
 
 $$
 u^+ = T\left(\frac{\partial y}{\partial x}\right)^2 = \rho\left(\frac{\partial y}{\partial t}\right)^2
@@ -143,7 +143,7 @@ $$
 \frac{\partial y}{\partial x} = + \frac{1}{c} \frac{\partial y}{\partial t}
 $$
 
-다시 한 번 $u_P = u_K$라는 결과와 총 에너지 밀도의 식을 얻는다.
+다시 한 번 $u\_P = u\_K$라는 결과와 총 에너지 밀도의 식을 얻는다.
 
 $$
 u^- = T\left(\frac{\partial y}{\partial x}\right)^2 = \rho\left(\frac{\partial y}{\partial t}\right)^2
@@ -158,13 +158,17 @@ $$
 여러 파동이 현을 따라 진행하고 있다고 하자. 목표는 점 $x$에서 $x$가 증가하는 방향으로 전달되는 에너지의 전달률인 $\mathcal{F}(x)$를 계산하는 것이다. 즉, 시간 당 $\mathcal{F}$만큼 음의 방향으로 놓인 현(음의 반현)은 에너지를 잃고, 양의 방향으로 놓인 현(양의 반현)은 에너지를 얻고 있는 것이다. 이것이 일어나는 이유는 음의 반현이 양의 반현에 $\mathcal{F}$의 일률로 일을 하기 때문이다. 이 점에서 현이 평형 상태의 방향을 기준으로 각도 $\theta$를 이루고 있다면, 현의 기울기는 $\tan \theta = \partial y /\partial x$이다. 따라서 음의 반현이 양의 반현에 작용하는 힘은
 
 $$
+\begin{align*}
 \textbf{F}= \begin{pmatrix} -T\cos \theta \\ -T \sin \theta \end{pmatrix}
+\end{align*}
 $$
 
 이고, 일률은 힘과 힘의 작용점이 움직이는 속도
 
 $$
+\begin{align*}
 \textbf{v} = \begin{pmatrix} 0 \\ \frac{\partial y}{\partial t} \end{pmatrix}
+\end{align*}
 $$
 
 의 내적이므로, $\mathcal{F}= \textbf{F}\cdot\textbf{v} = -T\sin\theta \frac{\partial y}{\partial t}$이다. 작은 각에 대한 근사 $\sin\theta \approx \tan\theta$, $\cos \theta \approx 1$을 사용하면 드디어 에너지 선속을 구하는 공식을 얻는다.
@@ -197,7 +201,7 @@ $$
 \mathcal{F}^- = -cT\left(\frac{\partial y}{\partial x}\right)^2 = -cu^-
 $$
 
-를 얻는다. 따라서 파동이 한 방향으로 진행하고 있는 영역이라면, 앞으로 진행하는 경우의 에너지 선속은 에너지 밀도 곱하기 파동의 진행 속력 $+c$이고, 반대로 진행하는 경우에는 $-c$를 곱해서 얻을 수 있다. 이 결과는 에너지가 위치에 의해 결정되는 특정 에너지 밀도 $u^{\pm}$의 형태로 파형 안에 잠재되어 있고 이것이 파동의 진행 속력으로 전달됨을 암시한다. 이것에 대한 추가적인 개념은 마지막 절에서 학습할 것이다.
+를 얻는다. 따라서 파동이 한 방향으로 진행하고 있는 영역이라면, 앞으로 진행하는 경우의 에너지 선속은 에너지 밀도 곱하기 파동의 진행 속력 $+c$이고, 반대로 진행하는 경우에는 $-c$를 곱해서 얻을 수 있다. 이 결과는 에너지가 위치에 의해 결정되는 특정 에너지 밀도 $u^\{\pm\}$의 형태로 파형 안에 잠재되어 있고 이것이 파동의 진행 속력으로 전달됨을 암시한다. 이것에 대한 추가적인 개념은 마지막 절에서 학습할 것이다.
 
 ## 4. 에너지의 보존
 

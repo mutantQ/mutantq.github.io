@@ -20,8 +20,8 @@ GLIE stands for **Greedy in the Limit with Infinite Exploration**. It is used to
 1. **Greedy in the Limit** means that the policy eventually converges to a greedy policy, i.e.
     
     $$
-    \lim_{t \rightarrow \infty} {\pi_t(a|s)}=I(a=\operatorname{argmax}_{a' \in A}{q_t(s,a')})
-    $$
+\lim_{t \rightarrow \infty} {\pi_t(a|s)}=I(a=\operatorname{argmax}_{a' \in A}{q_t(s,a')})
+$$
     
 2. **Infinite Exploration** means that all state-action pairs are explored infinitely many times, i.e.
 
@@ -31,7 +31,7 @@ $$
 
 If we have the Infinite Exploration property, samples for each state-action pairs will accumulate enough, allowing for accurate value prediction. The Greedy in the Limit property then ensures that the policy will converge to the optimal greedy policy.
 
-Greedy policy alone will not explore enough, and the $\epsilon$-greedy policy with fixed $\epsilon \in (0,1]$ will never fully exploit. By choosing $\epsilon$-greedy policy with $\epsilon_t=1/t$, where $t$ is the number of time-steps elapsed, we have a GLIE policy that will both explore and exploit sufficiently in the limit.
+Greedy policy alone will not explore enough, and the $\epsilon$-greedy policy with fixed $\epsilon \in (0,1]$ will never fully exploit. By choosing $\epsilon$-greedy policy with $\epsilon\_t=1/t$, where $t$ is the number of time-steps elapsed, we have a GLIE policy that will both explore and exploit sufficiently in the limit.
 
 ## Analogy Between DP and Model-free Algorithms
 
@@ -41,13 +41,13 @@ $$
 \begin{aligned} (T_V^\star f)(s)&=\max_{a \in A} \biggl[ {r(s, a) + \gamma \mathbb{E} \left[f(s')|s, a\right]} \bigg], \;\forall f \in V \\ (T_V^\pi f)(s)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s') \bigg| s, a \bigg], \;\forall f \in V \\(T_Q^\star f)(s,a)&=\mathbb{E} \bigg[r(s, a) + \gamma \max_{a'\in A} f(s',a') \bigg|s, a\bigg], \;\forall f \in Q \\ (T_Q^\pi f)(s, a)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s',a') \bigg| s, a \bigg], \;\forall f \in Q \end{aligned}
 $$
 
-To apply a Bellman operator we need exact knowledge of the transition dynamics of the system. We can avoid this problem using a sampled version of the operator. It turns out that the sampled versions of the above Bellman operators correspond to different model-free algorithms, except for $(T_V^\star f)(s)$:
+To apply a Bellman operator we need exact knowledge of the transition dynamics of the system. We can avoid this problem using a sampled version of the operator. It turns out that the sampled versions of the above Bellman operators correspond to different model-free algorithms, except for $(T\_V^\star f)(s)$:
 
 $$
 \begin{aligned} &(T_V^\star f)(s)  \leftrightarrow \text{(None)} \\ &(T_V^\pi f)(s)\leftrightarrow \text{(TD)} \\ &\leftrightarrow v_{t+1}(S_t)=v_t(S_t)+\alpha_t\bigg(R_{t+1}+\gamma v_t(S_{t+1})-v_t(S_t)\bigg)\\&(T_Q^\star f)(s,a)\leftrightarrow \text{(Q-learning)} \\& \leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma \max_{a' \in A}{q_t(S_{t+1}, a')-q_t(S_t, A_t)\bigg)}\\ &(T_Q^\pi f)(s, a) \leftrightarrow \text{(SARSA)} \\ &\leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma q_t(S_{t+1}, A_{t+1})-q_t(S_t, A_t)\bigg) \end{aligned}
 $$
 
-It is evident that we cannot build a sampled version of the operator $(T_V^\star f)(s)$ - Since the $\max_{a \in A}$ and the $\mathbb{E}$ operator do not commute, $(T_V^\star f)(s)$ cannot be expressed as an expectation from which we can sample upon.
+It is evident that we cannot build a sampled version of the operator $(T\_V^\star f)(s)$ - Since the $\max\_\{a \in A\}$ and the $\mathbb{E}$ operator do not commute, $(T\_V^\star f)(s)$ cannot be expressed as an expectation from which we can sample upon.
 
 SARSA is relatively simple - it’s simply the $q$-version of TD. However, Q-learning has some interesting properties that deserves attention of its own.
 
@@ -78,10 +78,10 @@ $$
 
 ### Theorem
 
-Q-learning converges to the optimal $q$-value function, $q\rightarrow q^\star$, as long as we take each action in each state indefinitely often AND decay the step sizes in such a way that $\sum_t\alpha_t=\infty$ and $\sum_t \alpha_t^2<\infty$.
+Q-learning converges to the optimal $q$-value function, $q\rightarrow q^\star$, as long as we take each action in each state indefinitely often AND decay the step sizes in such a way that $\sum\_t\alpha\_t=\infty$ and $\sum\_t \alpha\_t^2<\infty$.
 
 For example,  
-$\alpha_t= 1/t^\omega, \omega \in (0.5, 1)$.
+$\alpha\_t= 1/t^\omega, \omega \in (0.5, 1)$.
 
 ## Overestimation in Q-Learning
 
@@ -97,14 +97,16 @@ $$
 \max_{a' \in A}{q_t(S_{t+1}, a')}=q_t\left(S_{t+1}, \operatorname{argmax}_{a' \in A} q_t(S_{t+1}, a')\right)
 $$
 
-Suppose that the value function is currently inaccurate and has high noise. For simplicity, assume that the optimal q-value function $q^\star(S_{t+1},a')$ stays constant regardless of the action $a'$ taken. For some of the $a'$s, the noise will add up to increase $q$. Therefore, the $\operatorname{argmax}\_{a' \in A}$ will choose the $a'$ with the highest noise value then update $q(S\_{t}, A\_{t})$ towards the noise-added value. Similar logic applies to the case where  $q^\star(S\_{t+1},a')$ is not constant with respect to $a'$. Hence, Q-learning tends to overestimate the optimal $q$-value function.
+Suppose that the value function is currently inaccurate and has high noise. For simplicity, assume that the optimal q-value function $q^\star(S\_\{t+1\},a')$ stays constant regardless of the action $a'$ taken. For some of the $a'$s, the noise will add up to increase $q$. Therefore, the $\operatorname{argmax}\_\{a' \in A\}$ will choose the $a'$ with the highest noise value then update $q(S\_\{t\}, A\_\{t\})$ towards the noise-added value. Similar logic applies to the case where  $q^\star(S\_\{t+1\},a')$ is not constant with respect to $a'$. Hence, Q-learning tends to overestimate the optimal $q$-value function.
 
 ### Double Q-Learning
 
 How can we solve this problem? We can store two action value functions, $q$ and $q'$, and alternate between the two targets below:
 
 $$
+\begin{align*}
 \text{(target for }q \text{):}\;\;R_{t+1} + \gamma q'\left(S_{t+1}, \operatorname{argmax}_{a' \in A} q(S_{t+1},a')\right) \\\\ \text{(target for }q' \text{):}\;\;R_{t+1} + \gamma q\left(S_{t+1}, \operatorname{argmax}_{a' \in A} q'(S_{t+1},a')\right)
+\end{align*}
 $$
 
 This eliminates the influence of noise by decoupling the selection ($\operatorname{argmax}$) step and the evaluation step.
@@ -131,9 +133,9 @@ $$
 \mathbb{E}_{X \sim d}[f(X)] \simeq \hat{X} :=\frac{1}{N} \sum_{i=1}^{N} f(X_i), \;\text{for each}\;X_i \sim d,
 $$
 
-It could be problematic if $f(X)$ deviates significantly from $\mathbb{E}_{X \sim d}[f(X)]$ for some rare events, since it will overestimate or underestimate whenever the rare event is not sufficiently sampled.
+It could be problematic if $f(X)$ deviates significantly from $\mathbb{E}\_\{X \sim d\}[f(X)]$ for some rare events, since it will overestimate or underestimate whenever the rare event is not sufficiently sampled.
 
-Therefore, we can seek to sample from a different distribution $d'$ so that the rare events are sampled more. Now, suppose that we have samples $f(X_i)$ with $X_i \sim d'$. How can we evaluate the original expectation using these samples? We can first modify the original expectation as follows:
+Therefore, we can seek to sample from a different distribution $d'$ so that the rare events are sampled more. Now, suppose that we have samples $f(X\_i)$ with $X\_i \sim d'$. How can we evaluate the original expectation using these samples? We can first modify the original expectation as follows:
 
 $$
 \begin{aligned}\mathbb{E}_{X \sim d}[f(X)]&=\sum_x d(x)f(x) \\ &= \sum_x d'(x)\frac{d(x)}{d'(x)}f(x) \\ &= \mathbb{E}_{X \sim d'} \left[\frac{d(x)}{d'(x)}f(x)\right] \end{aligned}
@@ -145,11 +147,11 @@ $$
 \mathbb{E}_{X \sim d}[f(X)] \simeq \hat{X}' := \frac{1}{N} \sum_{i=1}^{N} \frac{d(X_i)}{d'(X_i)}f(X_i), \;\text{for each}\;X_i \sim d'.
 $$
 
-This technique of sampling from a new distribution $d'$ to yield an estimate for the original expectation $\mathbb{E}_{X \sim d}[f(X)]$ is called Importance Sampling.
+This technique of sampling from a new distribution $d'$ to yield an estimate for the original expectation $\mathbb{E}\_\{X \sim d\}[f(X)]$ is called Importance Sampling.
 
 ### Importance Sampling for Off-Policy MC
 
-Suppose you want to estimate the $v$-value function $v^\pi$ for some policy $\pi$ using MC, and that the trajectory $\tau_t=\{S_t, A_t, R_{t+1} , \cdots \}$ is generated with some behavior policy $\mu$. We can get an importance sample for $G_t=G(\tau_t)=R_{t+1}+\gamma R_{t+2} + \cdots$ by reweighing the target with $\frac{p(\tau_t\|\pi)}{p(\tau_t\|\mu)}$ (Suppose $N=1$):
+Suppose you want to estimate the $v$-value function $v^\pi$ for some policy $\pi$ using MC, and that the trajectory $\tau\_t=\{S\_t, A\_t, R\_\{t+1\} , \cdots \}$ is generated with some behavior policy $\mu$. We can get an importance sample for $G\_t=G(\tau\_t)=R\_\{t+1\}+\gamma R\_\{t+2\} + \cdots$ by reweighing the target with $\frac{p(\tau\_t\|\pi)}{p(\tau\_t\|\mu)}$ (Suppose $N=1$):
 
 $$
 \frac{p(\tau_t|\pi)}{p(\tau_t|\mu)} G_t = \frac{p(A_t|S_t,\pi)p(R_{t+1},S_{t+1}|S_t,A_t)p(A_{t+1}|S_{t+1},\pi) \cdots}{p(A_t|S_t,\mu)p(R_{t+1},S_{t+1}|S_t,A_t)p(A_{t+1}|S_{t+1},\mu) \cdots} G_t
@@ -185,4 +187,4 @@ $$
 q(S_t, A_t) \leftarrow q(S_t, A_t) + \alpha \left(R_{t+1}+ \gamma \sum_{a \in A} \pi(a |S_{t+1})q(S_{t+1}, a)-q(S_t, A_t) \right)
 $$
 
-Expected SARSA is also called Generalized Q-learning because it reduces to Q-learning when the policy chosen to be $\pi=\pi_q$, where $\pi_q$ is the greedy policy generated from $q$.
+Expected SARSA is also called Generalized Q-learning because it reduces to Q-learning when the policy chosen to be $\pi=\pi\_q$, where $\pi\_q$ is the greedy policy generated from $q$.

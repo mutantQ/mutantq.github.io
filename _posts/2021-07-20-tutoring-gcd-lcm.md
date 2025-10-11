@@ -29,7 +29,9 @@ $A$와 $B$의 최대공약수(Greatest Common Divisor, GCD)를 $G$라고 하면,
 $G$는 ($A$와 $B$의 최대공약수이기 전에) $A$와 $B$의 공약수(Common Divisor, CD)이므로
 
 $$
-A=Ga \;\;(a는\;자연수) \newline B=Gb\;\;(b는\;자연수) \tag{1}
+\begin{align*}
+A=Ga \;\;(a는\;자연수) \\ B=Gb\;\;(b는\;자연수) \tag{1}
+\end{align*}
 $$
 
 이다. 여기서 **$a$와 $b$가 서로소, 즉 $\textrm{gcd}(a, b)=1$임을 보이고자 한다.**
@@ -45,13 +47,17 @@ $$
 라고 하자. 그러면 또 다시
 
 $$
-a=ka'\;\;(a'은\;자연수) \newline b=kb'\;\;(b'은\;자연수) \tag{2}
+\begin{align*}
+a=ka'\;\;(a'은\;자연수) \\ b=kb'\;\;(b'은\;자연수) \tag{2}
+\end{align*}
 $$
 
 와 같이 나타낼 수 있다. 식 $(2)$의 결과를 식 $(1)$에 대입하면
 
 $$
-A=(Gk)a'\;\;(a'는\;자연수) \newline B=(Gk)b'\;\;(b'는\;자연수) \tag{3}
+\begin{align*}
+A=(Gk)a'\;\;(a'는\;자연수) \\ B=(Gk)b'\;\;(b'는\;자연수) \tag{3}
+\end{align*}
 $$
 
 따라서 $Gk=G'$는 $A$와 $B$의 공약수이다.
@@ -77,19 +83,21 @@ $$
 을 만족하는 $m$이 존재한다. 이때, $L$은 $A$와 $B$의 공배수이기 때문에 다음이 성립한다.
 
 $$
-L=Ak_1 = (Ga)k_1\;\;(k_1은\;자연수)\newline L=Bk_2 = (Gb)k_2\;\;(k_2는\;자연수)\tag{5}
+\begin{align*}
+L=Ak_1 = (Ga)k_1\;\;(k_1은\;자연수)\\ L=Bk_2 = (Gb)k_2\;\;(k_2는\;자연수)\tag{5}
+\end{align*}
 $$
 
 식 $(5)$의 결과를 식 $(4)$에 대입하면 다음을 얻는다.
 
 $$
-\begin{aligned} Gab&=Lm\newline &=Gak_1 m \newline&=Gbk_2m\;\;(m은\;1보다\;큰\;자연수) \end{aligned} \tag{6}
+\begin{aligned} Gab&=Lm\\ &=Gak_1 m \\&=Gbk_2m\;\;(m은\;1보다\;큰\;자연수) \end{aligned} \tag{6}
 $$
 
 이를 정리하면
 
 $$
-\begin{aligned} b&=k_1m \newline a&=k_2m\;\;(m은\;1보다\;큰\;자연수) \end{aligned} \tag{7}
+\begin{aligned} b&=k_1m \\ a&=k_2m\;\;(m은\;1보다\;큰\;자연수) \end{aligned} \tag{7}
 $$
 
 따라서 $a$와 $b$는 공약수 $m$을 가진다. 이는 $a,b$가 서로소라는 가정에 모순이다. 결론을 부정했을 때 모순이 발생하므로, 결론은 참이다.
@@ -105,7 +113,7 @@ $$
 앞서 증명한 사실들을 조합하면 다음을 얻는다.
 
 $$
-\begin{aligned} AB&=(Ga)(Gb)=G^2ab \newline GL&=G(Gab)=G^2ab \end{aligned} \tag{8}
+\begin{aligned} AB&=(Ga)(Gb)=G^2ab \\ GL&=G(Gab)=G^2ab \end{aligned} \tag{8}
 $$
 
 $$

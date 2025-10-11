@@ -13,7 +13,7 @@ unlisted: true
 
 *This work has not been AI-generated.*
 
-**Note.** The notation used here might be confusing. We use $S$ to denote the state space and $S_t$ to represent the state at time $t$. Similarly, $A$ represents the action space, and $A_t$ denotes the action at time $t$.
+**Note.** The notation used here might be confusing. We use $S$ to denote the state space and $S\_t$ to represent the state at time $t$. Similarly, $A$ represents the action space, and $A\_t$ denotes the action at time $t$.
 
 ## DP
 
@@ -33,7 +33,7 @@ $$
 
 ### What does this mean?
 
-MC stands for **Monte Carlo**. In a Monte Carlo update, the sampled return $G_t$ is determined by processing the entire $n$-th episode up to the terminal time step $T$. Then, $v_n(S_t)$ is updated towards $G_t$ with a step-size $\alpha$. Unlike DP, MC updates can be performed even without the knowledge of the rules underlying the environment, as the updates are based on samples. However, since $G_t$ can have a large variance, we use a small step-size $\alpha$ to reduce noise during updates.
+MC stands for **Monte Carlo**. In a Monte Carlo update, the sampled return $G\_t$ is determined by processing the entire $n$-th episode up to the terminal time step $T$. Then, $v\_n(S\_t)$ is updated towards $G\_t$ with a step-size $\alpha$. Unlike DP, MC updates can be performed even without the knowledge of the rules underlying the environment, as the updates are based on samples. However, since $G\_t$ can have a large variance, we use a small step-size $\alpha$ to reduce noise during updates.
 
 ## TD
 
@@ -43,7 +43,7 @@ $$
 
 ### What does this mean?
 
-TD stands for **Temporal Difference**. In a Temporal Difference update, for each time step $t$ of the episode we update the value $v_t(S_t)$ to $v_{t+1}(S_t)$ by updating it towards the bootstrapped return $H_t$. We can think of TD as the sampled version of DP. TD is a bootstrapping method in the sense that it uses the estimate $v_t(S_{t+1})$ itself to create the target $H_t$. Therefore, it does not calculate the full cumulative return $G_t$. Note that the step-size $\alpha$ is also used since $H_t$ is a random variable.
+TD stands for **Temporal Difference**. In a Temporal Difference update, for each time step $t$ of the episode we update the value $v\_t(S\_t)$ to $v\_\{t+1\}(S\_t)$ by updating it towards the bootstrapped return $H\_t$. We can think of TD as the sampled version of DP. TD is a bootstrapping method in the sense that it uses the estimate $v\_t(S\_\{t+1\})$ itself to create the target $H\_t$. Therefore, it does not calculate the full cumulative return $G\_t$. Note that the step-size $\alpha$ is also used since $H\_t$ is a random variable.
 
 ## Comparing MC and TD
 
@@ -51,15 +51,15 @@ Although the equations look similar, MC and TD differ substantially in the below
 
 1. **computation**
     
-    For a MC update, the episode needs to conclude before updating the value function, as it requires the calculation of $G_t$, which involves future terms. In contrast, TD can be updated as we go, since the target $H_t$ can be calculated for each time step.
+    For a MC update, the episode needs to conclude before updating the value function, as it requires the calculation of $G\_t$, which involves future terms. In contrast, TD can be updated as we go, since the target $H\_t$ can be calculated for each time step.
     
 2. **bootstrapping**
     
-    In a MC update, we do not bootstrap from the value function estimate $v_n(S_t)$ to calculate the the target $G_t$, since it is independently calculated from the rewards in the time range $[t+1, T]$. However, we do bootstrap in a TD update as can be seen from the definition of the target $H_t$ - it involves the value function itself, $v_t(S_{t+1})$.
+    In a MC update, we do not bootstrap from the value function estimate $v\_n(S\_t)$ to calculate the the target $G\_t$, since it is independently calculated from the rewards in the time range $[t+1, T]$. However, we do bootstrap in a TD update as can be seen from the definition of the target $H\_t$ - it involves the value function itself, $v\_t(S\_\{t+1\})$.
     
 3. **bias and variance**
     
-    In a MC update, the target $G_t$ is the unbiased estimator of the true value function value $v^{\pi}(S_t)$. However $G_t$ has large variance as it is the weighted sum of multiple rewards $R_k\;(k=t+1,\cdots,T)$, which are all random variables. The circumstances are different for TD updates, because the target $H_t$ only involves two random variables, $R_{t+1}$ and $v_t(S_{t+1})$. Since there are less random “components” in the target, the variance is kept low - however unbiasedness is sacrificed due to bias-variance tradeoff.
+    In a MC update, the target $G\_t$ is the unbiased estimator of the true value function value $v^\{\pi\}(S\_t)$. However $G\_t$ has large variance as it is the weighted sum of multiple rewards $R\_k\;(k=t+1,\cdots,T)$, which are all random variables. The circumstances are different for TD updates, because the target $H\_t$ only involves two random variables, $R\_\{t+1\}$ and $v\_t(S\_\{t+1\})$. Since there are less random “components” in the target, the variance is kept low - however unbiasedness is sacrificed due to bias-variance tradeoff.
     
 
 ## $n$-step TD
@@ -70,7 +70,7 @@ $$
 
 ### What does this mean?
 
-Suppose you want to cut off the later terms in $G_t$, and bootstrap at some point instead. If we do so, we get the $n$-step TD, with $n$ reward terms ($R_{t+1},\cdots,R_{t+n}$) and one bootstrapping term ($v_k(S_{t+n})$). As expected, the $n$-step TD has intermediate bias and intermediate variance, and interpolates between MC and TD.
+Suppose you want to cut off the later terms in $G\_t$, and bootstrap at some point instead. If we do so, we get the $n$-step TD, with $n$ reward terms ($R\_\{t+1\},\cdots,R\_\{t+n\}$) and one bootstrapping term ($v\_k(S\_\{t+n\})$). As expected, the $n$-step TD has intermediate bias and intermediate variance, and interpolates between MC and TD.
 
 ## $\lambda$-TD
 
@@ -80,7 +80,7 @@ $$
 
 ### What does this mean?
 
-In MC, we continue sampling the rewards until the end of the episode, whereas in TD, we stop and bootstrap. We can also do something in the middle - that is, we can take a linear combination of rewards and bootstrapped value functions. This gives the $\lambda$-TD, which is another way of interpolating between MC ($\lambda=1)$ and TD ($\lambda=0$). The $\lambda$-TD can be represented as a weighted average of $n$-step returns: $G_t^\lambda=\sum_{n=1}^{T}(1-\lambda)\lambda^{n-1} G_t^{(n)}$.
+In MC, we continue sampling the rewards until the end of the episode, whereas in TD, we stop and bootstrap. We can also do something in the middle - that is, we can take a linear combination of rewards and bootstrapped value functions. This gives the $\lambda$-TD, which is another way of interpolating between MC ($\lambda=1)$ and TD ($\lambda=0$). The $\lambda$-TD can be represented as a weighted average of $n$-step returns: $G\_t^\lambda=\sum\_\{n=1\}^\{T\}(1-\lambda)\lambda^\{n-1\} G\_t^\{(n)\}$.
 
 ## $n$-step TD vs. $\lambda$-TD
 
@@ -104,7 +104,7 @@ $$
 v_\mathbf{w} (s)= \mathbf{w}^{T}\mathbf{x}(s)
 $$
 
-If we want to update the values for a state $s=S_t$ using MC, we update the weight acoording to the following:
+If we want to update the values for a state $s=S\_t$ using MC, we update the weight acoording to the following:
 
 $$
 \Delta \mathbf{w} = \alpha(G_t-v(S_t))\mathbf{x}(S_t)
@@ -116,10 +116,10 @@ $$
 \Delta \mathbf{w}_{k+1} = \sum_{t=0}^{T-1} {\alpha (G_t-v(S_t))\mathbf{x}(S_t)}
 $$
 
-But what’s interesting is that we can split the MC error $G_t-v(S_t)$ into two parts:
+But what’s interesting is that we can split the MC error $G\_t-v(S\_t)$ into two parts:
 
-1. the TD error term, $\delta_t := R_{t+1}+\gamma v(S_{t+1})-v(S_t)$,
-2. and the non-TD error term, $\gamma (G_{t+1}-v(S_{t+1}))$.
+1. the TD error term, $\delta\_t := R\_\{t+1\}+\gamma v(S\_\{t+1\})-v(S\_t)$,
+2. and the non-TD error term, $\gamma (G\_\{t+1\}-v(S\_\{t+1\}))$.
 
 $$
 \begin{aligned} G_t-v(S_t) &= R_{t+1}+\gamma G_{t+1}-v(S_t)\\ &= R_{t+1}+\gamma G_{t+1}-v(S_t) + \gamma v(S_{t+1}) - \gamma v(S_{t+1})\\ &= (R_{t+1}+\gamma v(S_{t+1})-v(S_t)) + \gamma (G_{t+1} - v(S_{t+1})) \\ &= \delta_t+\gamma(G_{t+1} -v(S_{t+1}))\end{aligned}
@@ -137,7 +137,7 @@ $$
 \begin{aligned} \Delta \mathbf{w}_{k+1} &= \sum_{t=0}^{T-1} {\alpha (G_t-v(S_t))\mathbf{x}(S_t)} \\ &= \sum_{t=0}^{T-1} {\alpha \left(\sum_{k=t}^{T-1} {\gamma^{k-t}\delta_k}\right)\mathbf{x}(S_t)} \\&= \sum_{k=0}^{T-1} { \alpha \delta_k\left(\sum_{t=0}^{k} {\gamma^{k-t}}\mathbf{x}(S_t)\right)}  \end{aligned}
 $$
 
-Defining the eligibility trace $\mathbf{e}\_{k} := \sum_{t=0}^{k} {\gamma^{k-t}}\mathbf{x}(S_t)$ and renaming the summation index $k$ to $t$, we have:
+Defining the eligibility trace $\mathbf{e}\_\{k\} := \sum\_\{t=0\}^\{k\} \{\gamma^\{k-t\}\}\mathbf{x}(S\_t)$ and renaming the summation index $k$ to $t$, we have:
 
 $$
 \begin{aligned} \Delta \mathbf{w}_{k+1} &= \sum_{k=0}^{T-1} {\alpha\delta_k\mathbf{e}_k} \\ &= \sum_{t=0}^{T-1} {\alpha\delta_t\mathbf{e}_t},  \end{aligned}
@@ -149,7 +149,7 @@ $$
 \mathbf{e}_t=\gamma\mathbf{e}_{t-1}+\mathbf{x}_t
 $$
 
-What’s “magical”, as Hado mentions in the lecture, is that the term $\alpha\delta_t\mathbf{e}_t$ now does not involve future terms at all! Therefore, we can now update the weights online, and obtain (almost) the same results as the original MC.
+What’s “magical”, as Hado mentions in the lecture, is that the term $\alpha\delta\_t\mathbf{e}\_t$ now does not involve future terms at all! Therefore, we can now update the weights online, and obtain (almost) the same results as the original MC.
 
 Even if we choose not to update the values online and instead accumulate the summation until the end of the episode, the required memory remains independent of the episode's duration. In this case, the result will exactly equal the result of the original MC.
 

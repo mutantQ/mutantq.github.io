@@ -35,10 +35,12 @@ $$
 한편, 벡터는 여러 수의 묶음, 즉 순서쌍으로도 이해할 수 있다. 큐비트 역시도 두 수 $\alpha,\:\beta$의 순서쌍으로 표현할 수 있기 때문에 2차원 벡터이다. 여기서 $\ket{0}=\begin{bmatrix} 1 \\\\ 0\end{bmatrix}$, $\ket{1}=\begin{bmatrix} 0 \\\\ 1\end{bmatrix}$로 정의하면 아래처럼 표현하는 것도 가능하다:
 
 $$
+\begin{align*}
 \begin{equation}q=\alpha \ket{0} + \beta \ket{1}=\begin{bmatrix} \alpha\\\beta \end{bmatrix}\end{equation}
+\end{align*}
 $$
 
-아래의 $\ket{q_1}, \ket{q_2}, \ket{q_3}$는 모두 큐비트를 나타내는 벡터들이다:
+아래의 $\ket{q\_1}, \ket{q\_2}, \ket{q\_3}$는 모두 큐비트를 나타내는 벡터들이다:
 
 $$
 \begin{align}\ket{q_1}&=\frac{1}{\sqrt{2}}\ket0+\frac{i}{\sqrt{2}}\ket1=\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i  \end{bmatrix} \\ \ket{q_2}&=\frac{i}{\sqrt{3}}\ket0+\sqrt{\frac{2}{3}}\ket1=\frac{1}{\sqrt{3}} \begin{bmatrix} i \\ \sqrt{2}  \end{bmatrix} \\ \ket{q_3}&=\frac{1}{2}(1+i)\ket0 + \frac{1}{2}(1-i)\ket1=\frac{1}{2}\begin{bmatrix}1+i \\ 1-i \end{bmatrix}\end{align}
@@ -68,7 +70,7 @@ $$
 **본의 규칙 - 큐비트 ver.**
 
 <aside>
-💡 큐비트 $q=\alpha\left|0\right>+\beta\left|1\right>$에 대해, 측정 이후 큐비트의 상태는 $\left|0\right>$ 또는 $\left|1\right>$이며, $\left|0\right>$으로 측정될 확률은 $\left|\alpha\right|^2$, $\left|1\right>$로 측정될 확률은 $\left|\beta\right|^2$이다.
+💡 큐비트 $q=\alpha\left\|0\right>+\beta\left\|1\right>$에 대해, 측정 이후 큐비트의 상태는 $\left\|0\right>$ 또는 $\left\|1\right>$이며, $\left\|0\right>$으로 측정될 확률은 $\left\|\alpha\right\|^2$, $\left\|1\right>$로 측정될 확률은 $\left\|\beta\right\|^2$이다.
 
 </aside>
 
@@ -78,7 +80,7 @@ $$
 \begin{equation} |\alpha| ^2 + |\beta| ^2=1 \end{equation}
 $$
 
-이것이 첫번째 제약조건이다. $\alpha = \alpha_1+\alpha_2 i$, $\beta = \beta_1 + \beta_2 i$라 두면 아래와 같이 변형할 수 있다.
+이것이 첫번째 제약조건이다. $\alpha = \alpha\_1+\alpha\_2 i$, $\beta = \beta\_1 + \beta\_2 i$라 두면 아래와 같이 변형할 수 있다.
 
 $$
 \begin{equation} \alpha_1^2+\alpha_2^2+\beta_1^2+\beta_2^2=1 \end{equation}
