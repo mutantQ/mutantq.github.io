@@ -160,6 +160,8 @@ This connects to active learning and optimal experimental design, but reframes t
 
 **How do humans know what they don't know?** Metacognition—awareness of ignorance—seems uniquely human. Yet it's crucial for directing curiosity and research. Can we instill this in AI? Perhaps through explicit uncertainty quantification: teaching models to recognize when their compressions break down, when their basis functions fail to capture observed structure.
 
+Recent work by Chlon et al. (2024) provides precisely this kind of framework. Their analysis reveals that hallucinations in large language models are **predictable compression failures**—occurring when models minimize expected conditional description length but encounter data structures their learned bases cannot adequately represent. They show that LLMs are "Bayesian in expectation, not in realization," leading to systematic deviations when permutation-dependent compressions fail. Critically, they introduce quantifiable metrics for detecting when a model's information budget is insufficient for reliable decompression. This transforms uncertainty from post-hoc error detection to **pre-emptive epistemic honesty**: an AI scientist that recognizes its compression is failing can say "I need more experimental data to build an adequate basis" rather than confabulating plausible-sounding theories. This is precisely the metacognitive awareness needed for autonomous scientific discovery—knowing not just what you know, but when your basis functions are inadequate.
+
 ### Cloning vs. Approximation: The Quantum Distinction
 
 Here's a crucial distinction: **Quantum computers clone; neural networks approximate.**
@@ -336,12 +338,20 @@ The integration of information compression theory and neural network approximati
 
 ## References
 
-Key papers and resources mentioned:
-- How many degrees of freedom do we need to train deep networks: a loss landscape perspective (arXiv:2107.05802)
-- The information bottleneck method (arXiv:physics/0004057)
-- Deep Learning and the Information Bottleneck Principle (arXiv:1503.02406)
-- Intrinsic dimension of data representations in deep neural networks (arXiv:1905.12784)
+**Compression and Hallucinations:**
+- Chlon, L., Karim, A., & Chlon, M. (2024). Predictable Compression Failures: Why Language Models Actually Hallucinate. arXiv:2509.11208. Available at: [https://arxiv.org/abs/2509.11208](https://arxiv.org/abs/2509.11208)
+
+**Neural Network Theory and Capacity:**
+- How many degrees of freedom do we need to train deep networks: a loss landscape perspective. arXiv:2107.05802
+- Intrinsic dimension of data representations in deep neural networks. arXiv:1905.12784
+- Generalization bounds for deep learning. arXiv:2012.04115
 - Gordon's escape theorem and related work on high-dimensional geometry
+
+**Information Theory:**
+- The information bottleneck method. arXiv:physics/0004057
+- Deep Learning and the Information Bottleneck Principle. arXiv:1503.02406
+
+**AI for Science:**
 - Symbolic regression literature including AIFeynman
-- Generalization bounds for deep learning (arXiv:2012.04115)
+- Neural network methods for solving differential equations
 
