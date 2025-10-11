@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-signing-right-away",
+        },{id: "post-information-compression-neural-networks-and-ai-for-science-toward-a-unified-theory",
+        
+          title: "Information Compression, Neural Networks, and AI for Science: Toward a Unified Theory",
+        
+        description: "Exploring the deep connections between information compression theory, neural network approximation, and the future of scientific discovery through AI",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/information-compression-neural-networks-and-ai-for-science/";
+          
+        },
+      },{id: "post-signing-right-away",
         
           title: "Signing Right Away",
         
