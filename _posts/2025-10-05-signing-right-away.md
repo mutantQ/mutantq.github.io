@@ -8,7 +8,7 @@ categories: whitepaper
 lang: en
 ---
 
-*This work contains AI-generated paragraphs and sentences. The original whitepaper of this work has been written by myself in English. The original experiment notes (undisclosed) were written in Korean by myself and my teammates, Wonbeen Yoon and Minjun Yi from Seoul National University. Gemini Deep Research was used to organize the work into the full whitepaper. Each work was fully reviewed and revised by myself.*
+*This work contains AI-generated paragraphs and sentences. The original whitepaper of this work has been written by myself in English. The original experiment notes (undisclosed) were written in Korean by myself and my teammates, Wonbeen Yoon and Minjun Yi from Seoul National University. Gemini Deep Research was used to organize the work into the full whitepaper. Each work was fully reviewed and revised by myself. Special thanks to Hrvoje (Harvey) Puh for his valuable feedback in the original whitepaper.*
 
 
 You can find the full whitepaper here: **[PDF](/assets/pdf/SRA-2025-10-05.pdf)** \
