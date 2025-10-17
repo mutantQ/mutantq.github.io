@@ -8,7 +8,7 @@ categories: essay
 lang: en
 ---
 
-*I Acknowledge "Hagibunmi" from the Physics Research open chat for his valuable feedback. This essay was originally written in Korean and was machine translated by Claude 4.5 Sonnet. The translated essay was fully reviewed and revised by myself.*
+*I Acknowledge "Hagibunmi" from the Physics Research open chat for his valuable feedback. This essay was originally written in Korean and was machine translated by Claude 4.5 Sonnet. The translated essay was fully reviewed and revised by myself. The original (Korean) essay can be found [here](/blog/2025/ai-science-and-humanities-kr)*.
 
 ## Introduction
 
