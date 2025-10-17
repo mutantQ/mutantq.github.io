@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-큐비트의-이헤",
+        },{id: "post-큐비트의-이해",
         
-          title: "큐비트의 이헤",
+          title: "큐비트의 이해",
         
         description: "양자컴퓨팅의 기본: 큐비트와 블로흐 구면, 그리고 복소수의 필요성",
         section: "Posts",
