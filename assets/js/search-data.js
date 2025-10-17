@@ -44,22 +44,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-큐비트의-이해-양자컴퓨팅의-기본",
+        },{id: "post-",
         
-          title: "큐비트의 이해: 양자컴퓨팅의 기본",
+          title: "",
         
-        description: "양자컴퓨팅의 기본 단위인 큐비트를 수학적으로 이해하고, 블로흐 구면과 복소수의 필요성을 알아봅니다",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/understanding-qubits-draft/";
+            window.location.href = "/blog/2025/2025-10-17-understanding-qubits/";
           
         },
-      },{id: "post-information-compression-neural-networks-and-ai-for-science-toward-a-unified-theory",
+      },{id: "post-toward-a-unified-theory",
         
-          title: "Information Compression, Neural Networks, and AI for Science: Toward a Unified Theory",
+          title: "Toward a Unified Theory",
         
-        description: "Exploring the deep connections between information compression theory, neural network approximation, and the future of scientific discovery through AI",
+        description: "Information Compression, Neural Networks, and AI for Science: future of scientific discovery through AI",
         section: "Posts",
         handler: () => {
           
