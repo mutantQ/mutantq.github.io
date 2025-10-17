@@ -627,6 +627,17 @@ ninja.data = [{
             window.location.href = "/blog/2021/tutoring-materials-index/";
           
         },
+      },{id: "post-큐비트의-이해-양자컴퓨팅의-기본",
+        
+          title: "큐비트의 이해: 양자컴퓨팅의 기본",
+        
+        description: "양자컴퓨팅의 기본 단위인 큐비트를 수학적으로 이해하고, 블로흐 구면과 복소수의 필요성을 알아봅니다",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/understanding-qubits-draft/";
+          
+        },
       },{id: "post-현의-진동과-에너지",
         
           title: "현의 진동과 에너지",
