@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "큐비트의 이헤"
+title: "큐비트의 이해"
 date: 2025-10-17 19:00:00 +0900
 description: "양자컴퓨팅의 기본: 큐비트와 블로흐 구면, 그리고 복소수의 필요성"
 tags: quantum-computing qubits bloch-sphere complex-numbers physics korean
@@ -39,9 +39,7 @@ $$
 \ket{q}=\alpha\ket{0}+\beta\ket{1}
 $$
 
-이것이 선형대수학에서 자주 등장하는 **선형 결합(linear combination)**의 개념이다. 앞으로는 $\{\ket{0}, \ket{1}\}$을 서로 수직인 두 단위 벡터처럼 생각해주기를 바란다. 
-
-2차원 평면 상의 벡터 $\mathbf{v}$를 $x$축 방향 단위 벡터 $\mathbf{i}$와 $y$축 방향 단위 벡터 $\mathbf{j}$의 선형 결합 $\mathbf{v}=x\mathbf{i}+y\mathbf{j}$로 표현하듯, 큐비트 역시도 상태 $\ket{0}$과 상태 $\ket{1}$의 선형 결합으로 표현할 수 있다.
+이것이 선형대수학에서 자주 등장하는 **선형 결합(linear combination)**의 개념이다. 2차원 평면 상의 벡터 $\mathbf{v}$를 $x$축 방향 단위 벡터 $\mathbf{i}$와 $y$축 방향 단위 벡터 $\mathbf{j}$의 선형 결합 $\mathbf{v}=x\mathbf{i}+y\mathbf{j}$로 표현하듯, 큐비트 역시도 상태 $\ket{0}$과 상태 $\ket{1}$의 선형 결합으로 표현할 수 있다. 앞으로는 $\{\ket{0}, \ket{1}\}$을 서로 수직인 두 단위 벡터처럼 생각해주기를 바란다.
 
 #### 벡터 표기법
 
@@ -52,8 +50,6 @@ $$
 \ket{q}=\alpha \ket{0} + \beta \ket{1}=\begin{bmatrix} \alpha\\\beta \end{bmatrix}
 \end{align*}
 $$
-
-이 표기법은 양자 게이트(행렬)를 큐비트(벡터)에 적용할 때 매우 유용하다.
 
 ## 예시로 알아보는 큐비트
 
@@ -406,7 +402,7 @@ $$
 
 지금까지 양자컴퓨팅의 기본 단위인 큐비트에 대해 알아보았다. 핵심 내용을 정리하면:
 
-### 📌 핵심 요약
+### 핵심 요약
 
 **1. 중첩 (Superposition)**
 - 큐비트는 $\ket{0}$과 $\ket{1}$의 양자 중첩 상태: $\ket{q}=\alpha\ket{0}+\beta\ket{1}$
@@ -430,7 +426,7 @@ $$
 - 위상이 반대면 상쇄 간섭 (확률 감소)
 - 이것이 양자컴퓨터의 계산 능력의 핵심
 
-### 🎯 큐비트의 의의
+### 큐비트의 의의
 
 큐비트는 고전 비트보다 복잡하지만, 바로 그 복잡성이 양자컴퓨터의 강력한 계산 능력의 원천이 된다. 
 
