@@ -44,15 +44,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-큐비트의-이헤",
+        },{id: "post-",
         
-          title: "큐비트의 이헤",
+          title: "",
         
-        description: "양자컴퓨팅의 기본: 큐비트와 블로흐 구면, 그리고 복소수의 필요성",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/understanding-qubits/";
+            window.location.href = "/blog/2025/2025-10-17-understanding-qubits/";
           
         },
       },{id: "post-toward-a-unified-theory",
