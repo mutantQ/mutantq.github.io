@@ -77,17 +77,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/signing-right-away/";
           
         },
-      },{id: "post-ai-science-and-the-humanities",
-        
-          title: "AI, Science, and the Humanities",
-        
-        description: "Exploring the essential role of humanities in AI research",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/ai-science-and-humanities/";
-          
-        },
       },{id: "post-인공지능과-과학-그리고-인문학",
         
           title: "인공지능과 과학, 그리고 인문학",
@@ -97,6 +86,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/ai-science-and-humanities-kr/";
+          
+        },
+      },{id: "post-ai-science-and-the-humanities",
+        
+          title: "AI, Science, and the Humanities",
+        
+        description: "Exploring the essential role of humanities in AI research",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-science-and-humanities-copy/";
           
         },
       },{id: "post-test-01-정답",
