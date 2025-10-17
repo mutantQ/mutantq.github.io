@@ -88,6 +88,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/ai-science-and-humanities/";
           
         },
+      },{id: "post-인공지능과-과학-그리고-인문학",
+        
+          title: "인공지능과 과학, 그리고 인문학",
+        
+        description: "인공지능 연구에 있어서 인문학의 역할과 그 함의에 관하여",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-science-and-humanities-kr/";
+          
+        },
       },{id: "post-test-01-정답",
         
           title: "TEST 01 : 정답",
