@@ -38,7 +38,7 @@ unlisted: true
 
 그렇다면 $f(p/q)=0$이기 때문에, 양변에 $q^n$을 곱하면
 
-$q^nf(p/q)=q^n(c_n(p/q)^n+c_{n-1}(p/q)^{n-1}+\cdots+c_0)\newline=c_np^n+c_{n-1}p^{n-1}q+\cdots+c_1pq^{n-1}+c_0q^n=0$
+$q^nf(p/q)=q^n(c_n(p/q)^n+c_{n-1}(p/q)^{n-1}+\cdots+c_0)\newline =c_np^n+c_{n-1}p^{n-1}q+\cdots+c_1pq^{n-1}+c_0q^n=0$
 
 이때 $n\ge1$을 가정하고 $c_0q^n$만 남기고 나머지 항들을 우변으로 넘기면
 

@@ -28,7 +28,7 @@ DP stands for Dynamic Programming. There are several different versions of DP. I
 ## MC
 
 $$
-G_t&=R_{t+1}+\gamma G_{t+1}=\cdots=\sum_{k=0}^{T} {\gamma^k R_{t+k+1}} \text{ (target)} \newline v_{n+1}(S_t)&=v_n(S_t)+\alpha (G_t-v_n(S_t)) \text{ (update)}
+\begin{aligned} G_t&=R_{t+1}+\gamma G_{t+1}=\cdots=\sum_{k=0}^{T} {\gamma^k R_{t+k+1}} \text{ (target)} \newline  v_{n+1}(S_t)&=v_n(S_t)+\alpha (G_t-v_n(S_t)) \text{ (update)} \end{aligned}
 $$
 
 ### What does this mean?
@@ -38,7 +38,7 @@ MC stands for **Monte Carlo**. In a Monte Carlo update, the sampled return $G_t$
 ## TD
 
 $$
-H_t&=R_{t+1}+\gamma v_t(S_{t+1})\text{ (target)} \newline v_{t+1}(S_t)&=v_t(S_t)+\alpha(H_t-v_t(S_t))\text{ (update)}
+\begin{aligned} H_t&=R_{t+1}+\gamma v_t(S_{t+1})\text{ (target)} \newline  v_{t+1}(S_t)&=v_t(S_t)+\alpha(H_t-v_t(S_t))\text{ (update)}\end{aligned}
 $$
 
 ### What does this mean?
@@ -65,7 +65,7 @@ Although the equations look similar, MC and TD differ substantially in the below
 ## $n$-step TD
 
 $$
-G_t^{(n)}&=R_{t+1}+\gamma R_{t+2}+\cdots+\gamma^{n-1}R_{t+n}+\gamma^n v_k(S_{t+n}) \text{ (target)} \newline v_{k+1}(S_t)&=v_k(S_t)+\alpha\left(G_t^{(n)}-v_k(S_t)\right)\text{ (update)}
+\begin{aligned} G_t^{(n)}&=R_{t+1}+\gamma R_{t+2}+\cdots+\gamma^{n-1}R_{t+n}+\gamma^n v_k(S_{t+n}) \text{ (target)} \newline  v_{k+1}(S_t)&=v_k(S_t)+\alpha\left(G_t^{(n)}-v_k(S_t)\right)\text{ (update)}\end{aligned}
 $$
 
 ### What does this mean?
@@ -75,7 +75,7 @@ Suppose you want to cut off the later terms in $G_t$, and bootstrap at some poin
 ## $\lambda$-TD
 
 $$
-G_t^{\lambda}&=R_{t+1}+\gamma \left((1-\lambda)v_k(S_{t+1}) + \lambda G_{t+1}^\lambda\right) \text{ (target)} \newline v_{k+1}(S_t)&=v_k(S_t)+\alpha\left(G_t^{\lambda}-v_k(S_t)\right)\text{ (update)}
+\begin{aligned} G_t^{\lambda}&=R_{t+1}+\gamma \left((1-\lambda)v_k(S_{t+1}) + \lambda G_{t+1}^\lambda\right) \text{ (target)} \newline  v_{k+1}(S_t)&=v_k(S_t)+\alpha\left(G_t^{\lambda}-v_k(S_t)\right)\text{ (update)}\end{aligned}
 $$
 
 ### What does this mean?
@@ -122,25 +122,25 @@ But what’s interesting is that we can split the MC error $G_t-v(S_t)$ into two
 2. and the non-TD error term, $\gamma (G_{t+1}-v(S_{t+1}))$.
 
 $$
-G_t-v(S_t) &= R_{t+1}+\gamma G_{t+1}-v(S_t)\newline &= R_{t+1}+\gamma G_{t+1}-v(S_t) + \gamma v(S_{t+1}) - \gamma v(S_{t+1})\newline &= (R_{t+1}+\gamma v(S_{t+1})-v(S_t)) + \gamma (G_{t+1} - v(S_{t+1})) \newline &= \delta_t+\gamma(G_{t+1} -v(S_{t+1}))
+\begin{aligned} G_t-v(S_t) &= R_{t+1}+\gamma G_{t+1}-v(S_t)\newline  &= R_{t+1}+\gamma G_{t+1}-v(S_t) + \gamma v(S_{t+1}) - \gamma v(S_{t+1})\newline  &= (R_{t+1}+\gamma v(S_{t+1})-v(S_t)) + \gamma (G_{t+1} - v(S_{t+1})) \newline  &= \delta_t+\gamma(G_{t+1} -v(S_{t+1}))\end{aligned}
 $$
 
 Let’s utilize this discovery to our advantage. Note that the non-TD error term turns out to be the discounted MC error term for the next time step. Continuing the recursion, we obtain the following:
 
 $$
-G_t-v(S_t) &= \delta_t+\gamma(G_{t+1} - v(S_{t+1})) \newline&=\delta_t +\gamma\delta_{t+1}+\gamma^2(G_{t+2}- v(S_{t+2})) \newline&= \cdots \newline&=\sum_{k=t}^{T-1} {\gamma^{k-t}\delta_k}
+\begin{aligned} G_t-v(S_t) &= \delta_t+\gamma(G_{t+1} - v(S_{t+1})) \newline &=\delta_t +\gamma\delta_{t+1}+\gamma^2(G_{t+2}- v(S_{t+2})) \newline &= \cdots \newline &=\sum_{k=t}^{T-1} {\gamma^{k-t}\delta_k} \end{aligned}
 $$
 
 Now, let’s plug this into the updating equation and change the order of summation:
 
 $$
-\Delta \mathbf{w}_{k+1} &= \sum_{t=0}^{T-1} {\alpha (G_t-v(S_t))\mathbf{x}(S_t)} \newline &= \sum_{t=0}^{T-1} {\alpha \left(\sum_{k=t}^{T-1} {\gamma^{k-t}\delta_k}\right)\mathbf{x}(S_t)} \newline&= \sum_{k=0}^{T-1} { \alpha \delta_k\left(\sum_{t=0}^{k} {\gamma^{k-t}}\mathbf{x}(S_t)\right)}
+\begin{aligned} \Delta \mathbf{w}_{k+1} &= \sum_{t=0}^{T-1} {\alpha (G_t-v(S_t))\mathbf{x}(S_t)} \newline  &= \sum_{t=0}^{T-1} {\alpha \left(\sum_{k=t}^{T-1} {\gamma^{k-t}\delta_k}\right)\mathbf{x}(S_t)} \newline &= \sum_{k=0}^{T-1} { \alpha \delta_k\left(\sum_{t=0}^{k} {\gamma^{k-t}}\mathbf{x}(S_t)\right)}  \end{aligned}
 $$
 
 Defining the eligibility trace $\mathbf{e}_{k} := \sum_{t=0}^{k} {\gamma^{k-t}}\mathbf{x}(S_t)$ and renaming the summation index $k$ to $t$, we have:
 
 $$
-\Delta \mathbf{w}_{k+1} &= \sum_{k=0}^{T-1} {\alpha\delta_k\mathbf{e}_k} \newline &= \sum_{t=0}^{T-1} {\alpha\delta_t\mathbf{e}_t},
+\begin{aligned} \Delta \mathbf{w}_{k+1} &= \sum_{k=0}^{T-1} {\alpha\delta_k\mathbf{e}_k} \newline  &= \sum_{t=0}^{T-1} {\alpha\delta_t\mathbf{e}_t},  \end{aligned}
 $$
 
 plus the recursion relation of the eligibility trace:
@@ -162,5 +162,5 @@ $$
 The derivation is similar:
 
 $$
-G_t^\lambda-v(S_t) &= R_{t+1}+\gamma((1-\lambda)v(S_{t+1})+\lambda G_{t+1}^\lambda)-v(S_t)\newline &= R_{t+1}+\gamma((1-\lambda)v(S_{t+1})+\lambda G_{t+1}^\lambda)-v(S_t)+ \gamma\lambda v(S_{t+1}) - \gamma\lambda v(S_{t+1})\newline &= (R_{t+1}+\gamma v(S_{t+1})-v(S_t)) + \gamma\lambda (G_{t+1}^\lambda - v(S_{t+1})) \newline &= \delta_t+\gamma\lambda(G_{t+1}^\lambda - v(S_{t+1}))\newline&=\delta_t +\gamma\lambda\delta_{t+1}+\gamma^2\lambda^2(G_{t+2}^\lambda - v(S_{t+2})) \newline&= \cdots \newline&=\sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k},\newline\Delta \mathbf{w}_{k+1} &= \sum_{t=0}^{T-1} {\alpha (G_t^\lambda-v(S_t))\mathbf{x}(S_t)} \newline &= \sum_{t=0}^{T-1} {\alpha \left(\sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k}\right)\mathbf{x}(S_t)} \newline&= \sum_{k=0}^{T-1} { \alpha \delta_k\left(\sum_{t=0}^{k} {(\gamma\lambda)^{k-t}}\mathbf{x}(S_t)\right)} \newline&= \sum_{k=0}^{T-1} { \alpha \delta_k\tilde{\mathbf{e}}_t} \newline\text{where}\newline \tilde{\mathbf{e}}_t &:= \sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k}.
+\begin{aligned} G_t^\lambda-v(S_t) &= R_{t+1}+\gamma((1-\lambda)v(S_{t+1})+\lambda G_{t+1}^\lambda)-v(S_t)\newline  &= R_{t+1}+\gamma((1-\lambda)v(S_{t+1})+\lambda G_{t+1}^\lambda)-v(S_t)+ \gamma\lambda v(S_{t+1}) - \gamma\lambda v(S_{t+1})\newline  &= (R_{t+1}+\gamma v(S_{t+1})-v(S_t)) + \gamma\lambda (G_{t+1}^\lambda - v(S_{t+1})) \newline  &= \delta_t+\gamma\lambda(G_{t+1}^\lambda - v(S_{t+1}))\newline &=\delta_t +\gamma\lambda\delta_{t+1}+\gamma^2\lambda^2(G_{t+2}^\lambda - v(S_{t+2})) \newline &= \cdots \newline &=\sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k},\newline \Delta \mathbf{w}_{k+1} &= \sum_{t=0}^{T-1} {\alpha (G_t^\lambda-v(S_t))\mathbf{x}(S_t)} \newline  &= \sum_{t=0}^{T-1} {\alpha \left(\sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k}\right)\mathbf{x}(S_t)} \newline &= \sum_{k=0}^{T-1} { \alpha \delta_k\left(\sum_{t=0}^{k} {(\gamma\lambda)^{k-t}}\mathbf{x}(S_t)\right)} \newline &= \sum_{k=0}^{T-1} { \alpha \delta_k\tilde{\mathbf{e}}_t} \newline \text{where}\newline  \tilde{\mathbf{e}}_t &:= \sum_{k=t}^{T-1} {(\gamma\lambda)^{k-t}\delta_k}.  \end{aligned}
 $$

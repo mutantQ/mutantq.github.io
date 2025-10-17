@@ -20,7 +20,7 @@ It is hard to build lookup tables if the state space $S$ or the action space $A$
 Therefore, we will estimate the value function using function approximation. In many cases, the function approximation will involve some parameter vector $\mathbf{w}$:
 
 $$
-v_{\mathbf{w}}(s) &\approx v^\pi(s) \;(\text{or} \; v^\star(s)), \newline q_{\mathbf{w}}(s,a)&\approx q^\pi(s,a) \;(\text{or} \; q^\star(s,a)).
+\begin{aligned} v_{\mathbf{w}}(s) &\approx v^\pi(s) \;(\text{or} \; v^\star(s)), \newline  q_{\mathbf{w}}(s,a)&\approx q^\pi(s,a) \;(\text{or} \; q^\star(s,a)). \end{aligned}
 $$
 
 The parameter vector $\mathbf{w}$ will usually be some high dimensional vector that we can adjust to approximate the the value function. In a deep RL setup, we can also imagine $v_\mathbf{w}(s)$ and $q_\mathbf{w} (s, a)$ as a neural network, a rich class of nonlinear function that maps the state space to a range of values $(v_\mathbf{w}(s):S \rightarrow \mathbb{R})$ or the state-action space to a range of values $(q_\mathbf{w}(s, a) : S \times A \rightarrow \mathbb{R})$.
@@ -55,7 +55,7 @@ The fact that we do not have to hand engineer features when using deep learning 
 Since we have already explored the tabular case, let’s now explore the linear case. In a linear function approximation setup, we represent the state (or the observation) at time $t$ as a vector $\mathbf{x}(S_t)$ which we will also call $\mathbf{x}_t$. This mapping $\mathbf{x}:S\rightarrow \mathbb{R}^n$ is called the feature mapping, and is considered to be fixed:
 
 $$
-\mathbf{x}(s)=\begin{pmatrix} x_1(s) \newline \vdots \newline x_n(s) \end{pmatrix},\; \forall s \in S.
+\mathbf{x}(s)=\begin{pmatrix} x_1(s) \newline  \vdots \newline  x_n(s) \end{pmatrix},\; \forall s \in S.
 $$
 
 Then we approximate the value function by a linear combination of the weights and features:
@@ -69,7 +69,7 @@ $$
 But what about action-value functions? We can use two different techniques to approximate $q(s,a)$. The first one is similar to the previous case. With the feature mapping $\mathbf{x}:S\times A \rightarrow \mathbb{R}^n$:
 
 $$
-\mathbf{x}(s,a)=\begin{pmatrix} x_1(s,a) \newline \vdots \newline x_n(s,a) \end{pmatrix},\; \forall s \in S.
+\mathbf{x}(s,a)=\begin{pmatrix} x_1(s,a) \newline  \vdots \newline  x_n(s,a) \end{pmatrix},\; \forall s \in S.
 $$
 
 The approximation of the value function is almost identical as before:
@@ -99,7 +99,7 @@ $$
 The distribution $d$ is some distribution of states in which we can sample from. Suppose we already know the value function $v^\pi(s)$. Then we can apply stochastic gradient descent (SGD) with decaying step size $\alpha_t$ to find some local minimum / saddle point of a smooth function:
 
 $$
-\nabla_\mathbf{w} v_\mathbf{w}(S_t)=\mathbf{x}(S_t) = \mathbf{x}_t, \newline \Delta \mathbf{w}_t = \alpha_t(v^\pi(S_t)-v_\mathbf{w}(S_t)) \mathbf{x}_t.
+\nabla_\mathbf{w} v_\mathbf{w}(S_t)=\mathbf{x}(S_t) = \mathbf{x}_t, \newline  \Delta \mathbf{w}_t = \alpha_t(v^\pi(S_t)-v_\mathbf{w}(S_t)) \mathbf{x}_t.
 $$
 
 Note that the gradient of our value function, $\nabla_\mathbf{w} v_\mathbf{w}(S_t)$, is simply $\mathbf{x}(S_t)$. Luckily, $J(\mathbf{w})$ is quadratic in $\mathbf{w}$, and it’s Hessian is positive semi-definite everywhere in $\mathbb{R}^n$ which makes it a semi-convex(?) function. Hence, every local minimum is a global minimum. SGD with decaying step size will then ensure $J(\mathbf{w})$’s convergence to the global minimum.
@@ -137,7 +137,7 @@ $$
 We can verify this by setting the gradient of ${\mathbb{E}^\pi[(G_t-v_\mathbf{w}(S_t))^2]}$ with respect to $\mathbf{w}$ to zero:
 
 $$
-\begin{align} \nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - v_\mathbf{w}(S_t))^2]=\nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)^2]&=0\newline\mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}(S_t))\nabla_\mathbf{w}(\mathbf{w}^\top\mathbf{x}_t)]&=0 \newline=\mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)\mathbf{x}_t]&=0 \newline= \mathbb{E}^\pi[G_t\mathbf{x}_t - \mathbf{x}_t^\top\mathbf{x}_t\mathbf{w}]&=0 \newline \mathbb{E}^\pi[\mathbf{x}_t\mathbf{x}_t^\top]\mathbf{w}=\mathbb{E}^\pi[G_t\mathbf{x}_t] \newline \mathbf{w}=\mathbf{w}_\text{MC}=\mathbb{E}^\pi[\mathbf{x}_t \mathbf{x}_t^\top]^{-1}\mathbb{E}^\pi[G_t\mathbf{x}_t]\end{align}
+\begin{align} \nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - v_\mathbf{w}(S_t))^2]=\nabla_\mathbf{w} \mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)^2]&=0\newline \mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}(S_t))\nabla_\mathbf{w}(\mathbf{w}^\top\mathbf{x}_t)]&=0 \newline =\mathbb{E}^\pi[(G_t - \mathbf{w}^\top\mathbf{x}_t)\mathbf{x}_t]&=0 \newline = \mathbb{E}^\pi[G_t\mathbf{x}_t - \mathbf{x}_t^\top\mathbf{x}_t\mathbf{w}]&=0 \newline  \mathbb{E}^\pi[\mathbf{x}_t\mathbf{x}_t^\top]\mathbf{w}=\mathbb{E}^\pi[G_t\mathbf{x}_t] \newline  \mathbf{w}=\mathbf{w}_\text{MC}=\mathbb{E}^\pi[\mathbf{x}_t \mathbf{x}_t^\top]^{-1}\mathbb{E}^\pi[G_t\mathbf{x}_t]\end{align}
 $$
 
 ## Convergence of TD with Linear Approximation
@@ -151,7 +151,7 @@ $$
 We can verify this by setting the expected value of $\Delta\mathbf{w}$ to zero. Assuming $\alpha_t$ does not correlate with $R_{t+1},\mathbf{x}_t,\mathbf{x}_{t+1}$:
 
 $$
-\begin{align} \mathbb{E}^\pi[\Delta \mathbf{w}]=0&=\mathbb{E}^\pi[\alpha_t(R_{t+1} + \gamma\mathbf{x}_{t+1}^\top\mathbf{w}-\mathbf{x}_t^\top\mathbf{w})\mathbf{x}_t] \newline 0 &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] + \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\gamma\mathbf{x}_{t+1}^\top-\mathbf{x}_t^\top)\mathbf{w}] \newline \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]\mathbf{w} &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] \newline \mathbf{w} = \mathbf{w}_\text{TD}&= \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]^{-1} \mathbb{E}^\pi[R_{t+1} \mathbf{x}_t]\end{align}
+\begin{align} \mathbb{E}^\pi[\Delta \mathbf{w}]=0&=\mathbb{E}^\pi[\alpha_t(R_{t+1} + \gamma\mathbf{x}_{t+1}^\top\mathbf{w}-\mathbf{x}_t^\top\mathbf{w})\mathbf{x}_t] \newline  0 &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] + \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\gamma\mathbf{x}_{t+1}^\top-\mathbf{x}_t^\top)\mathbf{w}] \newline  \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]\mathbf{w} &= \mathbb{E}^\pi[\alpha_tR_{t+1} \mathbf{x}_t] \newline  \mathbf{w} = \mathbf{w}_\text{TD}&= \mathbb{E}^\pi[\alpha_t\mathbf{x}_t(\mathbf{x}_t^\top-\gamma\mathbf{x}_{t+1}^\top)]^{-1} \mathbb{E}^\pi[R_{t+1} \mathbf{x}_t]\end{align}
 $$
 
 This differs from the MC solution. Remember, TD updates have less variance but may be biased. But since they have less variance, they tend to converge faster.

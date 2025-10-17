@@ -90,8 +90,10 @@ This perspective reframes fundamental questions in deep learning:
 To formalize this intuition, consider rate-distortion theory. For a matrix $X$ sampled from distribution $\mathcal{D}$ and compressed representation $\tilde{X}$ (e.g., quantized singular values):
 
 $$
-&\underset{p(\tilde{x}|x)}{\text{minimize}}\;I(X;\tilde{X})\newline
+\begin{aligned}
+&\underset{p(\tilde{x}|x)}{\text{minimize}}\;I(X;\tilde{X})\newline 
 &\text{subject to} \; \left< d(x,\tilde{x}) \right>_{p(x,\tilde{x})}\le D
+\end{aligned}
 $$
 
 For deterministic SVD, $p(\tilde{x}|x)$ is deterministic, so $I(X; \tilde{X})=H(\tilde{X})-H(\tilde{X}|X)=H(\tilde{X})$—we simply minimize the entropy of our representation. But introducing stochasticity creates an interesting tradeoff: randomness enables exploring alternative compressions, potentially discovering better representations at the cost of slightly higher mutual information.

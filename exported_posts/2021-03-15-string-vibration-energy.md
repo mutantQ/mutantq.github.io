@@ -112,7 +112,7 @@ $$
 따라서 새로운 결과를 다시 써서 간단한 접근을 수정하면
 
 $$
-\begin{align} u_P \delta x &= T(\delta x)(\delta l - \delta x)+\frac{T(\delta l) - T(\delta x)}{2}(\delta l - \delta x) \newline &= T(\delta x)\! \left((\delta l - \delta x)+\frac{1}{2}\frac{(\delta l - \delta x)^2}{(\delta x - \delta x_0)} \right) \end{align} \tag{6}
+\begin{align} u_P \delta x &= T(\delta x)(\delta l - \delta x)+\frac{T(\delta l) - T(\delta x)}{2}(\delta l - \delta x) \newline  &= T(\delta x)\! \left((\delta l - \delta x)+\frac{1}{2}\frac{(\delta l - \delta x)^2}{(\delta x - \delta x_0)} \right) \end{align} \tag{6}
 $$
 
 간단한 접근이 위 식에서 더 개선되었으나, 추가적인 길이 변화에 의한 효과는 기존 식보다 차수가 더 높고, 따라서 차수가 가장 낮은 항만 고려하면 식 (5)에서 구한 결과도 충분히 타당하다는 것을 확인할 수 있다.
@@ -158,13 +158,13 @@ $$
 여러 파동이 현을 따라 진행하고 있다고 하자. 목표는 점 $x$에서 $x$가 증가하는 방향으로 전달되는 에너지의 전달률인 $\mathcal{F}(x)$를 계산하는 것이다. 즉, 시간 당 $\mathcal{F}$만큼 음의 방향으로 놓인 현(음의 반현)은 에너지를 잃고, 양의 방향으로 놓인 현(양의 반현)은 에너지를 얻고 있는 것이다. 이것이 일어나는 이유는 음의 반현이 양의 반현에 $\mathcal{F}$의 일률로 일을 하기 때문이다. 이 점에서 현이 평형 상태의 방향을 기준으로 각도 $\theta$를 이루고 있다면, 현의 기울기는 $\tan \theta = \partial y /\partial x$이다. 따라서 음의 반현이 양의 반현에 작용하는 힘은
 
 $$
-\textbf{F}= \begin{pmatrix} -T\cos \theta \newline -T \sin \theta \end{pmatrix}
+\textbf{F}= \begin{pmatrix} -T\cos \theta \newline  -T \sin \theta \end{pmatrix}
 $$
 
 이고, 일률은 힘과 힘의 작용점이 움직이는 속도
 
 $$
-\textbf{v} = \begin{pmatrix} 0 \newline \frac{\partial y}{\partial t} \end{pmatrix}
+\textbf{v} = \begin{pmatrix} 0 \newline  \frac{\partial y}{\partial t} \end{pmatrix}
 $$
 
 의 내적이므로, $\mathcal{F}= \textbf{F}\cdot\textbf{v} = -T\sin\theta \frac{\partial y}{\partial t}$이다. 작은 각에 대한 근사 $\sin\theta \approx \tan\theta$, $\cos \theta \approx 1$을 사용하면 드디어 에너지 선속을 구하는 공식을 얻는다.

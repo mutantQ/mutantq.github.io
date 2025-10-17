@@ -45,10 +45,10 @@ $$
 
 #### 벡터 표기법
 
-벡터는 여러 수의 묶음, 즉 순서쌍으로도 이해할 수 있다. 큐비트 역시도 두 수 $\alpha,\\:\beta$의 순서쌍으로 표현할 수 있기 때문에 2차원 벡터이다. 여기서 $\ket{0}=\begin{bmatrix} 1 \newline 0\end{bmatrix}$, $\ket{1}=\begin{bmatrix} 0 \newline 1\end{bmatrix}$로 정의하면 아래처럼 표현하는 것도 가능하다:
+벡터는 여러 수의 묶음, 즉 순서쌍으로도 이해할 수 있다. 큐비트 역시도 두 수 $\alpha,\\:\beta$의 순서쌍으로 표현할 수 있기 때문에 2차원 벡터이다. 여기서 $\ket{0}=\begin{bmatrix} 1 \newline  0\end{bmatrix}$, $\ket{1}=\begin{bmatrix} 0 \newline  1\end{bmatrix}$로 정의하면 아래처럼 표현하는 것도 가능하다:
 
 $$
-\ket{q}=\alpha \ket{0} + \beta \ket{1}=\begin{bmatrix} \alpha\newline\beta \end{bmatrix}
+\ket{q}=\alpha \ket{0} + \beta \ket{1}=\begin{bmatrix} \alpha\newline \beta \end{bmatrix}
 $$
 
 이 표기법은 양자 게이트(행렬)를 큐비트(벡터)에 적용할 때 매우 유용하다.
@@ -58,7 +58,7 @@ $$
 아래의 $\ket{q_1}, \ket{q_2}, \ket{q_3}$는 모두 큐비트를 나타내는 벡터들이다:
 
 $$
-\begin{align}\ket{q_1}&=\frac{1}{\sqrt{2}}\ket0+\frac{i}{\sqrt{2}}\ket1=\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \newline i  \end{bmatrix} \newline \ket{q_2}&=\frac{i}{\sqrt{3}}\ket0+\sqrt{\frac{2}{3}}\ket1=\frac{1}{\sqrt{3}} \begin{bmatrix} i \newline \sqrt{2}  \end{bmatrix} \newline \ket{q_3}&=\frac{1}{2}(1+i)\ket0 + \frac{1}{2}(1-i)\ket1=\frac{1}{2}\begin{bmatrix}1+i \newline 1-i \end{bmatrix}\end{align}
+\begin{align}\ket{q_1}&=\frac{1}{\sqrt{2}}\ket0+\frac{i}{\sqrt{2}}\ket1=\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \newline  i  \end{bmatrix} \newline  \ket{q_2}&=\frac{i}{\sqrt{3}}\ket0+\sqrt{\frac{2}{3}}\ket1=\frac{1}{\sqrt{3}} \begin{bmatrix} i \newline  \sqrt{2}  \end{bmatrix} \newline  \ket{q_3}&=\frac{1}{2}(1+i)\ket0 + \frac{1}{2}(1-i)\ket1=\frac{1}{2}\begin{bmatrix}1+i \newline  1-i \end{bmatrix}\end{align}
 $$
 
 식을 2분 정도 지그시 관찰해보기를 바란다.
@@ -110,7 +110,7 @@ $$
 아래의 원의 방정식과 구의 방정식, 그리고 식 $(6)$을 함께 보자.
 
 $$
-\textrm{원의 방정식:}&\;\;x^2+y^2=1 \newline \textrm{구의 방정식:}&\;\;x^2+y^2+z^2=1
+\begin{aligned}\textrm{원의 방정식:}&\;\;x^2+y^2=1 \newline  \textrm{구의 방정식:}&\;\;x^2+y^2+z^2=1 \end{aligned}
 $$
 
 식 $(6)$이 특별하게 느껴지지 않는가? 원의 방정식과 구의 방정식과 함께 보면 식 $(6)$이 4차원 공간 상의 구, 즉 초구(Hypersphere)의 방정식이라는 사실을 알아차릴 수 있다. 제약 조건(=등식)이 추가될 때마다 자유도는 줄어든다. 즉, 방금 큐비트는 $2$차원 복소 벡터이기에 실변수로는 4차원인 것 같으면서도, 제약 조건에 의해 1개의 자유도가 날아가면서 3개의 변수만으로도 표현할 수 있게 된 것이다.
@@ -136,8 +136,8 @@ $$
 예를 들어 다음 세 복소수를 생각해보자:
 $$
 \begin{align}
-z_0&=1+i = \sqrt{2}e^{i\pi/4} \newline
-z_1&=-1-i = \sqrt{2}e^{i5\pi/4} = \sqrt{2}e^{i\pi/4} \cdot e^{i\pi} \newline
+z_0&=1+i = \sqrt{2}e^{i\pi/4} \newline 
+z_1&=-1-i = \sqrt{2}e^{i5\pi/4} = \sqrt{2}e^{i\pi/4} \cdot e^{i\pi} \newline 
 z_2&=-1+i = \sqrt{2}e^{i3\pi/4} = \sqrt{2}e^{i\pi/4} \cdot e^{i\pi/2}
 \end{align}
 $$
@@ -151,12 +151,12 @@ $$
 
 이 큐비트를 벡터로 쓰면:
 $$
-\ket{q} = \begin{bmatrix} 1+i \newline -1-i \end{bmatrix} = \begin{bmatrix} \sqrt{2}e^{i\pi/4} \newline \sqrt{2}e^{i5\pi/4} \end{bmatrix}
+\ket{q} = \begin{bmatrix} 1+i \newline  -1-i \end{bmatrix} = \begin{bmatrix} \sqrt{2}e^{i\pi/4} \newline  \sqrt{2}e^{i5\pi/4} \end{bmatrix}
 $$
 
 극좌표 형식에서 공통 인수를 빼내면:
 $$
-\ket{q} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline \sqrt{2}e^{i\pi} \end{bmatrix} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline -\sqrt{2} \end{bmatrix}
+\ket{q} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline  \sqrt{2}e^{i\pi} \end{bmatrix} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline  -\sqrt{2} \end{bmatrix}
 $$
 
 여기서 흥미로운 사실을 발견할 수 있다. 전체 상태에 공통으로 $e^{i\pi/4}$가 곱해져 있다. 이를 **전역 위상(Global Phase)**이라 부른다.
@@ -170,7 +170,7 @@ $$
 
 따라서 $\sqrt{4} = 2$로 나눠서 정규화해야 한다:
 $$
-\ket{q}_{\text{normalized}} = e^{i\pi/4} \frac{1}{2}\begin{bmatrix} \sqrt{2} \newline -\sqrt{2} \end{bmatrix} = e^{i\pi/4} \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline -1 \end{bmatrix}
+\ket{q}_{\text{normalized}} = e^{i\pi/4} \frac{1}{2}\begin{bmatrix} \sqrt{2} \newline  -\sqrt{2} \end{bmatrix} = e^{i\pi/4} \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline  -1 \end{bmatrix}
 $$
 
 이제 정규화 조건을 확인하면:
@@ -193,7 +193,7 @@ $$
 큐비트 $\ket{q}=\alpha\ket{0}+\beta\ket{1}$을 생각해보자. $\alpha$와 $\beta$를 극좌표로 표현하면:
 $$
 \begin{align}
-\ket{q}&=|\alpha|e^{i\theta_\alpha}\ket{0}+|\beta|e^{i\theta_\beta}\ket{1} \newline
+\ket{q}&=|\alpha|e^{i\theta_\alpha}\ket{0}+|\beta|e^{i\theta_\beta}\ket{1} \newline 
 &=e^{i\theta_\alpha}\left(|\alpha|\ket{0}+|\beta|e^{i(\theta_\beta-\theta_\alpha)}\ket{1}\right)
 \end{align}
 $$
@@ -220,18 +220,18 @@ $$
 **북극과 남극 (Z축)**
 $$
 \begin{align}
-\ket{0} &= \begin{bmatrix} 1 \newline 0 \end{bmatrix} \quad (\theta=0) \newline
-\ket{1} &= \begin{bmatrix} 0 \newline 1 \end{bmatrix} \quad (\theta=\pi)
+\ket{0} &= \begin{bmatrix} 1 \newline  0 \end{bmatrix} \quad (\theta=0) \newline 
+\ket{1} &= \begin{bmatrix} 0 \newline  1 \end{bmatrix} \quad (\theta=\pi)
 \end{align}
 $$
 
 **적도 위의 상태들 (X-Y 평면)**
 $$
 \begin{align}
-\ket{+} &= \frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline 1 \end{bmatrix} \quad (\theta=\pi/2, \phi=0) \newline
-\ket{-} &= \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline -1 \end{bmatrix} \quad (\theta=\pi/2, \phi=\pi) \newline
-\ket{+i} &= \frac{1}{\sqrt{2}}(\ket{0}+i\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline i \end{bmatrix} \quad (\theta=\pi/2, \phi=\pi/2) \newline
-\ket{-i} &= \frac{1}{\sqrt{2}}(\ket{0}-i\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline -i \end{bmatrix} \quad (\theta=\pi/2, \phi=3\pi/2)
+\ket{+} &= \frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline  1 \end{bmatrix} \quad (\theta=\pi/2, \phi=0) \newline 
+\ket{-} &= \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline  -1 \end{bmatrix} \quad (\theta=\pi/2, \phi=\pi) \newline 
+\ket{+i} &= \frac{1}{\sqrt{2}}(\ket{0}+i\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline  i \end{bmatrix} \quad (\theta=\pi/2, \phi=\pi/2) \newline 
+\ket{-i} &= \frac{1}{\sqrt{2}}(\ket{0}-i\ket{1}) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \newline  -i \end{bmatrix} \quad (\theta=\pi/2, \phi=3\pi/2)
 \end{align}
 $$
 
@@ -299,8 +299,8 @@ $$
 벡터 표기로 쓰고 극좌표 형식으로 변환하면:
 $$
 \begin{align}
-\ket{q} &= \begin{bmatrix} 1+i \newline -1-i \newline -1+i \end{bmatrix} = \begin{bmatrix} \sqrt{2}e^{i\pi/4} \newline \sqrt{2}e^{i5\pi/4} \newline \sqrt{2}e^{i3\pi/4} \end{bmatrix} \newline
-&= e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline \sqrt{2}e^{i\pi} \newline \sqrt{2}e^{i\pi/2} \end{bmatrix} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline -\sqrt{2} \newline \sqrt{2}i \end{bmatrix}
+\ket{q} &= \begin{bmatrix} 1+i \newline  -1-i \newline  -1+i \end{bmatrix} = \begin{bmatrix} \sqrt{2}e^{i\pi/4} \newline  \sqrt{2}e^{i5\pi/4} \newline  \sqrt{2}e^{i3\pi/4} \end{bmatrix} \newline 
+&= e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline  \sqrt{2}e^{i\pi} \newline  \sqrt{2}e^{i\pi/2} \end{bmatrix} = e^{i\pi/4}\begin{bmatrix} \sqrt{2} \newline  -\sqrt{2} \newline  \sqrt{2}i \end{bmatrix}
 \end{align}
 $$
 
@@ -315,7 +315,7 @@ $$
 
 따라서 $\sqrt{6}$로 나눠서 정규화한다:
 $$
-\ket{q}_{\text{normalized}} = e^{i\pi/4} \frac{1}{\sqrt{6}}\begin{bmatrix} \sqrt{2} \newline -\sqrt{2} \newline \sqrt{2}i \end{bmatrix} = e^{i\pi/4} \sqrt{\frac{1}{3}}\begin{bmatrix} 1 \newline -1 \newline i \end{bmatrix}
+\ket{q}_{\text{normalized}} = e^{i\pi/4} \frac{1}{\sqrt{6}}\begin{bmatrix} \sqrt{2} \newline  -\sqrt{2} \newline  \sqrt{2}i \end{bmatrix} = e^{i\pi/4} \sqrt{\frac{1}{3}}\begin{bmatrix} 1 \newline  -1 \newline  i \end{bmatrix}
 $$
 
 확인:

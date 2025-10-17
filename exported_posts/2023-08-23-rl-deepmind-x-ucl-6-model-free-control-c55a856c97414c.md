@@ -20,7 +20,7 @@ GLIE stands for **Greedy in the Limit with Infinite Exploration**. It is used to
 1. **Greedy in the Limit** means that the policy eventually converges to a greedy policy, i.e.
     
     $$
-\lim_{t \rightarrow \infty} {\pi_t(a|s)}=I(a=\argmax_{a' \in A}{q_t(s,a')})
+    \lim_{t \rightarrow \infty} {\pi_t(a|s)}=I(a=\argmax_{a' \in A}{q_t(s,a')})
     $$
     
 2. **Infinite Exploration** means that all state-action pairs are explored infinitely many times, i.e.
@@ -38,13 +38,13 @@ Greedy policy alone will not explore enough, and the $\epsilon$-greedy policy wi
 In lecture 04, we covered different types of Bellman operators:
 
 $$
-(T_V^\star f)(s)&=\max_{a \in A} \biggl[ {r(s, a) + \gamma \mathbb{E} \left[f(s')|s, a\right]} \bigg], \;\forall f \in V \newline (T_V^\pi f)(s)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s') \bigg| s, a \bigg], \;\forall f \in V \newline(T_Q^\star f)(s,a)&=\mathbb{E} \bigg[r(s, a) + \gamma \max_{a'\in A} f(s',a') \bigg|s, a\bigg], \;\forall f \in Q \newline (T_Q^\pi f)(s, a)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s',a') \bigg| s, a \bigg], \;\forall f \in Q
+\begin{aligned} (T_V^\star f)(s)&=\max_{a \in A} \biggl[ {r(s, a) + \gamma \mathbb{E} \left[f(s')|s, a\right]} \bigg], \;\forall f \in V \newline  (T_V^\pi f)(s)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s') \bigg| s, a \bigg], \;\forall f \in V \newline (T_Q^\star f)(s,a)&=\mathbb{E} \bigg[r(s, a) + \gamma \max_{a'\in A} f(s',a') \bigg|s, a\bigg], \;\forall f \in Q \newline  (T_Q^\pi f)(s, a)&=\mathbb{E}^\pi \bigg[ r(s, a) + \gamma  f(s',a') \bigg| s, a \bigg], \;\forall f \in Q \end{aligned}
 $$
 
 To apply a Bellman operator we need exact knowledge of the transition dynamics of the system. We can avoid this problem using a sampled version of the operator. It turns out that the sampled versions of the above Bellman operators correspond to different model-free algorithms, except for $(T_V^\star f)(s)$:
 
 $$
-&(T_V^\star f)(s)  \leftrightarrow \text{(None)} \newline &(T_V^\pi f)(s)\leftrightarrow \text{(TD)} \newline &\leftrightarrow v_{t+1}(S_t)=v_t(S_t)+\alpha_t\bigg(R_{t+1}+\gamma v_t(S_{t+1})-v_t(S_t)\bigg)\newline&(T_Q^\star f)(s,a)\leftrightarrow \text{(Q-learning)} \newline& \leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma \max_{a' \in A}{q_t(S_{t+1}, a')-q_t(S_t, A_t)\bigg)}\newline &(T_Q^\pi f)(s, a) \leftrightarrow \text{(SARSA)} \newline &\leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma q_t(S_{t+1}, A_{t+1})-q_t(S_t, A_t)\bigg)
+\begin{aligned} &(T_V^\star f)(s)  \leftrightarrow \text{(None)} \newline  &(T_V^\pi f)(s)\leftrightarrow \text{(TD)} \newline  &\leftrightarrow v_{t+1}(S_t)=v_t(S_t)+\alpha_t\bigg(R_{t+1}+\gamma v_t(S_{t+1})-v_t(S_t)\bigg)\newline &(T_Q^\star f)(s,a)\leftrightarrow \text{(Q-learning)} \newline & \leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma \max_{a' \in A}{q_t(S_{t+1}, a')-q_t(S_t, A_t)\bigg)}\newline  &(T_Q^\pi f)(s, a) \leftrightarrow \text{(SARSA)} \newline  &\leftrightarrow q_{t+1}(S_t, A_t) = q_t(S_t, A_t) + \alpha_t \bigg(R_{t+1} + \gamma q_t(S_{t+1}, A_{t+1})-q_t(S_t, A_t)\bigg) \end{aligned}
 $$
 
 It is evident that we cannot build a sampled version of the operator $(T_V^\star f)(s)$ - Since the $\max_{a \in A}$ and the $\mathbb{E}$ operator do not commute, $(T_V^\star f)(s)$ cannot be expressed as an expectation from which we can sample upon.
@@ -104,7 +104,7 @@ Suppose that the value function is currently inaccurate and has high noise. For 
 How can we solve this problem? We can store two action value functions, $q$ and $q'$, and alternate between the two targets below:
 
 $$
-\text{(target for }q \text{):}\;\;R_{t+1} + \gamma q'\left(S_{t+1}, \argmax_{a' \in A} q(S_{t+1},a')\right) \newline \text{(target for }q' \text{):}\;\;R_{t+1} + \gamma q\left(S_{t+1}, \argmax_{a' \in A} q'(S_{t+1},a')\right)
+\text{(target for }q \text{):}\;\;R_{t+1} + \gamma q'\left(S_{t+1}, \argmax_{a' \in A} q(S_{t+1},a')\right) \newline  \text{(target for }q' \text{):}\;\;R_{t+1} + \gamma q\left(S_{t+1}, \argmax_{a' \in A} q'(S_{t+1},a')\right)
 $$
 
 This eliminates the influence of noise by decoupling the selection ($\argmax$) step and the evaluation step.
@@ -136,7 +136,7 @@ It could be problematic if $f(X)$ deviates significantly from $\mathbb{E}_{X \si
 Therefore, we can seek to sample from a different distribution $d'$ so that the rare events are sampled more. Now, suppose that we have samples $f(X_i)$ with $X_i \sim d'$. How can we evaluate the original expectation using these samples? We can first modify the original expectation as follows:
 
 $$
-\mathbb{E}_{X \sim d}[f(X)]&=\sum_x d(x)f(x) \newline &= \sum_x d'(x)\frac{d(x)}{d'(x)}f(x) \newline &= \mathbb{E}_{X \sim d'} \left[\frac{d(x)}{d'(x)}f(x)\right]
+\begin{aligned}\mathbb{E}_{X \sim d}[f(X)]&=\sum_x d(x)f(x) \newline  &= \sum_x d'(x)\frac{d(x)}{d'(x)}f(x) \newline  &= \mathbb{E}_{X \sim d'} \left[\frac{d(x)}{d'(x)}f(x)\right] \end{aligned}
 $$
 
 Now, we have a new expectation that can be sampled from $d'$ instead. Note that $d'$ has to be positive for all $x$ for this to work. Sampling from $d'$ gives:
@@ -158,7 +158,7 @@ $$
 Luckily, the transition probability (in which most cases we do not know) cancels out and we are left with:
 
 $$
-\frac{p(\tau_t|\pi)}{p(\tau_t|\mu)} G_t &= \frac{p(A_t|S_t,\pi)p(A_{t+1}|S_{t+1},\pi) \cdots}{p(A_t|S_t,\mu)p(A_{t+1}|S_{t+1},\mu) \cdots} G_t \newline &= \frac{\pi(A_t|S_t)\pi(A_{t+1}|S_{t+1}) \cdots}{\mu(A_t|S_t)\mu(A_{t+1}|S_{t+1}) \cdots} G_t
+\begin{aligned}\frac{p(\tau_t|\pi)}{p(\tau_t|\mu)} G_t &= \frac{p(A_t|S_t,\pi)p(A_{t+1}|S_{t+1},\pi) \cdots}{p(A_t|S_t,\mu)p(A_{t+1}|S_{t+1},\mu) \cdots} G_t \newline  &= \frac{\pi(A_t|S_t)\pi(A_{t+1}|S_{t+1}) \cdots}{\mu(A_t|S_t)\mu(A_{t+1}|S_{t+1}) \cdots} G_t \end{aligned}
 $$
 
 We can then update $v^\pi$ towards the importance sampled target to get:

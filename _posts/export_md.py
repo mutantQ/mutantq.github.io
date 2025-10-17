@@ -144,14 +144,14 @@ def unescape_inline(equation):
             result.append(char)
             i += 1
     
-    # Restore newline
+    # Restore newline (add space to prevent concatenation with next character)
     result_str = ''.join(result)
-    result_str = result_str.replace('<<<NEWLINE>>>', r'\newline')
+    result_str = result_str.replace('<<<NEWLINE>>>', r'\newline ')
     
     return result_str
 
 def process_block_equation_export(equation):
-    """Process block equations: unwrap align* environments, replace \\ with \newline."""
+    """Process block equations: keep align*/aligned if & is present, otherwise unwrap and replace \\ with \newline."""
     equation = equation.strip()
     
     # Replace degree symbol
@@ -159,7 +159,18 @@ def process_block_equation_export(equation):
     equation = equation.replace(r'\operatorname{argmax}', r'\argmax')
     equation = equation.replace(r'\operatorname{argmin}', r'\argmin')
     
-    # Unwrap align* environment
+    # Check if equation uses alignment character (&)
+    has_alignment = '&' in equation
+    
+    # If equation has alignment, keep the align*/aligned environment
+    if has_alignment:
+        # Keep align* or aligned as-is, just replace \\ with \newline
+        equation = equation.replace(r'\\\\', '<<<QUAD_BACKSLASH>>>')
+        equation = equation.replace(r'\\', r'\newline ')
+        equation = equation.replace('<<<QUAD_BACKSLASH>>>', r'\newline ')
+        return equation
+    
+    # Otherwise, unwrap align* environment if present
     if equation.startswith(r'\begin{align*}') and equation.endswith(r'\end{align*}'):
         # Remove the align* wrapper
         equation = equation[len(r'\begin{align*}'):-(len(r'\end{align*}'))]
@@ -173,10 +184,10 @@ def process_block_equation_export(equation):
     # Replace \\ with \newline (but be careful with \\\\)
     # First protect \\\\ (quad backslash)
     equation = equation.replace(r'\\\\', '<<<QUAD_BACKSLASH>>>')
-    # Then replace remaining \\ with \newline
-    equation = equation.replace(r'\\', r'\newline')
+    # Then replace remaining \\ with \newline (add space to prevent concatenation)
+    equation = equation.replace(r'\\', r'\newline ')
     # Restore quad backslash as \newline (since \\\\ was used for line breaks in inline)
-    equation = equation.replace('<<<QUAD_BACKSLASH>>>', r'\newline')
+    equation = equation.replace('<<<QUAD_BACKSLASH>>>', r'\newline ')
     
     return equation
 
@@ -192,6 +203,58 @@ def remove_html_tags(content):
         content = re.sub(rf'</{tag}>\s*', '', content)
     
     return content
+
+def is_in_list_context(content, pos):
+    """Check if position is within a list item by looking at indentation pattern."""
+    # Find the start of current line
+    line_start = pos
+    while line_start > 0 and content[line_start - 1] not in ['\n', '\r']:
+        line_start -= 1
+    
+    # Check indentation of current line
+    indent = content[line_start:pos]
+    if not indent or indent.strip() != '':  # No indentation or has non-whitespace
+        return False
+    
+    # Look back through previous lines to find list marker
+    search_pos = line_start - 1
+    lines_checked = 0
+    max_lines = 20  # Limit search to avoid performance issues
+    
+    while search_pos >= 0 and lines_checked < max_lines:
+        # Find start of previous line
+        prev_line_start = search_pos
+        while prev_line_start > 0 and content[prev_line_start - 1] not in ['\n', '\r']:
+            prev_line_start -= 1
+        
+        # Get the line content
+        line_content = content[prev_line_start:search_pos + 1].lstrip()
+        
+        # Empty line check
+        if not line_content.strip():
+            lines_checked += 1
+            search_pos = prev_line_start - 1
+            continue
+        
+        # Check for numbered list marker (e.g., "1. ", "2. ")
+        if line_content and line_content[0].isdigit():
+            match = re.match(r'^\d+\.\s', line_content)
+            if match:
+                return True
+        
+        # Check for bullet list marker (e.g., "- ", "* ", "+ ")
+        if line_content and line_content[0] in ['-', '*', '+']:
+            if len(line_content) > 1 and line_content[1] == ' ':
+                return True
+        
+        # If we found non-empty, non-list content, stop
+        if line_content and line_content[0] not in ['-', '*', '+'] and not line_content[0].isdigit():
+            break
+        
+        lines_checked += 1
+        search_pos = prev_line_start - 1
+    
+    return False
 
 def export_latex_equations(content):
     """Export all LaTeX equations from Jekyll format to standard markdown."""
@@ -210,6 +273,15 @@ def export_latex_equations(content):
                 line_start -= 1
             indent = content[line_start:i]
             
+            # Check if we're in a list context
+            in_list = is_in_list_context(content, i)
+            
+            # Only remove indentation if not in a list
+            if not in_list and indent and indent.strip() == '':
+                for _ in range(len(indent)):
+                    if result and result[-1] in [' ', '\t']:
+                        result.pop()
+            
             j = i + 2
             while j < len(content) - 1:
                 if content[j:j+2] == '$$':
@@ -217,9 +289,24 @@ def export_latex_equations(content):
                     processed = process_block_equation_export(equation)
                     result.append('$$')
                     result.append('\n')
-                    result.append(processed)
+                    
+                    # If in list, add indentation to each line of the equation
+                    if in_list and indent:
+                        # Split equation into lines and add indentation
+                        equation_lines = processed.split('\n')
+                        for idx, line in enumerate(equation_lines):
+                            if idx > 0:
+                                result.append('\n')
+                            if line.strip():  # Only indent non-empty lines
+                                result.append(indent)
+                            result.append(line)
+                    else:
+                        result.append(processed)
+                    
                     result.append('\n')
-                    result.append(indent)  # Apply same indentation to closing $$
+                    # Keep indentation for closing $$ if in list
+                    if in_list and indent:
+                        result.append(indent)
                     result.append('$$')
                     i = j + 2
                     break

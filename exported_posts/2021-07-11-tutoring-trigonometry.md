@@ -12,13 +12,13 @@ unlisted: true
 
 - 참고: 삼각함수의 정의
     
-    $\cos{t}=\newline(\textrm{(1,0)에서 출발하여 반지름이 1인 원을 따라 1초에 1씩 움직이는 점의 t초 후 x좌표})$
+    $\cos{t}=\newline (\textrm{(1,0)에서 출발하여 반지름이 1인 원을 따라 1초에 1씩 움직이는 점의 t초 후 x좌표})$
     
-    $\sin{t}=\newline(\textrm{(1,0)에서 출발하여 반지름이 1인 원을 따라 1초에 1씩 움직이는 점의 t초 후 y좌표})$
+    $\sin{t}=\newline (\textrm{(1,0)에서 출발하여 반지름이 1인 원을 따라 1초에 1씩 움직이는 점의 t초 후 y좌표})$
     
-    $$
-\tan{t}=\frac{\sin{t}}{\cos{t}} \newline \sec{t}=\frac{1}{\cos{t}} \newline \csc{t}=\frac{1}{\sin{t}} \newline \cot{t}=\frac{\cos{t}}{\sin{t}}
-    $$
+$$
+\tan{t}=\frac{\sin{t}}{\cos{t}} \newline  \sec{t}=\frac{1}{\cos{t}} \newline  \csc{t}=\frac{1}{\sin{t}} \newline  \cot{t}=\frac{\cos{t}}{\sin{t}}
+$$
     
 
 [https://www.youtube.com/watch?v=snHKEpCv0Hk&list=LL&index=14](https://www.youtube.com/watch?v=snHKEpCv0Hk&list=LL&index=14)
@@ -58,7 +58,7 @@ $\sin{\theta}, \cos{\theta},\tan{\theta},\sec{\theta},\csc{\theta},\cot{\theta}$
 제 1사분면 위의 점 $P=(\sin{\theta}, \cos{\theta})$에 대해, 다음을 보여라.
 
 $$
-\cos^2{\theta}+\sin^2{\theta}=1\newline 1+\tan^2\theta=\sec^2{\theta}
+\cos^2{\theta}+\sin^2{\theta}=1\newline  1+\tan^2\theta=\sec^2{\theta}
 $$
 
 만약 $P$가 제 1사분면 위의 점이 아니면, 위의 식은 성립하는가?

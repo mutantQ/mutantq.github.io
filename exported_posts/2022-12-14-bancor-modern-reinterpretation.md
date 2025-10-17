@@ -53,7 +53,9 @@ We model Keynes’ Bancor and the Clearing Union mathematically, and set up a Mu
 - For a matrix $Z$, $Z^D$ is the diagonal part of $Z$, $Z^*=Z-Z^D$ is the matrix obtained by zeroing its diagonals, and $Z^S=(\sum_{j}Z_{ij})$ is the vector created by summing over each row of $Z$. Also, given the vector $z=(z_i)$, we define the operation $\mathrm{diag}(z)=(\mathrm{diag}(z)_{ij})$ and its inverse operation as:
     
     $$
-\mathrm{diag}(z)_{ij}=\begin{cases} z_i, & \text{if } i = j\newline        0, & \text{if } i \neq j    \end{cases}\;,\;\;\mathrm{diag}^{-1}(Z)_i=(Z_{ii}).
+    \begin{align*}
+    \mathrm{diag}(z)_{ij}=\begin{cases} z_i, & \text{if } i = j\newline         0, & \text{if } i \neq j    \end{cases}\;,\;\;\mathrm{diag}^{-1}(Z)_i=(Z_{ii}).
+    \end{align*}
     $$
     
 - $\star$ denotes the element-wise multiplication of tensors with equal size.
@@ -72,7 +74,7 @@ $$
 Where $s_i$ is the time the $i$-th country joined the clearing union. Let’s narrow our focus to two countries, $i$ and $j$. When the cumulative net export $NX_{ij}(t)$ from $i$ to $j$ is positive, $i$ is said to have gained a trade surplus, and $j$ is said to be running a trade deficit. The accounts keep track of these imbalances - country $i$ gains Bancors and the country $j$ loses Bancors. Assuming $t>s_i$ for all $i$, and denoting the cumulative export from $i$ to $j$ during the interval $[\max{s_i,s_j},t]$ in Bancors as $X_{ij}(t)$,
 
 $$
-NX_{ij}(t)=X_{ij}(t)-X_{ji}(t),\newlineb_i(t)=NX^S_i(t)=\sum_{j=1}^n {NX_{ij}(t)}.
+NX_{ij}(t)=X_{ij}(t)-X_{ji}(t),\newline b_i(t)=NX^S_i(t)=\sum_{j=1}^n {NX_{ij}(t)}.
 $$
 
 ### Minimization of Global Imbalances
@@ -176,13 +178,13 @@ $$
 Note that $1/RE_{ij}(t)=RE_{ji}(t)$, and that $\sum_{j=1}^n \alpha_{ij}(t)=1$. Now, the total demand is then split according to the ratio $\alpha_{ij}(t)$, which then creates the flow of goods $F_{ji}(t)$ from $j$ into $i$. Here, the $\Delta$ operator is the discrete difference operator, i.e., $\Delta x(t)=x(t)-x(t-1)$.
 
 $$
-F_{ji}(t)&=\hat{D}_i(t)\alpha_{ij}(t) \newline \Delta X_{ij}(t)&=F_{ij}(t)=\alpha_{ji}(t)\hat{D}_j(t)\;\;\;(i\ne j)\newline \Delta NX_{ij}(t)&=\Delta X_{ij}(t)-\Delta X_{ji}(t)
+\begin{aligned}F_{ji}(t)&=\hat{D}_i(t)\alpha_{ij}(t) \newline  \Delta X_{ij}(t)&=F_{ij}(t)=\alpha_{ji}(t)\hat{D}_j(t)\;\;\;(i\ne j)\newline  \Delta NX_{ij}(t)&=\Delta X_{ij}(t)-\Delta X_{ji}(t)\end{aligned}
 $$
 
 Country $i$’s instantaneous export, import and net export at time $t$ is given by:
 
 $$
-EX_i(t)&=\sum_{j \ne i}\Delta X_{ij}(t)=\sum_{j \ne i}\alpha_{ji}(t)\hat{D}_j(t),\;\;EX(t)=(\alpha^*)^T(t)\hat{D}(t) \newline  IM_i(t)&=\sum_{j \ne i}\Delta X_{ji}(t)=\sum_{j \ne i}\alpha_{ij}(t)\hat{D}_i(t),\;\;IM(t)=(\alpha^*)^S(t)\star \hat{D}(t) \newlineNET_i(t)&=EX_i(t)-IM_i(t)
+\begin{aligned} EX_i(t)&=\sum_{j \ne i}\Delta X_{ij}(t)=\sum_{j \ne i}\alpha_{ji}(t)\hat{D}_j(t),\;\;EX(t)=(\alpha^*)^T(t)\hat{D}(t) \newline   IM_i(t)&=\sum_{j \ne i}\Delta X_{ji}(t)=\sum_{j \ne i}\alpha_{ij}(t)\hat{D}_i(t),\;\;IM(t)=(\alpha^*)^S(t)\star \hat{D}(t) \newline NET_i(t)&=EX_i(t)-IM_i(t)\end{aligned}
 $$
 
 The GDP $\tilde{R}_i(t)$ is then the sum of total demand and the net export:
@@ -200,8 +202,8 @@ $$
 The commodity prices $P_i(t)$, the inflation rates $\pi_i(t)$, and the shocks $\beta_i(t)$ are updated according to the following:
 
 $$
-P_i(t+1) &= P_i(t) \left(1+ \frac{NX_i (t)}{\hat{D} _i(t)}\right)\left(\frac{1}{1+I_i(t)}\right) \newline \pi_i{(t+1)} &= \frac{P_i{(t+1)}-P_i{(t)}}{P_i{(t)}} \newline D_i{(t+1)} &= \left(\frac{1}{1+\pi_i{(t+1)}}\right)D_i{(t)} \newline \beta_i(t+1) &= \max\{\epsilon-1,\rho \beta_i(t)+\eta_i(t)\},\newline
-&\text{ where }\epsilon,\rho>0 \text{ and }\eta_i(t) \sim \mathcal{N}(0,\sigma^2)
+\begin{aligned} P_i(t+1) &= P_i(t) \left(1+ \frac{NX_i (t)}{\hat{D} _i(t)}\right)\left(\frac{1}{1+I_i(t)}\right) \newline  \pi_i{(t+1)} &= \frac{P_i{(t+1)}-P_i{(t)}}{P_i{(t)}} \newline  D_i{(t+1)} &= \left(\frac{1}{1+\pi_i{(t+1)}}\right)D_i{(t)} \newline  \beta_i(t+1) &= \max\{\epsilon-1,\rho \beta_i(t)+\eta_i(t)\},\newline 
+&\text{ where }\epsilon,\rho>0 \text{ and }\eta_i(t) \sim \mathcal{N}(0,\sigma^2)\end{aligned}
 $$
 
 ## Incorporating International Relations
@@ -219,9 +221,9 @@ $$
 Because $A_{ii}(t)=1$ for all time $t$, the weight of the reward $R_i(t)$ is $1$. We then replace the reward in the RL objective with the shared reward $R_i'(t)$:
 
 $$
-\underset{\pi_i\in\mathcal{P_i}}{\text{maximize}}\; \sum_{t=0}^\infty{\gamma^t R_i'(t)} 
-&= \sum_{t=0}^\infty{\gamma^t(A(t) \hat{R}(t))_i} \newline 
-&= \sum_{t=0}^\infty{\sum_{j=1}^n{A_{ij}(t)\left(\tilde{R}_j(t)-\zeta|b_j(t)|\right)}}
+\begin{aligned}\underset{\pi_i\in\mathcal{P_i}}{\text{maximize}}\; \sum_{t=0}^\infty{\gamma^t R_i'(t)} 
+&= \sum_{t=0}^\infty{\gamma^t(A(t) \hat{R}(t))_i} \newline  
+&= \sum_{t=0}^\infty{\sum_{j=1}^n{A_{ij}(t)\left(\tilde{R}_j(t)-\zeta|b_j(t)|\right)}}\end{aligned}
 $$
 
 How, specifically, does the invite-and-accept mechanism work? The action space for country $i$ when there are $n$ countries is $\mathcal{A}_i=\mathbb{R}\times\mathbb{R}^{n}\times\mathbb{R}^{n}$. When $a_i(t)=(I_i(t), P_i(t),Q_i(t))\in\mathcal{A}_i$ is selected, $I_i(t)$ is used as the interest rate, and then the invitation probabilities and the acceptance probabilities are calculated using the preferences $P_i(t)$ and $Q_i(t)$:
@@ -245,7 +247,7 @@ $$
 In matrix form,
 
 $$
-M(t)&=U^*(t)(V^*)^T(t) \newline \Delta A(t) &= \delta(M(t)+M^T(t))
+\begin{aligned} M(t)&=U^*(t)(V^*)^T(t) \newline  \Delta A(t) &= \delta(M(t)+M^T(t)) \end{aligned}
 $$
 
 The maximum increment is $2\delta$, since the invitation can be sent and received in both directions. To be certain that $0 \le A_{ij}(t) \le 1$, $\delta>0$ is chosen so that $(2\delta) T\le1$ for the total number of timesteps, $T$.

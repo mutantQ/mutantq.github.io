@@ -23,7 +23,7 @@ But what exactly is this "objective function" a function of? In Cheolsu's case, 
 In general, the objective function in optimization problems is usually a function from $\mathbb{R}^n$ to $\mathbb{R}$, where $\mathbb{R}^n$ represents an $n$-dimensional real vector space. Although there may be various ways to express optimization problems, **the standard form (continuous) optimization problem** is usually represented as follows:
 
 $$
-\begin{equation}\begin{aligned}& \underset{\theta \in \mathbb{R}^n}{\text{minimize}}& & f(\theta) \newline& \text{subject to}& & g_i(\theta) \leq 0, \; i = 1, \ldots, m.\newline&&& h_j(\theta) = 0, \; j = 1, \ldots, p.\end{aligned}\end{equation}
+\begin{equation}\begin{aligned}& \underset{\theta \in \mathbb{R}^n}{\text{minimize}}& & f(\theta) \newline & \text{subject to}& & g_i(\theta) \leq 0, \; i = 1, \ldots, m.\newline &&& h_j(\theta) = 0, \; j = 1, \ldots, p.\end{aligned}\end{equation}
 $$
 
 Here, the objective function is called $f$, and the constraint functions are called $g_i$ and $h_j$ for $i=1,\dots,m$ and $j=1,\dots,p$. All of these functions maps $\mathbb{R}^n$ to $\mathbb{R}$, which means that it takes in as input an $n$-dimensional vector and outputs a single number. Unlike what was mentioned earlier about maximizing the test score, it’s traditional in standard optimization problems to minimize the objective function $f$. In fact, maximizing and minimizing differ only by a sign. To convert a maximization problem into a minimization problem, simply put a minus sign in front of the objective function. Instead of maximizing Cheol-su’s test score $s(\theta)$, if we set $-s(\theta)$ as $f(\theta)$ and mimimize it, the test score maximization problem can be represented in the standard form.
@@ -75,7 +75,7 @@ This equation addresses the issue in the previous equation where the step-size w
 Surprisingly, for simple functions like $f(\theta)=\theta^2$ we can use concepts of sequences and differentiation learned in high school to determine and prove the conditions under which $\theta^{(k)}$ converges to the state $\theta=0$, the minimum point. Let's assume $\alpha=0.01$ and start from $\theta^{(0)}=1$. Since $f'(\theta)=2\theta$, substituting this into the original equation gives:
 
 $$
-\begin{align} \theta^{(k+1)}&=\theta^{(k)}-0.02\:\theta^{(k)}=0.98\:\theta^{(k)},\newline
+\begin{align} \theta^{(k+1)}&=\theta^{(k)}-0.02\:\theta^{(k)}=0.98\:\theta^{(k)},\newline 
 \theta^{(k)}&=0.98^k \theta^{(0)}=0.98^k. \end{align}
 $$
 
@@ -90,8 +90,8 @@ However, if the magnitude of $\alpha$ is too large, the sequence $\theta^{(k)}$ 
 $$
 \begin{equation}
 \begin{aligned}
-\theta^{(k+1)}&=\theta^{(k)}-4\:\theta^{(k)}=(-3)\,\theta^{(k)}, \newline
-\theta^{(k)}&=(-3)^k, \newline
+\theta^{(k+1)}&=\theta^{(k)}-4\:\theta^{(k)}=(-3)\,\theta^{(k)}, \newline 
+\theta^{(k)}&=(-3)^k, \newline 
 \theta^{(0)}&=(-3)^k.
 \end{aligned}
 \end{equation}

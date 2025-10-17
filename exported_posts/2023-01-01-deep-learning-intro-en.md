@@ -53,7 +53,7 @@ A basic walkthrough of linear algebra and python
 *- Contemporary Linear Algebra, Howard Anton & Robert C. Busby, p.7.*
 > 
 
-$\mathbf{v}=\begin{bmatrix} x_1 \newline x_2 \end{bmatrix}$is an element of the $n$-space, that is, $\mathbf{v} \in \mathbb{R}^n$. What is $n$?
+$\mathbf{v}=\begin{bmatrix} x_1 \newline  x_2 \end{bmatrix}$is an element of the $n$-space, that is, $\mathbf{v} \in \mathbb{R}^n$. What is $n$?
 
 *Note.*
 
@@ -92,8 +92,10 @@ $\mathbf{x}= (x_1, x_2)\in \mathbb{R}^2$ is a 2-dimensional vector.
 find the set of $\mathbf{x}$ satisfying the below equation by filling in the blank.
 
 $$
-& 3x_1+x_2=0 \newline
+\begin{align*}
+& 3x_1+x_2=0 \newline 
 & \textrm{Solution: } \{(t, \Box t) | t \in \mathbb{R} \}
+\end{align*}
 $$
 
 *Vocab. 2-dimensional vector = 이차원 벡터, satisfy = 만족하다.*
@@ -158,12 +160,14 @@ Find examples of (a) a pair of two parallel vectors, and (b) a pair of two ortho
 ### Prob 2.2
 
 $$
-& 3x_1 + 2x_2 - x_3 = 0 \newline
-& 6x_1 + 4x_2 - 2x_3 = 0 \newline
+\begin{align*}
+& 3x_1 + 2x_2 - x_3 = 0 \newline 
+& 6x_1 + 4x_2 - 2x_3 = 0 \newline 
 & -3x_1 -2x_2 +x_3 = 0
+\end{align*}
 $$
 
-(a) Solve for the set of vectors $\mathbf{v}=\begin{bmatrix} x_1 \newline x_2 \newline x_3 \end{bmatrix} \in \mathbb{R}^3$ which satisfies the system of equations shown above.
+(a) Solve for the set of vectors $\mathbf{v}=\begin{bmatrix} x_1 \newline  x_2 \newline  x_3 \end{bmatrix} \in \mathbb{R}^3$ which satisfies the system of equations shown above.
 
 (b) Express $\mathbf{v}$ as a linear combination of two linearly independent vectors.
 
@@ -181,11 +185,11 @@ $$
 
 (a) What are transformations? What are linear transformations?
 
-(b) Suppose the matrix $A=\begin{bmatrix}1 & 2 \newline 3 & 4 \end{bmatrix}$ represents a linear transformation from $\mathbb{R}^2$ to $\mathbb{R}^2$. Where do the two canonical basis vectors $\mathbf{i}=\begin{bmatrix} 1 \newline 0 \end{bmatrix}$ and $\mathbf{j} = \begin{bmatrix} 0 \newline 1 \end{bmatrix}$ map to?
+(b) Suppose the matrix $A=\begin{bmatrix}1 & 2 \newline  3 & 4 \end{bmatrix}$ represents a linear transformation from $\mathbb{R}^2$ to $\mathbb{R}^2$. Where do the two canonical basis vectors $\mathbf{i}=\begin{bmatrix} 1 \newline  0 \end{bmatrix}$ and $\mathbf{j} = \begin{bmatrix} 0 \newline  1 \end{bmatrix}$ map to?
 
-(c) Where do the vectors $\mathbf{v}=\begin{bmatrix} 2 \newline 3 \end{bmatrix}$ and $\mathbf{w} = \begin{bmatrix} -1 \newline 2 \end{bmatrix}$ map to? Explain your answers.
+(c) Where do the vectors $\mathbf{v}=\begin{bmatrix} 2 \newline  3 \end{bmatrix}$ and $\mathbf{w} = \begin{bmatrix} -1 \newline  2 \end{bmatrix}$ map to? Explain your answers.
 
-(d) Answer (b), (c) in the case where the matrix $A$ is replaced by the matrix $B=\begin{bmatrix}-1 & 2 \newline 2 & -4 \end{bmatrix}$.
+(d) Answer (b), (c) in the case where the matrix $A$ is replaced by the matrix $B=\begin{bmatrix}-1 & 2 \newline  2 & -4 \end{bmatrix}$.
 
 *Note. Matrices are usually denoted by capital letters. In some cases, we will use boldface capital letters too.*
 
@@ -204,7 +208,9 @@ In other words, show that $L_A$ fits the formal definition of a linear transform
 *Note. refer to the matrix-vector multiplication rule below.*
 
 $$
-A\mathbf{x}=\begin{bmatrix} a & b \newline c & d\end{bmatrix} \begin{bmatrix} x \newline y\end{bmatrix} = x\begin{bmatrix} a \newline c\end{bmatrix} + y\begin{bmatrix} b \newline d\end{bmatrix} = \begin{bmatrix} ax+by \newline cx+dy\end{bmatrix}
+\begin{align*}
+A\mathbf{x}=\begin{bmatrix} a & b \newline  c & d\end{bmatrix} \begin{bmatrix} x \newline  y\end{bmatrix} = x\begin{bmatrix} a \newline  c\end{bmatrix} + y\begin{bmatrix} b \newline  d\end{bmatrix} = \begin{bmatrix} ax+by \newline  cx+dy\end{bmatrix}
+\end{align*}
 $$
 
 *Vocab. transformation = 변환, linear transformation = 선형 변환, canonical = 기본의, matrix = 행렬.*
@@ -213,17 +219,17 @@ $$
 
 *Practicing matrix-vector multiplication.* Using the matrix-vector multiplication rule in Prob 3.2, reduce the following matrix-vector products into a single vector (fill in the ?s) :
 
-(a) $A\mathbf{x}=\begin{bmatrix} 1 & 3 \newline 5 & -3\end{bmatrix} \begin{bmatrix} 2 \newline 1\end{bmatrix}= \begin{bmatrix} ? \newline ?\end{bmatrix}$
+(a) $A\mathbf{x}=\begin{bmatrix} 1 & 3 \newline  5 & -3\end{bmatrix} \begin{bmatrix} 2 \newline  1\end{bmatrix}= \begin{bmatrix} ? \newline  ?\end{bmatrix}$
 
-(b) $B\mathbf{y}=\begin{bmatrix} -3 & -1 \newline 2 & 2\end{bmatrix} \begin{bmatrix} -1 \newline 1\end{bmatrix}= \begin{bmatrix} ? \newline ?\end{bmatrix}$
+(b) $B\mathbf{y}=\begin{bmatrix} -3 & -1 \newline  2 & 2\end{bmatrix} \begin{bmatrix} -1 \newline  1\end{bmatrix}= \begin{bmatrix} ? \newline  ?\end{bmatrix}$
 
 Now, (c) extend the definition of the matrix-vector multiplication into higher dimensions. In other words, **find the analogous formula for calculating matrix-vector products for $3 \times 3$ matrices and $3$-tuples(vectors).** You can do this for $n \times n$ matrices and $n$-tuples(vectors), for any $n$. Did you find it?
 
 Then, using the formula you have found, calculate the following matrix-vector multiplication:
 
-(d) $C\mathbf{v}=\begin{bmatrix} 1 & 3 & -1 \newline 5 & -3 & 1 \newline 2 & 1 &  -2\end{bmatrix} \begin{bmatrix} 2 \newline 1 \newline 2\end{bmatrix}= \begin{bmatrix} ? \newline ? \newline ?\end{bmatrix}$
+(d) $C\mathbf{v}=\begin{bmatrix} 1 & 3 & -1 \newline  5 & -3 & 1 \newline  2 & 1 &  -2\end{bmatrix} \begin{bmatrix} 2 \newline  1 \newline  2\end{bmatrix}= \begin{bmatrix} ? \newline  ? \newline  ?\end{bmatrix}$
 
-(e) $D\mathbf{w}=\begin{bmatrix} -3 & -1 & 4 \newline 2 & 2 & -1 \newline 3 & -1 & 3\end{bmatrix} \begin{bmatrix} -1 \newline 1 \newline 3\end{bmatrix}= \begin{bmatrix} ? \newline ? \newline ?\end{bmatrix}$
+(e) $D\mathbf{w}=\begin{bmatrix} -3 & -1 & 4 \newline  2 & 2 & -1 \newline  3 & -1 & 3\end{bmatrix} \begin{bmatrix} -1 \newline  1 \newline  3\end{bmatrix}= \begin{bmatrix} ? \newline  ? \newline  ?\end{bmatrix}$
 
 *Vocab. product = 곱, dimension = 차원, analogous = 대응되는·비슷한.*
 
@@ -235,7 +241,7 @@ Then, using the formula you have found, calculate the following matrix-vector mu
 
 ### Prob 4.1
 
-*Composition of matrices.* In the video, we have learned how applying two $2 \times 2$ matrices $M_1$ and $M_2$ consecutively to the basis vectors $\mathbf{i}$ and $\mathbf{j}$ gives the columns of the product matrix $M_2 M_1$. For example, applying the rotation $M_1= \begin{bmatrix} 0 & -1 \newline 1 & 0 \end{bmatrix}$ and then the shear $M_2= \begin{bmatrix} 1 & 1 \newline 0 & 1 \end{bmatrix}$to the vector $\mathbf{i}= \begin{bmatrix} 1 \newline 0 \end{bmatrix}$ gives $\begin{bmatrix} 1 \newline 1 \end{bmatrix}$, which is the first column of the matrix $M_2 M_1$.
+*Composition of matrices.* In the video, we have learned how applying two $2 \times 2$ matrices $M_1$ and $M_2$ consecutively to the basis vectors $\mathbf{i}$ and $\mathbf{j}$ gives the columns of the product matrix $M_2 M_1$. For example, applying the rotation $M_1= \begin{bmatrix} 0 & -1 \newline  1 & 0 \end{bmatrix}$ and then the shear $M_2= \begin{bmatrix} 1 & 1 \newline  0 & 1 \end{bmatrix}$to the vector $\mathbf{i}= \begin{bmatrix} 1 \newline  0 \end{bmatrix}$ gives $\begin{bmatrix} 1 \newline  1 \end{bmatrix}$, which is the first column of the matrix $M_2 M_1$.
 
 *Note. The ordering of the multiplication is from right to left, in the same way we compose functions, $(g \circ f)(x)=g(f(x))$.*
 
@@ -244,7 +250,9 @@ Then, using the formula you have found, calculate the following matrix-vector mu
 You may refer to the $2\times2$ matrix-matrix multiplication formula below:
 
 $$
-\begin{bmatrix}a & b \newline c & d \end{bmatrix} \begin{bmatrix}e & f \newline g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \newline ce+dg & cf+dh \end{bmatrix}
+\begin{align*}
+\begin{bmatrix}a & b \newline  c & d \end{bmatrix} \begin{bmatrix}e & f \newline  g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \newline  ce+dg & cf+dh \end{bmatrix}
+\end{align*}
 $$
 
 (b) Give an instance of the formula found in (a), i.e. plug in actual numbers so that you can practice the calculation process yourself. You may use the matrices $C$ and $D$ in prob 3.3-(d),(e). Make sure that the matrices each have at least $6$ non-zero elements, so that the calculations are not too easy. 
@@ -298,16 +306,18 @@ $$
 
 *The transpose of a matrix, row vectors, column vectors, and the length of a vector.* The transpose of an $m \times n$ matrix $A$ is simply the matrix $A$ flipped along the diagonal, and is denoted by $A^T$. You may also think of this as interchanging the rows and columns of the matrix.
 
-As an example, in the case where $A=\begin{bmatrix}1 & 2 & 3 \newline 4 & 5 & 6 \end{bmatrix}$, the transpose of $A$ or $A^T=\begin{bmatrix} 1 & 4 \newline 2 & 5 \newline 3 & 6 \end{bmatrix}$. 
+As an example, in the case where $A=\begin{bmatrix}1 & 2 & 3 \newline  4 & 5 & 6 \end{bmatrix}$, the transpose of $A$ or $A^T=\begin{bmatrix} 1 & 4 \newline  2 & 5 \newline  3 & 6 \end{bmatrix}$. 
 
-Also, viewing the $n$-dimensional vector $\mathbf{x}$ as an $n \times 1$ matrix, we can consider its transpose too. For example, given the vector $\mathbf{x}=\begin{bmatrix} 1 \newline 2 \newline 3 \end{bmatrix}$, the transpose of $\mathbf{x}$ or $\mathbf{x}^T=\begin{bmatrix} 1 & 2 & 3 \end{bmatrix}$. 
+Also, viewing the $n$-dimensional vector $\mathbf{x}$ as an $n \times 1$ matrix, we can consider its transpose too. For example, given the vector $\mathbf{x}=\begin{bmatrix} 1 \newline  2 \newline  3 \end{bmatrix}$, the transpose of $\mathbf{x}$ or $\mathbf{x}^T=\begin{bmatrix} 1 & 2 & 3 \end{bmatrix}$. 
 
 We will now distinguish these two types of vectors as *column vectors* and *row vectors*.
 
 Lastly, the dot product of two vectors $\mathbf{x, y} \in \mathbb{R}^n$ is denoted by $\mathbf{x} \cdot \mathbf{y}$ and is defined as follows:
 
 $$
-\mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T \mathbf{y} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix} \begin{bmatrix} y_1 \newline y_2 \newline \vdots \newline y_n \end{bmatrix} =x_1y_1+x_2y_2+ \cdots + x_ny_n = \sum_{k=1}^{n} x_k y_k.
+\begin{align*}
+\mathbf{x} \cdot \mathbf{y} = \mathbf{x}^T \mathbf{y} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix} \begin{bmatrix} y_1 \newline  y_2 \newline  \vdots \newline  y_n \end{bmatrix} =x_1y_1+x_2y_2+ \cdots + x_ny_n = \sum_{k=1}^{n} x_k y_k.
+\end{align*}
 $$
 
 Now, consider the following:
@@ -334,7 +344,9 @@ Now, consider the following:
 Refer to the $2\times2$ matrix-matrix multiplication formula, or alternatively, you may use the same formula expressed in sigma notation, which are all given below:
 
 $$
-\begin{bmatrix}a & b \newline c & d \end{bmatrix} \begin{bmatrix}e & f \newline g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \newline ce+dg & cf+dh \end{bmatrix} \newline \textrm{or} \newline (AB)_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj},\; s=2.
+\begin{align*}
+\begin{bmatrix}a & b \newline  c & d \end{bmatrix} \begin{bmatrix}e & f \newline  g & h \end{bmatrix} = \begin{bmatrix}ae+bg & af+bh \newline  ce+dg & cf+dh \end{bmatrix} \newline  \textrm{or} \newline  (AB)_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj},\; s=2.
+\end{align*}
 $$
 
 *Note. Although we have proved the associativity of matrix multiplication in the video visually, it is better if we can prove this concretely using the multiplication formula.*
@@ -344,15 +356,19 @@ $$
 (c) Prove that the matrix multiplication is distributive over matrix addition for $2 \times 2$ matrices, using the matrix-matrix multiplication formula and the matrix addition formula. i.e., show the following:
 
 $$
-& A(B+C)=AB+AC, \newline
-& \textrm{for } A=\begin{bmatrix} a_{11} & a_{12} \newline   a_{21} & a_{22}\end{bmatrix}, B=\begin{bmatrix} b_{11} & b_{12} \newline   b_{21} & b_{22}\end{bmatrix}, C=\begin{bmatrix} c_{11} & c_{12} \newline   c_{21} & c_{22}\end{bmatrix}.
+\begin{align*}
+& A(B+C)=AB+AC, \newline 
+& \textrm{for } A=\begin{bmatrix} a_{11} & a_{12} \newline    a_{21} & a_{22}\end{bmatrix}, B=\begin{bmatrix} b_{11} & b_{12} \newline    b_{21} & b_{22}\end{bmatrix}, C=\begin{bmatrix} c_{11} & c_{12} \newline    c_{21} & c_{22}\end{bmatrix}.
+\end{align*}
 $$
 
 Refer to the $2\times2$ matrix-matrix multiplication formula in problem (a) and the $2\times2$ matrix addition formula. Alternatively, you may use the matrix addition formula expressed in terms of each element, which are all given below:
 
 $$
-& \begin{bmatrix}a & b \newline c & d \end{bmatrix}+\begin{bmatrix}e & f \newline g & h \end{bmatrix} = \begin{bmatrix}a+e & b+f \newline c+g & d+h \end{bmatrix} \newline 
-& \textrm{or } \newline (A+B)_{ij} = a_{ij} + b_{ij}
+\begin{align*}
+& \begin{bmatrix}a & b \newline  c & d \end{bmatrix}+\begin{bmatrix}e & f \newline  g & h \end{bmatrix} = \begin{bmatrix}a+e & b+f \newline  c+g & d+h \end{bmatrix} \newline  
+& \textrm{or } \newline  (A+B)_{ij} = a_{ij} + b_{ij}
+\end{align*}
 $$
 
 (d) What does the matrix-matrix multiplication & addition formula mean, in a visual context? Explain for each case.
@@ -388,10 +404,12 @@ A rotation (which is a linear transformation) maps the basis vectors $\mathbf{i}
 *Linear transformation from $\mathbb{R}^n$ to $\mathbb{R}^m$.* Now, consider a linear transformation from $\mathbb{R}^2$ to $\mathbb{R}^3$. This would be represented by a $3 \times 2$ matrix, such as the one below:
 
 $$
-W=\begin{bmatrix} -3 & -1 \newline 2 & 2  \newline 3 & -1\end{bmatrix}\in\mathbb{R}^{3\times2}.
+\begin{align*}
+W=\begin{bmatrix} -3 & -1 \newline  2 & 2  \newline  3 & -1\end{bmatrix}\in\mathbb{R}^{3\times2}.
+\end{align*}
 $$
 
-*Note. $\mathbb{R}^{m\times n}$ denotes the set of all $m \times n$ matrices.* Notice how the input $\mathbf{x}=\begin{bmatrix} x_1 \newline x_2 \end{bmatrix} \in \mathbb{R}^2$ is mapped to $W\mathbf{x}=x_1\begin{bmatrix} -3 \newline 2 \newline 3 \end{bmatrix} + x_2\begin{bmatrix} -1 \newline 2 \newline 1 \end{bmatrix}\in\mathbb{R}^3$.
+*Note. $\mathbb{R}^{m\times n}$ denotes the set of all $m \times n$ matrices.* Notice how the input $\mathbf{x}=\begin{bmatrix} x_1 \newline  x_2 \end{bmatrix} \in \mathbb{R}^2$ is mapped to $W\mathbf{x}=x_1\begin{bmatrix} -3 \newline  2 \newline  3 \end{bmatrix} + x_2\begin{bmatrix} -1 \newline  2 \newline  1 \end{bmatrix}\in\mathbb{R}^3$.
 
 (a) From what we’ve learned, we can say that $W\mathbf{x}$ is a linear combination of $[-3 \;\; 2 \;\; 3 ]^T$ and $[-1 \;\; 2 \;\; 1]^T$. If $\mathbf{x}$ moves around all of $\mathbb{R}^2$, where does $W\mathbf{x}$ move around in $\mathbb{R}^3$? Determine the shape of the set given below:
 
@@ -403,11 +421,11 @@ $$
 
 (b) Can you find a point in $\mathbb{R}^3$ where $W\mathbf{x}$ cannot reach? Find a point in $\mathbb{R}^3$ that lies outside of $\textrm{Im}(L_W)$.
 
-(c) Suppose $W$ is replaced by $W'=\begin{bmatrix} 3 & -1 \newline -6 & 2  \newline 3 & -1\end{bmatrix}.$ What happens to the shape of $\textrm{Im}(L_W)$?
+(c) Suppose $W$ is replaced by $W'=\begin{bmatrix} 3 & -1 \newline  -6 & 2  \newline  3 & -1\end{bmatrix}.$ What happens to the shape of $\textrm{Im}(L_W)$?
 
 (d) State all possible shapes of $\textrm{Im}(L_M)$ for $M \in \mathbb{R}^{3 \times 2}$, and the corresponding conditions of $M$ for each shape. Can $\textrm{Im}(L_M)$ be equal to $\mathbb{R}^3$?
 
-(e) Solve (a), (b), (c) for $W^T=\begin{bmatrix} -3 & 2 & 3 \newline -1 & 2 & -1 \end{bmatrix}$ , $(W')^T=\begin{bmatrix} 3 & -6 & 3 \newline -1  & 2 & -1\end{bmatrix}$. How are the circumstances different?
+(e) Solve (a), (b), (c) for $W^T=\begin{bmatrix} -3 & 2 & 3 \newline  -1 & 2 & -1 \end{bmatrix}$ , $(W')^T=\begin{bmatrix} 3 & -6 & 3 \newline  -1  & 2 & -1\end{bmatrix}$. How are the circumstances different?
 
 (f) Solve (d) with $M \in \mathbb{R}^{2 \times 3}$ instead of $M \in \mathbb{R}^{3 \times 2}$. Can $\textrm{Im}(L_M)$ be equal to $\mathbb{R}^2$?
 

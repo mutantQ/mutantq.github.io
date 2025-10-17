@@ -83,7 +83,7 @@ $$
 빛이 1초 동안 가는 거리를 $1 \;\textrm{ls}$, 1분 동안 가는 거리를 $1 \;\textrm{lm}$, 한 시간 동안 가는 거리를 $1 \;\textrm{lh}$, 하루 동안 가는 거리를 $1 \;\textrm{ld}$라고 하자. 이때, $1 \;\textrm{ls}=300,000,000\;\textrm m$이다. 빛의 속력은 일정하기 때문에, 시간이 길수록 빛이 가는 거리는 비례해서 길어진다. 예를 들어, 빛이 1초 동안 가는 거리가 $300,000,000 \; \textrm{m}$라면, 빛이 2초 동안 가는 거리는 $2 \times 300,000,000 \; \textrm{m} = 600,000,000 \; \textrm{m}$이다. 따라서 아래의 등식을 생각할 수 있다.
 
 $$
-1\;\textrm{ls}=300,000,000\;\textrm{m}\newline1\;\textrm{lm}=60\;\textrm{ls}\newline1\;\textrm{lh}=60\;\textrm{lm}\newline1\;\textrm{ld}=24\;\textrm{lh}\newline1\;\textrm{ly}=365\;\textrm{ls} \tag{2}
+1\;\textrm{ls}=300,000,000\;\textrm{m}\newline 1\;\textrm{lm}=60\;\textrm{ls}\newline 1\;\textrm{lh}=60\;\textrm{lm}\newline 1\;\textrm{ld}=24\;\textrm{lh}\newline 1\;\textrm{ly}=365\;\textrm{ls} \tag{2}
 $$
 
 $3a=b$이고 $a \neq 0,\;b\neq0$이라고 하자. 두 수가 서로 같다는 것은 서로 나누었을 때 $1$이 된다는 것이다. 즉,
@@ -95,7 +95,7 @@ $$
 같은 방식으로, 단위를 하나의 문자처럼 생각하고 식 $(2)$를 다시 쓰면 아래와 같다.
 
 $$
-\frac{300,000,000\;\textrm{m}}{1\;\textrm{ls}}=1\newline\frac{60\;\textrm{ls}}{1\;\textrm{lm}}=1\newline\frac{60\;\textrm{lm}}{1\;\textrm{lh}}=1\newline\frac{24\;\textrm{lh}}{1\;\textrm{ld}}=1\newline\frac{365\;\textrm{ld}}{1\;\textrm{ly}}=1 \tag{3}
+\frac{300,000,000\;\textrm{m}}{1\;\textrm{ls}}=1\newline \frac{60\;\textrm{ls}}{1\;\textrm{lm}}=1\newline \frac{60\;\textrm{lm}}{1\;\textrm{lh}}=1\newline \frac{24\;\textrm{lh}}{1\;\textrm{ld}}=1\newline \frac{365\;\textrm{ld}}{1\;\textrm{ly}}=1 \tag{3}
 $$
 
 이들을 서로 나눠 $1$로 만든 이유는, "어떤 수에 $1$을 아무리 곱해봤자, 그 수가 변하지 않는다"는 $1$의 매우 특별한 성질을 이용하고 싶어서이다. 아래는 이러한 $1$의 성질을 이용하여 식 $(1)$을 다시 쓴 것이다.
@@ -113,7 +113,7 @@ $$
 단위들을 모두 약분(cancel-out)하고 나면, 최종 단위는 $\textrm{m}$이다.
 
 $$
-D_{E-I} &= 9,000,000,000 \times365\times24\times60\times60\times300,000,000\;\textrm{m} \newline &\approx 85,000,000,000,000,000,000,000,000 \;\textrm{m}
+\begin{aligned} D_{E-I} &= 9,000,000,000 \times365\times24\times60\times60\times300,000,000\;\textrm{m} \newline  &\approx 85,000,000,000,000,000,000,000,000 \;\textrm{m} \end{aligned}
 $$
 
 숫자가 클 때, 괜히 '천문학적'이라는 표현을 쓰는 것이 아니라는 것을 알 수 있다.
@@ -165,7 +165,7 @@ $$
 이렇게 하면 모든 길이와 시간 단위를 통일해서 나타낼 수 있다. 심지어, 상대성 이론에서 자주 사용되는 수식의 대부분은 $c=1$을 대입하면 대칭적인 식으로 변하거나 훨씬 간단한 식으로 바뀐다.
 
 $$
-\textrm{새로운 공간 좌표:}\;\;\; x'=\gamma(x-vt) \;\rightarrow\; x'=\gamma(x-vt) \newline \textrm{새로운 시간 좌표:}\;\;\; t'=\gamma\left(t-\frac{v}{c^2}x \right) \;\rightarrow\; t'=\gamma(t-vx) \newline \textrm{물체의 에너지:}\;\;\; E^2 =(mc^2)^2+p^2c^2 \;\rightarrow\; E^2=m^2+p^2 \newline \textrm{블랙홀의 반지름:}\;\;\;R_S=\frac{2GM}{c^2} \;\rightarrow\; R_S=2M
+\textrm{새로운 공간 좌표:}\;\;\; x'=\gamma(x-vt) \;\rightarrow\; x'=\gamma(x-vt) \newline  \textrm{새로운 시간 좌표:}\;\;\; t'=\gamma\left(t-\frac{v}{c^2}x \right) \;\rightarrow\; t'=\gamma(t-vx) \newline  \textrm{물체의 에너지:}\;\;\; E^2 =(mc^2)^2+p^2c^2 \;\rightarrow\; E^2=m^2+p^2 \newline  \textrm{블랙홀의 반지름:}\;\;\;R_S=\frac{2GM}{c^2} \;\rightarrow\; R_S=2M
 $$
 
 ## 단위의 설정이 중요한 이유

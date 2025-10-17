@@ -21,7 +21,7 @@ Let $X$ be a complete normed vector space, equipped with a norm $|\cdot|$ and $T
 2. $\forall x_0 \in X$, the sequence $x_{n+1}=Tx_n$ converges to $x^\star$ in a geometric fashion:
     
     $$
-\|x_n-x^\star\| \le \gamma^n\|x_0-x^\star\|
+    \|x_n-x^\star\| \le \gamma^n\|x_0-x^\star\|
     $$
     
     Thus, $\lim_{n\rightarrow\infty}|x_n-x^\star|\le \lim_{n\rightarrow\infty}\gamma^n|x_0-x^\star|=0.$
@@ -113,7 +113,7 @@ This is the q-version of the previous Bellman Expectation Operator $T_V^\pi$. It
 2. $T^\star$ is a $\gamma$-contraction with respect to $|\cdot|_\infty$:
     
     $$
-\|T^\star v-T^\star u\|_\infty \le \gamma \|v-u\|_\infty, \forall u,v \in V
+    \|T^\star v-T^\star u\|_\infty \le \gamma \|v-u\|_\infty, \forall u,v \in V
     $$
     
 3. $T^\star$ is monotonic:
