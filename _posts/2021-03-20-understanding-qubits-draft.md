@@ -5,7 +5,7 @@ date: 2021-03-20 10:00:00 +0900
 description: 양자컴퓨팅의 기본 단위인 큐비트를 수학적으로 이해하고, 블로흐 구면과 복소수의 필요성을 알아봅니다
 tags: quantum-computing qubits bloch-sphere complex-numbers physics korean
 categories: quantum
-published: false
+unlisted: true
 ---
 
 ## 양자컴퓨터를 이해하고 싶다면 큐비트부터 이해하자
