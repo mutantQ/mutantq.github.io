@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""
+r"""
 Script to fix LaTeX equations in markdown files for Jekyll compatibility.
 - Inline equations ($...$): escape special characters, replace \newline with \\\\
 - Block equations ($$...$$): replace \newline with \\, wrap in align* if needed
+- Replace \degree with ° (degree symbol)
+- Replace \: with \\: (LaTeX spacing command)
 - Idempotent operation
 
 Escaping rules:
@@ -44,6 +46,12 @@ def double_escape_inline(equation):
     equation = equation.replace(r'\newline', '<<<NEWLINE>>>')
     equation = equation.replace(r'\argmax', r'\operatorname{argmax}')
     equation = equation.replace(r'\argmin', r'\operatorname{argmin}')
+    equation = equation.replace(r'\degree', '°')
+    
+    # Handle \: → \\: (idempotent: protect existing \\:)
+    equation = equation.replace(r'\\:', '<<<ESCAPED_COLON>>>')
+    equation = equation.replace(r'\:', r'\\:')
+    equation = equation.replace('<<<ESCAPED_COLON>>>', r'\\:')
     
     # Parse equation and identify LaTeX command braces
     result = []
@@ -163,11 +171,22 @@ def process_block_equation(equation):
     
     if equation.startswith(r'\begin{align'):
         equation = equation.replace(r'\newline', r'\\')
+        equation = equation.replace(r'\degree', '°')
+        # Handle \: → \\: (idempotent)
+        equation = equation.replace(r'\\:', '<<<ESCAPED_COLON>>>')
+        equation = equation.replace(r'\:', r'\\:')
+        equation = equation.replace('<<<ESCAPED_COLON>>>', r'\\:')
         return equation
     
     equation = equation.replace(r'\newline', r'\\')
     equation = equation.replace(r'\argmax', r'\operatorname{argmax}')
     equation = equation.replace(r'\argmin', r'\operatorname{argmin}')
+    equation = equation.replace(r'\degree', '°')
+    
+    # Handle \: → \\: (idempotent)
+    equation = equation.replace(r'\\:', '<<<ESCAPED_COLON>>>')
+    equation = equation.replace(r'\:', r'\\:')
+    equation = equation.replace('<<<ESCAPED_COLON>>>', r'\\:')
     
     if ('\\\\' in equation or '&' in equation):
         if not (r'\begin{aligned}' in equation or r'\begin{align*}' in equation):
