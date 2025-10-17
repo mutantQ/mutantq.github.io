@@ -2,9 +2,10 @@
 layout: post
 title: "큐비트의 이헤"
 date: 2025-10-17 19:00:00 +0900
-description: 양자컴퓨팅의 기본: 큐비트와 블로흐 구면, 그리고 복소수의 필요성
+description: "양자컴퓨팅의 기본: 큐비트와 블로흐 구면, 그리고 복소수의 필요성"
 tags: quantum-computing qubits bloch-sphere complex-numbers physics korean
 categories: quantum
+unlisted: true
 ---
 
 ## 양자컴퓨터를 이해하고 싶다면 큐비트부터 이해하자
