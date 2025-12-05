@@ -8,6 +8,8 @@ categories: hiring
 lang: en
 ---
 
+![mutual logo](/assets/img/mutual-logo.jpg)
+
 **We make digital content provably authentic at the hardware level.**
 
 AI-generated media is indistinguishable from reality. Software detection doesn't work. At mutual, we're building cryptographic signing directly into camera hardware—so content is authenticated the moment it's captured, before it ever touches software.

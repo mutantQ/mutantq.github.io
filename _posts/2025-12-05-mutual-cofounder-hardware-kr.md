@@ -8,6 +8,8 @@ categories: hiring
 lang: ko
 ---
 
+![mutual 로고](/assets/img/mutual-logo.jpg)
+
 **"이 영상, 진짜야?" 라는 질문에 답할 수 있는 기술을 만듭니다.**
 
 AI가 만든 영상과 진짜 영상, 이제 눈으로는 구분이 안 됩니다. 소프트웨어로 가려내는 건 한계가 있고요.
