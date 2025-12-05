@@ -12,9 +12,11 @@ lang: en
 
 **We make digital content provably authentic at the hardware level.**
 
-AI-generated media is indistinguishable from reality. Software detection doesn't work. At mutual, we're building cryptographic signing directly into camera hardware—so content is authenticated the moment it's captured, before it ever touches software.
+AI-generated media is indistinguishable from reality. Software detection doesn't work. \\
+At mutual, we're building cryptographic signing directly into camera hardware—so content is authenticated the moment it's captured, before it ever touches software.
 
-If you’d like to understand the architecture in more detail, you can read our whitepaper (PDF): [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf).
+Corporate introduction: [Introducing mutual](/blog/2025/introducing-mutual/) \\
+Whitepaper (PDF): [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf)
 
 ## Backed By
 
