@@ -55,11 +55,11 @@ ninja.data = [{
             window.location.href = "/blog/2025/mutual-cofounder-hardware/";
           
         },
-      },{id: "post-공동창업자-하드웨어-엔지니어-mutual",
+      },{id: "post-하드웨어-엔지니어-공동창업자를-찾습니다-mutual",
         
-          title: "공동창업자 (하드웨어 엔지니어) — mutual",
+          title: "하드웨어 엔지니어 공동창업자를 찾습니다! — mutual",
         
-        description: "AI 시대의 신뢰 인프라를 구축합니다. 기술 공동창업자를 찾습니다.",
+        description: "AI 시대의 신뢰 인프라를 구축해나갈 야망 있는 분을 모십니다",
         section: "Posts",
         handler: () => {
           
