@@ -57,6 +57,8 @@ Conceptually, the flow is straightforward:
 
 This way, when someone opens an image later, they can ask: \"Did this really originate from a physical sensor? Was it tampered with along the way?\"—and get a cryptographically grounded answer. The root of trust sits in **hardware**, not just in software that can be bypassed.
 
+For a deeper dive into the architecture, you can read the whitepaper (PDF): [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf).
+
 ## How we got here
 
 In spring 2024, I wrote up the first version of SRA as a kind of whitepaper. Then I left for mandatory military service. When I came back, I gathered a few friends, and we tried to turn the idea into a prototype.
@@ -85,7 +87,7 @@ Qualcomm's Snapdragon 8 Gen 3 already supports C2PA at the hardware level. Compa
 
 mutual's goal is to build a **reference architecture** that is not tied to any single chip or vendor. If a System-on-Chip exposes the right security primitives, our design should be able to run on top of it. On the business side, we are thinking in terms of an ARM-like IP licensing model.
 
-For now, we're a small team based in Seoul. Our days are filled with reading specs, building prototypes, and translating standards into running code. And soon, if things go well, we'll add a hardware engineer co-founder to the team.
+For now, we're a small team based in Seoul. Our days are filled with reading specs, building prototypes, and translating standards into running code. We're looking forward to adding a a hardware engineer co-founder to the team.
 
 If any of this resonates with you, you might enjoy reading the [co-founder role description](/blog/2025/mutual-cofounder-hardware/).
 

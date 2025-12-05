@@ -14,6 +14,8 @@ lang: en
 
 AI-generated media is indistinguishable from reality. Software detection doesn't work. At mutual, we're building cryptographic signing directly into camera hardware—so content is authenticated the moment it's captured, before it ever touches software.
 
+If you’d like to understand the architecture in more detail, you can read our whitepaper (PDF): [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf).
+
 ## Backed By
 
 **Kay Kyungsik Woo** — Founder & CEO of [MVL Foundation](https://mvlchain.io), the company behind TADA, a blockchain-based ride-hailing platform operating across Southeast Asia. Kay brings deep experience in building trust infrastructure for real-world applications.
@@ -36,7 +38,7 @@ AI-generated media is indistinguishable from reality. Software detection doesn't
 
 ## What We Offer
 
-- **Up to 20% equity** — true co-founder stake
+- **Default 10%, up to 20% equity** — true co-founder stake
 - **Hybrid-remote** — work remotely, but able to be in Seoul periodically for in-person collaboration
 - Hard technical problem with real-world impact
 
