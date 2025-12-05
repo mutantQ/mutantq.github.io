@@ -44,7 +44,51 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-큐비트의-이해",
+        },{id: "post-co-founder-hardware-engineer-mutual",
+        
+          title: "Co-Founder (Hardware Engineer) — mutual",
+        
+        description: "We&#39;re building the trust layer for the post-AI media era. Looking for a technical co-founder.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/mutual-cofounder-hardware/";
+          
+        },
+      },{id: "post-공동창업자-하드웨어-엔지니어-mutual",
+        
+          title: "공동창업자 (하드웨어 엔지니어) — mutual",
+        
+        description: "AI 시대의 신뢰 인프라를 구축합니다. 기술 공동창업자를 찾습니다.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/mutual-cofounder-hardware-kr/";
+          
+        },
+      },{id: "post-introducing-mutual",
+        
+          title: "Introducing mutual",
+        
+        description: "Building trust infrastructure for the post-AI era",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/introducing-mutual/";
+          
+        },
+      },{id: "post-mutual을-소개합니다",
+        
+          title: "mutual을 소개합니다",
+        
+        description: "AI 시대의 신뢰 인프라를 만듭니다",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/introducing-mutual-kr/";
+          
+        },
+      },{id: "post-큐비트의-이해",
         
           title: "큐비트의 이해",
         
@@ -77,6 +121,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/signing-right-away/";
           
         },
+      },{id: "post-ai-science-and-the-humanities",
+        
+          title: "AI, Science, and the Humanities",
+        
+        description: "Exploring the essential role of humanities in AI research",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-science-and-humanities/";
+          
+        },
       },{id: "post-인공지능과-과학-그리고-인문학",
         
           title: "인공지능과 과학, 그리고 인문학",
@@ -86,17 +141,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/ai-science-and-humanities-kr/";
-          
-        },
-      },{id: "post-ai-science-and-the-humanities",
-        
-          title: "AI, Science, and the Humanities",
-        
-        description: "Exploring the essential role of humanities in AI research",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/ai-science-and-humanities-copy/";
           
         },
       },{id: "post-test-01-정답",
