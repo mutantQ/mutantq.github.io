@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "공동창업자 (하드웨어 엔지니어) — mutual"
+title: "하드웨어 엔지니어 공동창업자를 찾습니다! — mutual"
 date: 2025-12-05 12:00:00 +0900
-description: AI 시대의 신뢰 인프라를 구축합니다. 기술 공동창업자를 찾습니다.
+description: AI 시대의 신뢰 인프라를 구축해나갈 야망 있는 분을 모십니다
 tags: startup hiring cofounder hardware fpga verilog
 categories: hiring
 lang: ko
