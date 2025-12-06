@@ -34,10 +34,10 @@ At mutual, we are designing **[SRA (Signing Right Away)](/assets/pdf/SRA-2024-05
 ## Research Highlights
 
 - **Reinforcement learning**  
-  At Seoul National University, my research spans offline reinforcement learning and generative models for sequential decision-making. My recent work on **[Q-Guided Flow Q-Learning (QFQL)](https://openreview.net/pdf?id=MFY9i3uR7S)** explores how to decouple policy and value learning while maintaining stability, and was accepted to the CoRL 2025 Workshop RemembeRL.
+  My recent work on **[Q-Guided Flow Q-Learning (QFQL)](https://openreview.net/pdf?id=MFY9i3uR7S)** explores how to decouple policy and value learning while maintaining stability, and was accepted to the CoRL 2025 Workshop RemembeRL. At [KAIST ACSS Lab](http://acss.kaist.ac.kr/), I studied group equivariant neural networks and explored how to apply symmetry-aware architectures to reinforcement learning.
 
-- **Security and real-world systems**  
-  I have worked on deep Q-networks for penetration testing on large-scale networks ([KICS 2025](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132012)), and supply chain verification techniques to prevent model and data poisoning attacks on military AI systems ([CISC-W 2024](https://manuscriptlink-society-file.s3.ap-northeast-1.amazonaws.com/kiisc/conference/ciscw2024/(%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC)+%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AF%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC(CISC-W%E2%80%9924)_.pdf)). At [KAIST ACSS Lab](http://acss.kaist.ac.kr/), I studied group equivariant neural networks and explored how to apply symmetry-aware architectures to reinforcement learning, which formed the basis of my early research experience.
+- **AI for Security, Security for AI**  
+  I have worked on deep Q-networks for penetration testing on large-scale networks ([KICS 2025](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12132012)), and supply chain verification techniques to prevent model and data poisoning attacks on military AI systems ([CISC-W 2024](https://manuscriptlink-society-file.s3.ap-northeast-1.amazonaws.com/kiisc/conference/ciscw2024/(%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC)+%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AF%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC(CISC-W%E2%80%9924)_.pdf)).
 
 ## Philosophy & Writing
 
