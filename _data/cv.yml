@@ -34,6 +34,13 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Pre-founder, mutual
+      institution: mutual, Seoul, South Korea
+      year: Oct 2025 - Present
+      description:
+        - Building trust infrastructure for the post-AI media era
+        - Leading development of SRA (Signing Right Away), a hardware-rooted architecture for C2PA-aligned content authenticity
+        - Raised angel investment from Kay Kyungsik Woo (MVL Foundation) to support FPGA prototyping and hardware development
     - title: Military Science & Technology Researcher
       institution: Republic of Korea Army, Innovation Institute for Future Army (IIFA), Daejeon, South Korea
       year: Apr 2024 - Oct 2025
@@ -112,10 +119,10 @@
     - title: "Signing Right Away (SRA)"
       year: Mar 2024 - Present
       description:
-        - Designed hardware-rooted trust architecture for verifiable digital provenance
-        - Developed authenticated encryption scheme for camera-to-processor data integrity
-        - Proposed TEE-based immediate signing to combat AI-generated fake content
-        # - Received angel investment (~$70K) for hardware prototyping and FPGA development
+        - Designed hardware-rooted trust architecture for verifiable digital provenance and content authenticity
+        - Developed authenticated encryption scheme (e.g., AES-GCM/CCM) for securing camera-to-processor image data
+        - Proposed TEE-based immediate signing aligned with C2PA to combat AI-generated fake content
+        - Raised angel investment for FPGA-based prototyping and secure camera pipeline development as part of mutual
         - "Collaborators: Wonbeen Yoon, Minjun Yi (Seoul National University)"
 
 - title: Essays & Educational Content
