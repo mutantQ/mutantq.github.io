@@ -31,6 +31,8 @@ I am an undergraduate researcher at Seoul National University, specializing in a
 
 **My end goal is to develop reinforcement learning agents that can make reliable decisions based on grounded factual information.** This vision drives two parallel research directions: advancing the technical foundations of decision-making through offline RL and generative models, while simultaneously ensuring the integrity of the information these agents rely upon through hardware-rooted content provenance and AI security.
 
+Concretely, I am currently building **mutual**, a small team working on **SRA (Signing Right Away)**—a hardware-rooted architecture that cryptographically signs camera sensor data at the moment of capture, aligned with the C2PA content authenticity standard. You can learn more in the company introduction post [Introducing mutual](/blog/2025/introducing-mutual/) and the whitepaper (PDF) [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf).
+
 ## Research Highlights
 
 My recent work on **Q-Guided Flow Q-Learning (QFQL)** introduces a novel actor-critic framework that decouples policy and value learning in offline reinforcement learning. By combining conditional flow matching with temporal-difference learning and adding a value-seeking guidance term at inference, QFQL achieves strong performance while maintaining training stability—without requiring auxiliary student models or policy regularizers. This work was accepted at the CoRL 2025 Workshop RemembeRL.
@@ -39,13 +41,7 @@ Beyond reinforcement learning, I explore the intersection of AI and security. I 
 
 ## Philosophy & Writing
 
-I believe that AI research must be grounded in a deep understanding of humanity, ethics, and society. Through my essays and whitepapers, I explore questions at the intersection of technology and philosophy:
-
-- **AI, Science, and the Humanities**: Examining why AI researchers must actively pursue an understanding of humans and society beyond technical knowledge, and how legal and ethical systems might evolve as humans and AI coexist.
-
-- **Signing Right Away**: A hardware-rooted trust architecture for verifiable digital provenance, addressing the proliferation of AI-generated fake content by securing content authenticity at the source.
-
-I also maintain educational content on deep learning and reinforcement learning fundamentals, making complex AI concepts accessible to learners at all levels.
+I believe that AI research must be grounded in a deep understanding of humanity, ethics, and society. In essays like **AI, Science, and the Humanities**, I explore how legal, ethical, and philosophical questions should shape AI research. I also maintain educational content on deep learning and reinforcement learning fundamentals, making complex AI concepts accessible to learners at all levels.
 
 ## Background
 
