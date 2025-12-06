@@ -5,7 +5,7 @@ description: Multi-agent reinforcement learning project simulating currency wars
 img: assets/img/projects/soul_currency.jpg
 importance: 1
 category: work
-github: https://github.com/codingJang/SOUL_Project
+github: https://github.com/mutantq/SOUL_Project
 ---
 
 ## Project Overview

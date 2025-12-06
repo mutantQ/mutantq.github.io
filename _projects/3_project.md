@@ -5,7 +5,7 @@ description: Virtual reality laboratory for teaching quantum computing concepts,
 img: assets/img/projects/qupid_vr.jpg
 importance: 3
 category: fun
-github: https://github.com/codingJang/QuPid
+github: https://github.com/mutantq/QuPid
 ---
 
 ## Project Overview

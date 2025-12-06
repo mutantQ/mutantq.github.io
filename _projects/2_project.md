@@ -5,7 +5,7 @@ description: Real-time feedback system for Forward Head Posture using markerless
 img: assets/img/projects/fhp_posture.jpg
 importance: 2
 category: work
-github: https://github.com/codingJang/codingJang-2019_FHP-Feedback-System
+github: https://github.com/mutantq/mutantq-2019_FHP-Feedback-System
 related_publications: true
 ---
 

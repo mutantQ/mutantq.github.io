@@ -256,15 +256,15 @@ The maximum increment is $2\delta$, since the invitation can be sent and receive
 
 ## Code
 
-[**economic_env.py**](https://github.com/codingJang/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/economics_env.py): The economics environment for the RL agents is implemented using PettingZoo.
+[**economic_env.py**](https://github.com/mutantq/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/economics_env.py): The economics environment for the RL agents is implemented using PettingZoo.
 
-[**politics_env.py**](https://github.com/codingJang/SOUL_project/blob/main/Source/Prototypes/PrototypeVer1/politics_env.py): The reward sharing mechanism is tested for randomly generated rewards.
+[**politics_env.py**](https://github.com/mutantq/SOUL_project/blob/main/Source/Prototypes/PrototypeVer1/politics_env.py): The reward sharing mechanism is tested for randomly generated rewards.
 
-[**APPO.py:**](https://github.com/codingJang/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/APPO.py) The RL agent is created and trained using Ray RLlib, using APPO+LSTM combination.
+[**APPO.py:**](https://github.com/mutantq/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/APPO.py) The RL agent is created and trained using Ray RLlib, using APPO+LSTM combination.
 
-[**load_and_play_ui.py**](https://github.com/codingJang/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/load_and_play_ui.py): The trained model is loaded and tested in the economics environment, with one of the agent’s action replaced with human input.
+[**load_and_play_ui.py**](https://github.com/mutantq/SOUL_project/blob/main/Source/Prototypes/PrototypeVer2/load_and_play_ui.py): The trained model is loaded and tested in the economics environment, with one of the agent’s action replaced with human input.
 
-[**PreprocessingInternationalRelationsData**](https://github.com/codingJang/SOUL_project/tree/main/Source/PreprocessingInternationalRelationsData): The affinity matrix $A\_\{ij\}(t)$, which is initialized to the identity matrix $I$, may be replaced with the IGO_adjmat.csv or DCAD_adjmat.csv, which are created by preprocessing the Intergovernmental Organization (IGO) dataset or the Defense Cooperation Agreement Dataset (DCAD), respectively.
+[**PreprocessingInternationalRelationsData**](https://github.com/mutantq/SOUL_project/tree/main/Source/PreprocessingInternationalRelationsData): The affinity matrix $A\_\{ij\}(t)$, which is initialized to the identity matrix $I$, may be replaced with the IGO_adjmat.csv or DCAD_adjmat.csv, which are created by preprocessing the Intergovernmental Organization (IGO) dataset or the Defense Cooperation Agreement Dataset (DCAD), respectively.
 
 ## Experiments
 
