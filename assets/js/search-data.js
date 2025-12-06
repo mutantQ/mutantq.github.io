@@ -733,7 +733,7 @@ ninja.data = [{
           section: "News",},{id: "news-after-presenting-sra-and-the-mutual-vision-on-november-4-2025-i-received-an-angel-investment-decision-on-november-6-2025-from-kay-kyungsik-woo-founder-amp-amp-ceo-of-mvl-foundation-the-company-behind-tada-tada-if-you-re-curious-about-the-vision-and-technical-details-you-can-read-introducing-mutual-and-the-whitepaper-pdf-signing-right-away",
           title: 'After presenting SRA and the mutual vision on November 4, 2025, I received...',
           description: "",
-          section: "News",},{id: "news-following-the-angel-investment-from-kay-kyungsik-woo-founder-amp-amp-ceo-of-mvl-foundation-i-have-started-recruiting-a-hardware-engineer-co-founder-for-mutual-we-are-building-a-hardware-rooted-content-authenticity-infrastructure-sra-signing-right-away-that-signs-camera-sensor-data-at-the-moment-of-capture-if-you-are-interested-or-know-someone-who-might-be-a-good-fit-please-see-the-detailed-description-here-하드웨어-엔지니어-공동창업자-모집-공고",
+          section: "News",},{id: "news-following-the-angel-investment-from-kay-kyungsik-woo-founder-amp-amp-ceo-of-mvl-foundation-i-have-started-recruiting-a-hardware-engineer-co-founder-for-mutual-we-are-building-a-hardware-rooted-content-authenticity-infrastructure-sra-signing-right-away-that-signs-camera-sensor-data-at-the-moment-of-capture-if-you-are-interested-or-know-someone-who-might-be-a-good-fit-please-see-the-detailed-description-here-co-founder-hardware-engineer-mutual",
           title: 'Following the angel investment from Kay Kyungsik Woo (founder &amp;amp;amp; CEO of MVL...',
           description: "",
           section: "News",},{id: "projects-soul-currency-war-simulation",
