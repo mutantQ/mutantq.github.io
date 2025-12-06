@@ -27,9 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am the pre-founder of **[mutual](/blog/2025/introducing-mutual/)**, a team building trust infrastructure for the post-AI media era.
+I am the pre-founder of **[mutual](/blog/2025/introducing-mutual/)**, a team building trust infrastructure for the post-AI media era. My long-term goal is to develop reinforcement learning agents that can make reliable decisions based on grounded factual information. To get there, I am starting one level deeper: making sure the “facts” themselves can be trusted.
 
-My long-term goal is to develop reinforcement learning agents that can make reliable decisions based on grounded factual information. To get there, I am starting one level deeper: making sure the “facts” themselves can be trusted. At mutual, we are designing **[SRA (Signing Right Away)](/assets/pdf/SRA-2024-05-26.pdf)** — a hardware-rooted architecture that cryptographically signs camera sensor data at the moment of capture, aligned with the C2PA content authenticity standard. Our aim is to provide an integrity layer that downstream systems — from apps and blockchains to future RL agents — can safely rely on.
+At mutual, we are designing **[SRA (Signing Right Away)](/assets/pdf/SRA-2024-05-26.pdf)** — a hardware-rooted architecture that cryptographically signs camera sensor data at the moment of capture, aligned with the C2PA content authenticity standard. Our aim is to provide an integrity layer that downstream systems — from apps and blockchains to future RL agents — can safely rely on.
 
 ## Research Highlights
 
