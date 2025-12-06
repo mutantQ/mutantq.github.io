@@ -5,7 +5,7 @@
     "image": "",
     "email": "jangyejun@snu.ac.kr",
     "url": "https://mutantq.github.io",
-    "summary": "AI researcher specializing in multi-agent reinforcement learning and deep learning. Research focus on developing reinforcement learning agents that can make reliable decisions based on grounded factual information, bridging advanced decision-making algorithms with trustworthy information infrastructure. Currently pursuing B.S. in Electrical and Computer Engineering at Seoul National University.",
+    "summary": "AI researcher and pre-founder of mutual, building trust infrastructure for the post-AI media era. Research focus on developing reinforcement learning agents that can make reliable decisions based on grounded factual information, bridging advanced decision-making algorithms with trustworthy information infrastructure. Currently pursuing B.S. in Electrical and Computer Engineering at Seoul National University.",
     "location": {
       "city": "Seoul",
       "countryCode": "KR",
@@ -88,17 +88,32 @@
   ],
   "work": [
     {
+      "name": "mutual",
+      "position": "Pre-founder",
+      "location": "Seoul, South Korea",
+      "url": "https://mutantq.github.io/blog/2025/introducing-mutual/",
+      "startDate": "2025-10",
+      "endDate": "Present",
+      "summary": "Building trust infrastructure for the post-AI media era through hardware-rooted content authenticity.",
+      "highlights": [
+        "Designing SRA (Signing Right Away), a hardware-rooted architecture for C2PA-aligned content authenticity",
+        "Integrating authenticated encryption and secure camera pipelines between image sensors and trusted execution environments",
+        "Raised angel investment from Kay Kyungsik Woo (MVL Foundation) to support FPGA prototyping and hardware development"
+      ]
+    },
+    {
       "name": "Republic of Korea Army, Innovation Institute for Future Army (IIFA)",
       "position": "Military Science & Technology Researcher",
       "location": "Daejeon, South Korea",
       "url": "https://en.wikipedia.org/wiki/Republic_of_Korea_Army",
       "startDate": "2024-04",
       "endDate": "2025-10",
-      "summary": "Research on AI security and deep reinforcement learning applications for military systems.",
+      "summary": "Mandatory military service as a Military Science & Technology Researcher, focusing on AI security and deep reinforcement learning applications for military systems.",
       "highlights": [
         "Conducted research on AI security, focusing on model and data poisoning attacks on military AI systems",
         "Investigated deep reinforcement learning applications for penetration testing on large-scale networks",
-        "Presented research findings at national conferences (KICS 2025, CISC-W 2024)"
+        "Presented research findings at national conferences (KICS 2025, CISC-W 2024)",
+        "Led work that resulted in publications at KICS 2025 and CISC-W 2024 on DQN-based penetration testing and supply chain verification for military AI systems"
       ]
     },
     {
@@ -330,11 +345,12 @@
   "projects": [
     {
       "name": "Signing Right Away (SRA)",
-      "summary": "Hardware-rooted trust architecture for verifiable digital provenance to combat AI-generated fake content.",
+      "summary": "Hardware-rooted trust architecture for verifiable digital provenance and content authenticity, forming the core of mutual's SRA (Signing Right Away) system.",
       "highlights": [
-        "Designed hardware-rooted trust architecture for verifiable digital provenance",
-        "Developed authenticated encryption scheme for camera-to-processor data integrity",
-        "Proposed TEE-based immediate signing to combat AI-generated fake content"
+        "Designed hardware-rooted trust architecture for verifiable digital provenance and C2PA-aligned content authenticity",
+        "Developed authenticated encryption scheme (e.g., AES-GCM/CCM) for securing camera-to-processor image data",
+        "Proposed TEE-based immediate signing to combat AI-generated fake content",
+        "Raised angel investment to fund FPGA-based prototyping and secure camera pipeline development"
       ],
       "startDate": "2024-03",
       "endDate": "Present",
