@@ -33,7 +33,7 @@ At mutual, we are designing **[SRA (Signing Right Away)](/assets/pdf/SRA-2024-05
 
 ## Research Highlights
 
-- **Reinforcement learning & AI safety**  
+- **Reinforcement learning**  
   At Seoul National University, my research spans offline reinforcement learning and generative models for sequential decision-making. My recent work on **[Q-Guided Flow Q-Learning (QFQL)](https://openreview.net/pdf?id=MFY9i3uR7S)** explores how to decouple policy and value learning while maintaining stability, and was accepted to the CoRL 2025 Workshop RemembeRL.
 
 - **Security and real-world systems**  
