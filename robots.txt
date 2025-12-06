@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mutantQ.github.io/sitemap.xml
+Sitemap: https://mutantq.github.io/sitemap.xml
