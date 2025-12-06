@@ -61,7 +61,7 @@ For a deeper dive into the architecture, you can read the whitepaper (PDF): [Sig
 
 ## How we got here
 
-In spring 2024, I wrote up the first version of SRA as a kind of whitepaper. Then I left for mandatory military service. When I came back, I gathered a few friends, and we tried to turn the idea into a prototype.
+In spring 2024, I wrote up the first version of SRA as a kind of whitepaper. Around that time I also benefited a lot from guidance by Prof. Soojean Han at KAIST ACSS Lab, who encouraged me to formalize the work in this format and generously provided the first Trion T20 FPGA board that made our early prototyping possible. Then I left for mandatory military service. When I came back, I gathered a few friends, and we tried to turn the idea into a prototype.
 
 We aimed high: without official documentation, we tried to reverse-engineer the MIPI CSI-2 camera interface and bolt a secure transport layer on top. It mostly failed. Our FPGA board didn't have enough memory. Our best-effort understanding of the protocol led to streams that would randomly break. We learned exactly what was wrong and what we needed—but we didn't have the resources to get there.
 
