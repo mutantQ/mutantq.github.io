@@ -773,14 +773,14 @@ ninja.data = [{
         title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://github.com/mutantq", "_blank");
+          window.open("https://github.com/mutantQ", "_blank");
         },
       },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/mutantq", "_blank");
+          window.open("https://www.linkedin.com/in/mutantQ", "_blank");
         },
       },{
         id: 'social-rss',
