@@ -1,12 +1,12 @@
 github_users:
-  - mutantq
+  - mutantQ
 
 repo_description_lines_max: 2
 
 github_repos:
-  - mutantq/SOUL_Project
-  - mutantq/mutantq-2019_FHP-Feedback-System
-  - mutantq/QuPid
-  - mutantq/Car-The-Garden
-  - mutantq/CongestionControl
-  - mutantq/2019-OOP-Python-asdf
+  - mutantQ/SOUL_Project
+  - mutantQ/mutantQ-2019_FHP-Feedback-System
+  - mutantQ/QuPid
+  - mutantQ/Car-The-Garden
+  - mutantQ/CongestionControl
+  - mutantQ/2019-OOP-Python-asdf

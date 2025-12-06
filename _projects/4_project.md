@@ -5,7 +5,7 @@ description: Miniature autonomous vehicle navigating the Korean driving test usi
 img: assets/img/projects/car_autonomous.jpg
 importance: 4
 category: fun
-github: https://github.com/mutantq/Car-The-Garden
+github: https://github.com/mutantQ/Car-The-Garden
 ---
 
 ## Project Overview

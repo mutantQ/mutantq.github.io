@@ -4,7 +4,7 @@
     "label": "AI Researcher",
     "image": "",
     "email": "jangyejun@snu.ac.kr",
-    "url": "https://mutantq.github.io",
+    "url": "https://mutantQ.github.io",
     "summary": "AI researcher specializing in multi-agent reinforcement learning and deep learning. Research focus on developing reinforcement learning agents that can make reliable decisions based on grounded factual information, bridging advanced decision-making algorithms with trustworthy information infrastructure. Currently pursuing B.S. in Electrical and Computer Engineering at Seoul National University.",
     "location": {
       "city": "Seoul",
@@ -14,13 +14,13 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "mutantq",
-        "url": "https://linkedin.com/in/mutantq"
+        "username": "mutantQ",
+        "url": "https://linkedin.com/in/mutantQ"
       },
       {
         "network": "GitHub",
-        "username": "mutantq",
-        "url": "https://github.com/mutantq"
+        "username": "mutantQ",
+        "url": "https://github.com/mutantQ"
       },
       {
         "network": "Google Scholar",
@@ -119,7 +119,7 @@
       "name": "Korea Foundation for Advanced Studies (KFAS)",
       "position": "Project Head, SOUL - A Modern Reinterpretation of Keynes' Bancor",
       "location": "Seoul, South Korea",
-      "url": "https://github.com/mutantq/soul",
+      "url": "https://github.com/mutantQ/soul",
       "startDate": "2023-02",
       "endDate": "2024-02",
       "summary": "Modeled international trade using multi-agent reinforcement learning to simulate Keynes' International Clearing Union.",
@@ -146,7 +146,7 @@
       "name": "Sejong Academy of Science and Arts (SASA)",
       "position": "Software Lead, FHP-RTFS",
       "location": "Sejong, South Korea",
-      "url": "https://github.com/mutantq/FHP-RTFS",
+      "url": "https://github.com/mutantQ/FHP-RTFS",
       "startDate": "2019-02",
       "endDate": "2020-02",
       "summary": "Built a contactless feedback system for alerting incorrect body posture when using digital devices.",
@@ -346,7 +346,7 @@
       "highlights": ["Virtual Reality", "Educational Technology", "Quantum Computing"],
       "startDate": "2021-08",
       "endDate": "2021-08",
-      "url": "https://github.com/mutantq/QuPid"
+      "url": "https://github.com/mutantQ/QuPid"
     },
     {
       "name": "Car-The-Garden - Autonomous Navigation",
@@ -354,7 +354,7 @@
       "highlights": ["Autonomous Navigation", "Search Algorithms", "Robotics"],
       "startDate": "2021-09",
       "endDate": "2021-12",
-      "url": "https://github.com/mutantq/Car-The-Garden"
+      "url": "https://github.com/mutantQ/Car-The-Garden"
     }
   ],
   "volunteer": [

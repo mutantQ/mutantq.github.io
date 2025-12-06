@@ -55,7 +55,7 @@
         - Modeled central banks of each country as an RL agent aiming to maximize annual GDP in a simulated global economy
         - Explored economic policy and international relations through game-theoretic and multi-agent simulations
         - Secured funding of 10 million KRW (~$10,000 CAD) and managed allocation for computing, mentoring, and resources
-        - title: "GitHub: <a href='https://github.com/mutantq/soul'>mutantq/soul</a>"
+        - title: "GitHub: <a href='https://github.com/mutantQ/soul'>mutantQ/soul</a>"
     - title: Editor, Questions for Future
       institution: KFAS & Institute for Future Strategy, Seoul National University, Seoul, South Korea
       year: Aug 2022 - Nov 2023
@@ -71,7 +71,7 @@
         - Developed a measurement criterion for Forward Head Posture (FHP) using computer vision techniques
         - Processing 3D webcam data and providing audio feedback led to 81% improvement in participants' FHP
         - Became 2020 Regeneron ISEF finalist
-        - title: "GitHub: <a href='https://github.com/mutantq/FHP-RTFS'>mutantq/FHP-RTFS</a>"
+        - title: "GitHub: <a href='https://github.com/mutantQ/FHP-RTFS'>mutantQ/FHP-RTFS</a>"
 
 - title: Publications
   type: time_table
@@ -153,12 +153,12 @@
       year: Aug 2021
       description:
         - Created a VR laboratory to explain basic but hard-to-grasp concepts in quantum computing, specifically the qubit
-        - title: "GitHub: <a href='https://github.com/mutantq/QuPid'>mutantq/QuPid</a>"
+        - title: "GitHub: <a href='https://github.com/mutantQ/QuPid'>mutantQ/QuPid</a>"
     - title: Car-The-Garden - Autonomous Navigation
       year: Sep 2021 - Dec 2021
       description:
         - Applied left-first and right-first search algorithms to navigate a miniature version of the standard Korean driving test
-        - title: "GitHub: <a href='https://github.com/mutantq/Car-The-Garden'>mutantq/Car-The-Garden</a>"
+        - title: "GitHub: <a href='https://github.com/mutantQ/Car-The-Garden'>mutantQ/Car-The-Garden</a>"
 
 - title: Honors and Awards
   type: time_table
