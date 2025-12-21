@@ -10,7 +10,9 @@ lang: ko
 
 ![mutual 로고](/assets/img/mutual-logo.jpg)
 
-{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" controls=true %}
+<div class="text-center">
+{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" width="800" height="450" controls=true %}
+</div>
 
 스마트폰 카메라 셔터를 누르는 순간부터 사진이 갤러리에 뜨기까지, 안에서는 무슨 일이 일어날까.
 
