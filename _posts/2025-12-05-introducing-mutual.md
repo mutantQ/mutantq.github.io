@@ -93,4 +93,4 @@ If any of this resonates with you, you might enjoy reading the [co-founder role 
 
 ---
 
-**Contact**: [jangyejun@snu.ac.kr](mailto:jangyejun@snu.ac.kr)
+**Contact**: [jangyejun@gmail.com](mailto:jangyejun@gmail.com)
