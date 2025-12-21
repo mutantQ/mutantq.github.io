@@ -46,5 +46,5 @@ Whitepaper (PDF): [Signing Right Away](/assets/pdf/SRA-2025-10-05.pdf)
 
 ---
 
-**Interested?** → [jangyejun@snu.ac.kr](mailto:jangyejun@snu.ac.kr)
+**Interested?** → [jangyejun@gmail.com](mailto:jangyejun@gmail.com)
 
