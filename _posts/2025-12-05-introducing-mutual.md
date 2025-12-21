@@ -10,6 +10,8 @@ lang: en
 
 ![mutual logo](/assets/img/mutual-logo.jpg)
 
+{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" controls=true %}
+
 Smartphone cameras capture billions of photos and videos every day. Between the moment light hits the sensor and the moment a file is stored or uploaded, that data passes through a long chain of hardware and software. mutual focuses on the earliest part of this pipeline, where physical signals are first converted into digital data.
 
 Over the coming years, a growing share of the media we consume will be generated or heavily modified by AI systems. At that scale, **human perception alone is no longer enough to reliably distinguish authentic content from fabricated content.**

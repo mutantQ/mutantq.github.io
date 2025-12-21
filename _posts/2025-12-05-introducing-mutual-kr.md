@@ -10,6 +10,8 @@ lang: ko
 
 ![mutual 로고](/assets/img/mutual-logo.jpg)
 
+{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" controls=true %}
+
 스마트폰 카메라 셔터를 누르는 순간부터 사진이 갤러리에 뜨기까지, 안에서는 무슨 일이 일어날까.
 
 나는 요즘 \"카메라와 마더보드 사이의 보안\"을 보고 있다. 이 한 줄을 이야기하면 사람들은 보통 카메라 해킹, 도촬, 랜섬웨어 같은 것을 떠올린다. 하지만 내가 정말로 신경 쓰는 건 조금 다르다.
