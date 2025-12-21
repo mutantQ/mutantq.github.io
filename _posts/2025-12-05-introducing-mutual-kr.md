@@ -10,8 +10,8 @@ lang: ko
 
 ![mutual 로고](/assets/img/mutual-logo.jpg)
 
-<div class="text-center">
-{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" width="800" height="450" controls=true %}
+<div class="ratio ratio-16x9 mx-auto" style="max-width: 800px;">
+  <iframe src="https://www.youtube.com/embed/Ev9knl_Zbsg" class="rounded z-depth-1" allowfullscreen></iframe>
 </div>
 
 스마트폰 카메라 셔터를 누르는 순간부터 사진이 갤러리에 뜨기까지, 안에서는 무슨 일이 일어날까.

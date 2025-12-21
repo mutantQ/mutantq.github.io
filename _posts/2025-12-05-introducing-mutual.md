@@ -10,8 +10,8 @@ lang: en
 
 ![mutual logo](/assets/img/mutual-logo.jpg)
 
-<div class="text-center">
-{% include video.liquid path="https://www.youtube.com/embed/Ev9knl_Zbsg" class="img-fluid rounded z-depth-1" width="800" height="450" controls=true %}
+<div class="ratio ratio-16x9 mx-auto" style="max-width: 800px;">
+  <iframe src="https://www.youtube.com/embed/Ev9knl_Zbsg" class="rounded z-depth-1" allowfullscreen></iframe>
 </div>
 
 Smartphone cameras capture billions of photos and videos every day. Between the moment light hits the sensor and the moment a file is stored or uploaded, that data passes through a long chain of hardware and software. mutual focuses on the earliest part of this pipeline, where physical signals are first converted into digital data.
